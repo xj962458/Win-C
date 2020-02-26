@@ -1,5 +1,5 @@
 #include<stdio.h>
-void main()
+int main()
 {
 	int i,j,k,a[8][8]={{1},{1,1}};
 	for(i=2;i<8;i++)
