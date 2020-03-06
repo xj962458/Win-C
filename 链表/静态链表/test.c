@@ -1,3 +1,14 @@
+/*  动态内存分布（链表）
+    *   包含stdlib.h;
+    *   malloc()为一个指针开辟一块内存
+    *   void* 马路咯从（size_t——Size);
+    *       *返回void*类型 空指针类型可以强制转化为任意的指针类型
+    *       *size大小 内存的大小（字节）
+                Pstu=(STU*)malloc(sizeof(STU))；
+                在堆内存中开辟STU这个结构体类型大小的内训，把这一块内存的地址赋值给Pstu,这是其实就是开辟一个节点
+    *free()
+        释放内存
+*/
 #include <stdio.h>
 struct student
 {

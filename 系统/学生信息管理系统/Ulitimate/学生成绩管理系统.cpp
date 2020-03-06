@@ -6,15 +6,15 @@
 int temp, hh;
 typedef struct
 {
-	char stu_name[40];
-	int stu_id;
-	char stu_clas[40];
-	double stu_cj1;
-	double stu_cj2;
-	double stu_cj3;
-	double stu_cj4;
-	double stu_cj5;
-	double avg_grade;
+	char stu_name[40];	//姓名
+	int stu_id;			//学号
+	char stu_clas[40];	//班级
+	double stu_cj1;		//成绩1
+	double stu_cj2;		//成绩2
+	double stu_cj3;		//成绩3
+	double stu_cj4;		//成绩4
+	double stu_cj5;		//成绩5
+	double avg_grade;	//平均成绩
 } student;
 student all_stu[200], a[200];
 int stu_number = 0;
@@ -118,6 +118,8 @@ int main()
 			break;
 		}
 	} while (option);
+
+	return 0;
 }
 
 void first()
@@ -326,7 +328,7 @@ thefourth:
 	scanf("%d", &num);
 	for (ai = 0; ai < stu_number; ai++)
 	{
-		if (num = all_stu[ai].stu_id)
+		if (num == all_stu[ai].stu_id)
 		{
 			i = 1;
 			break;
@@ -345,7 +347,7 @@ thefourth:
 	else
 	{
 		stu_number--;
-		for (; ai < stu_number; ai++)
+		for (; ai < stu_number; ai--)
 		{
 			all_stu[ai] = all_stu[ai + 1];
 		}

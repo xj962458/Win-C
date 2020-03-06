@@ -307,7 +307,7 @@ void Read_file(MES * head)
 
 
 // Ö÷º¯Êý
-void main()
+int main()
 {
 	MES *head;
 	int n;
@@ -373,5 +373,6 @@ void main()
 		}
 
 	}
+	return 0;
 }
 
