@@ -1,5 +1,5 @@
 #include<stdio.h>
-void main()
+int main()
 {
     char a[7][19]={
                     {' ',' ',' ',' ',' ',' ',' ',' ',' ','1',' ',' ',' ',' ',' ',' ',' ',' ',' '},
@@ -17,4 +17,5 @@ void main()
             printf("%c",a[i][j]);
         printf("\n");
     }
+    return 0;
 }

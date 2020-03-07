@@ -9,21 +9,22 @@ typedef struct student
 
 int main()
 {
-    int i, j, a, n, s;
-    STU stu[10], *p;
-    p = (STU *)malloc(sizeof(STU));
+    int i, j,k, a, n, s;
+    STU *p[9];
     printf("请输入您要输入的学生数:");
     scanf("%d", &n);
+    for(k=0;k<=n;k++)
+        p[k] = (STU *)malloc(sizeof(STU));
     for (i = 0; i < n; i++)
     {
         printf("请输入姓名：");
-        scanf("%s", &stu[i].name);
+        scanf("%s",&p[i]->name);
         printf("请输入年龄：");
-        scanf("%d", &stu[i].age);
+        scanf("%d", &p[i]->age);
         printf("请输入分数：");
-        scanf("%f", &stu[i].score);
+        scanf("%f",&p[i]->score);
     }
-
+    /*
     printf("姓名");
     printf("\t年龄");
     printf("\t分数\n");
@@ -34,13 +35,13 @@ int main()
         printf("%.1f\t", stu[j].score);
         printf("\n");
     }
-    /*
-    printf("%s\t",stu[0].name);
-    printf("%d\t",stu[0].age);
-    printf("%.1f\t",stu[0].score);
-    printf("\n");
-    printf("%s\t",stu[1].name);
-    printf("%d\t",stu[1].age);
-    printf("%.1f\t",stu[1].score);
     */
+    for(j=0;j<n;j++)
+    {
+        printf("%s\t",p[j]->name);
+        printf("%d\t",p[j]->age);
+        printf("%.1f\t",p[j]->score);
+        printf("\n");
+    }
+    return 0;
 }
