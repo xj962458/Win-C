@@ -13,8 +13,8 @@ int main()
 {
     struct student *create();
     void print(struct student * head);
-    void BubbleSort(struct student * head); //Ã°ÅİÅÅĞò
-    void SelectedSort(struct student * head);   //Ñ¡ÔñÅÅĞò
+    void BubbleSort(struct student * head); //å†’æ³¡æ’åº
+    void SelectedSort(struct student * head);   //é€‰æ‹©æ’åº
     struct student *head;
     head = create();
     print(head);
@@ -52,7 +52,7 @@ void print(struct student *head)
 {
     struct student *p;
     p = head;
-    printf("%dÃûÑ§ÉúµÄ³É¼¨·Ö±ğÊÇ£º\n", n);
+    printf("%dåå­¦ç”Ÿçš„æˆç»©åˆ†åˆ«æ˜¯ï¼š\n", n);
     if (head != NULL)
     {
         do
@@ -63,10 +63,10 @@ void print(struct student *head)
     }
     else
     {
-        printf("Á´±íÎª¿Õ");
+        printf("é“¾è¡¨ä¸ºç©º");
     }
 }
-//Ã°ÅİÅÅĞòµÄÖ÷ÒªË¼Ïë½«Ç°ºóÁ½Á½Ïà±È½Ï£¬Ã¿±È½ÏÒ»´Î»á°ÑÒ»ÂÖ×î´ó»ò×îĞ¡µÄÊı·ÅÔÚ×îºó
+//å†’æ³¡æ’åºçš„ä¸»è¦æ€æƒ³å°†å‰åä¸¤ä¸¤ç›¸æ¯”è¾ƒï¼Œæ¯æ¯”è¾ƒä¸€æ¬¡ä¼šæŠŠä¸€è½®æœ€å¤§æˆ–æœ€å°çš„æ•°æ”¾åœ¨æœ€å
 void BubbleSort(struct student *head)
 {
     struct student *cur, *tail;
@@ -95,7 +95,7 @@ void BubbleSort(struct student *head)
         cur = head;
     }
 }
-//Ñ¡ÔñÅÅĞò
+//é€‰æ‹©æ’åº
 void SelectedSort(struct student *head)
 {
     struct student *cur, *p = NULL, *q = NULL;

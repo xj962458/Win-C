@@ -2,94 +2,94 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-#define STU_NUM 40 //×î¶àÑ§ÉúÈËÊı
-#define COURSE_NUM 3 //×î¶à¿Î³ÌÃÅÊı
-#define NAME_LEN 15 //×î³¤ĞÕÃû°üº¬µÄ×Ö·ûÊıÄ¿
+#define STU_NUM 40 //æœ€å¤šå­¦ç”Ÿäººæ•°
+#define COURSE_NUM 3 //æœ€å¤šè¯¾ç¨‹é—¨æ•°
+#define NAME_LEN 15 //æœ€é•¿å§“ååŒ…å«çš„å­—ç¬¦æ•°ç›®
 
 
-//¶¨ÒåÑ§Éú½á¹¹ÌåÀàĞÍ£¬±íÊ¾Ñ§Éú¼ÇÂ¼Ó¦¾ßÓĞµÄĞÎÊ½
+//å®šä¹‰å­¦ç”Ÿç»“æ„ä½“ç±»å‹ï¼Œè¡¨ç¤ºå­¦ç”Ÿè®°å½•åº”å…·æœ‰çš„å½¢å¼
 struct student
 {
-	long sno;		/*Ñ§ºÅ*/
-	char sname[NAME_LEN];	/*ĞÕÃû*/
-	float score[COURSE_NUM];	/*¸÷ÃÅ¿Î³Ì³É¼¨*/
-	float total;	/*×Ü·Ö*/
-	//struct student *next;		/*µ¥Á´±í½á¹¹Ê¹ÓÃ£»½á¹¹ÌåÊı×éÔò²»ÓÃ´ËÓï¾ä*/
+	long sno;		/*å­¦å·*/
+	char sname[NAME_LEN];	/*å§“å*/
+	float score[COURSE_NUM];	/*å„é—¨è¯¾ç¨‹æˆç»©*/
+	float total;	/*æ€»åˆ†*/
+	//struct student *next;		/*å•é“¾è¡¨ç»“æ„ä½¿ç”¨ï¼›ç»“æ„ä½“æ•°ç»„åˆ™ä¸ç”¨æ­¤è¯­å¥*/
 };
 
-int flag=0;	//×÷Îª×Ü³É¼¨ÊÇ·ñ¼ÆËãµÄÒ»¸ö±êÖ¾£¬flagÎª0Ê±±íÊ¾Ã»ÓĞ¼ÆËã
+int flag=0;	//ä½œä¸ºæ€»æˆç»©æ˜¯å¦è®¡ç®—çš„ä¸€ä¸ªæ ‡å¿—ï¼Œflagä¸º0æ—¶è¡¨ç¤ºæ²¡æœ‰è®¡ç®—
 
-//ËùÓĞº¯ÊıµÄÔ­ĞÍÉùÃ÷·ÅÔÚ´Ë´¦
-//¹¦ÄÜ 1:ÊäÈëÑ§ÉúĞÅÏ¢
+//æ‰€æœ‰å‡½æ•°çš„åŸå‹å£°æ˜æ”¾åœ¨æ­¤å¤„
+//åŠŸèƒ½ 1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 void InputStuInfor(struct student stu[],int m, int n);
-//¹¦ÄÜ 2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 void QueryByName(struct student stu[],int m,int n);
-//¹¦ÄÜ 3:¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+//åŠŸèƒ½ 3:è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 void StuTotalScore(struct student stu[],int m,int n);
-//¹¦ÄÜ 4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+//åŠŸèƒ½ 4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 void CourseAverageScore(struct student stu[],float avecourse[],int m, int n);
-//¹¦ÄÜ 5:°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò
+//åŠŸèƒ½ 5:æŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº
 void SortbyTotalScore(struct student stu[],int m,int n);
-//¹¦ÄÜ 6:Êä³öÑ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 void DisplayStuInfor(struct student stu[],int m,int n);
-//²Ëµ¥º¯Êı:ÏÔÊ¾²Ëµ¥,£¬»ñÈ¡²¢·µ»ØÓÃ»§Ñ¡ÔñµÄ¹¦ÄÜÏî±àºÅ
+//èœå•å‡½æ•°:æ˜¾ç¤ºèœå•,ï¼Œè·å–å¹¶è¿”å›ç”¨æˆ·é€‰æ‹©çš„åŠŸèƒ½é¡¹ç¼–å·
 int Menu(void);
 
 int main()
 {
-	struct student stu[STU_NUM];		//¶¨ÒåÑ§Éú¼ÇÂ¼£¬×î¶àÖ»ÓĞSTU_NUM¸öÍ¬Ñ§
-	float avecourse[COURSE_NUM]={0};	 //avecourse Êı×é´æ´¢Ã¿ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+	struct student stu[STU_NUM];		//å®šä¹‰å­¦ç”Ÿè®°å½•ï¼Œæœ€å¤šåªæœ‰STU_NUMä¸ªåŒå­¦
+	float avecourse[COURSE_NUM]={0};	 //avecourse æ•°ç»„å­˜å‚¨æ¯é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 
 
-	int m=2,n=3;	//mÎªÊµ¼ÊÑ§ÉúÊı£»nÎªÊµ¼Ê¿Î³ÌÊı¡£ÕâÀïÊÂÏÈÉè¶¨n=3
+	int m=2,n=3;	//mä¸ºå®é™…å­¦ç”Ÿæ•°ï¼›nä¸ºå®é™…è¯¾ç¨‹æ•°ã€‚è¿™é‡Œäº‹å…ˆè®¾å®šn=3
 	int i,j;
 	int item;
 
 
-	printf("ÇëÊäÈëÑ§ÉúµÄ×ÜÈËÊı");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿçš„æ€»äººæ•°");
 	scanf("%d",&m);
 	while(1)
 	{
-		item=Menu();//²Ëµ¥ÏÔÊ¾£¬²¢»ñÈ¡ÓÃ»§Ñ¡ÔñµÄ²Ëµ¥¹¦ÄÜÏî±àºÅ
+		item=Menu();//èœå•æ˜¾ç¤ºï¼Œå¹¶è·å–ç”¨æˆ·é€‰æ‹©çš„èœå•åŠŸèƒ½é¡¹ç¼–å·
 	
 
-		//¸ù¾İÓÃ»§µÄÑ¡Ôñ£¬Íê³ÉÏàÓ¦µÄ²Ù×÷£¨±¾½ÚÖ»Íê³ÉÊäÈë¡¢Êä³ö£¬¼ÆËã×Ü·ÖºÍÍË³ö²Ù×÷£©
+		//æ ¹æ®ç”¨æˆ·çš„é€‰æ‹©ï¼Œå®Œæˆç›¸åº”çš„æ“ä½œï¼ˆæœ¬èŠ‚åªå®Œæˆè¾“å…¥ã€è¾“å‡ºï¼Œè®¡ç®—æ€»åˆ†å’Œé€€å‡ºæ“ä½œï¼‰
 		switch(item)
 		{
 		case 1:
 			InputStuInfor(stu,m,n);
-			getchar(); //ÊäÈëÑ§ÉúĞÅÏ¢
+			getchar(); //è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 			getchar();
 			break;
 		case 2:
-			QueryByName(stu,m,n); //°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+			QueryByName(stu,m,n); //æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 			getchar();
 			getchar();
 			break;
 		case 3:
-			StuTotalScore(stu,m,n); //¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+			StuTotalScore(stu,m,n); //è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 			flag=1;
 			getchar(); getchar();
 			break;
 		case 4:
-			CourseAverageScore(stu,avecourse,m,n); // ¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+			CourseAverageScore(stu,avecourse,m,n); // è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 			getchar();getchar();
 			break;
 		case 5:
-			SortbyTotalScore(stu,m,n); //°´×Ü³É¼¨½µĞòÅÅ
+			SortbyTotalScore(stu,m,n); //æŒ‰æ€»æˆç»©é™åºæ’
 			getchar();getchar();
 			break;
 		case 6:
-			DisplayStuInfor(stu,m,n); //Êä³öÑ§ÉúĞÅÏ¢
+			DisplayStuInfor(stu,m,n); //è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 			getchar();getchar();
 			break;
-		case 0:/*ÍË³ö*/
+		case 0:/*é€€å‡º*/
 			exit(0);
-			printf("³ÌĞò½áÊø\n");
+			printf("ç¨‹åºç»“æŸ\n");
 			getchar();getchar();
 			break;
 		default:
-			printf("\n\nÊäÈëµÄÃüÁî²»¶Ô,ÇëÖØĞÂÊäÈë!!\n");
+			printf("\n\nè¾“å…¥çš„å‘½ä»¤ä¸å¯¹,è¯·é‡æ–°è¾“å…¥!!\n");
 			getchar();getchar();
 			break;
 		}
@@ -99,33 +99,33 @@ int main()
 
 
 
-//ÏÂÃæÊÇËùÓĞº¯ÊıµÄ¾ßÌåÊµÏÖ
-//¹¦ÄÜ1:ÊäÈëÑ§ÉúĞÅÏ¢
+//ä¸‹é¢æ˜¯æ‰€æœ‰å‡½æ•°çš„å…·ä½“å®ç°
+//åŠŸèƒ½1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 void InputStuInfor(struct student stu[],int m,int n)
 {
 	int i,j;
 	for(i=0;i<m;i++)
 	{
-		printf("ÇëÊäÈëµÚ%dÎ»Ñ§ÉúµÄÑ§ºÅ¡¢ĞÕÃûºÍ¸÷ÃÅ¿Î³Ì³É¼¨\n",i+1);
-		printf("Ñ§ ºÅ:");
+		printf("è¯·è¾“å…¥ç¬¬%dä½å­¦ç”Ÿçš„å­¦å·ã€å§“åå’Œå„é—¨è¯¾ç¨‹æˆç»©\n",i+1);
+		printf("å­¦ å·:");
 		scanf("%ld",&stu[i].sno);
-		getchar();		 //¹ıÂËµô»Ø³µ¼ü
-		printf("ĞÕ Ãû:");
+		getchar();		 //è¿‡æ»¤æ‰å›è½¦é”®
+		printf("å§“ å:");
 		gets(stu[i].sname);
 		for(j=0;j<n;j++)
 		{
-			printf("¿Î³Ì%d³É¼¨:",j+1);
+			printf("è¯¾ç¨‹%dæˆç»©:",j+1);
 			scanf("%f",&stu[i].score[j]);
 		}
 	}
 }
 
-//¹¦ÄÜ 2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 void QueryByName(struct student stu[],int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!!\n");
+	printf("å‡½æ•°å®ç°ä¸­!!\n");
 }
-//¹¦ÄÜ 3;¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+//åŠŸèƒ½ 3;è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 void StuTotalScore(struct student stu[],int m,int n)
 {
 	int i,j;
@@ -135,50 +135,51 @@ void StuTotalScore(struct student stu[],int m,int n)
 		for(j=0;j<n;j++)
 			stu[i].total+=stu[i].score[i];
 	}
-	printf("¸÷¸öÑ§ÉúµÄ×Ü³É¼¨¼ÆËãÍê±Ï!\n");
+	printf("å„ä¸ªå­¦ç”Ÿçš„æ€»æˆç»©è®¡ç®—å®Œæ¯•!\n");
 }
-//¹¦ÄÜ 4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+//åŠŸèƒ½ 4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 void CourseAverageScore(struct student stu[],float avecourse[],int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!\n");
+	printf("å‡½æ•°å®ç°ä¸­!\n");
 }
-//¹¦ÄÜ 5£º°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò
+//åŠŸèƒ½ 5ï¼šæŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº
 void SortbyTotalScore(struct student stu[],int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!!\n");
+	printf("å‡½æ•°å®ç°ä¸­!!\n");
 }
-//¹¦ÄÜ 6:Êä³öÑ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 void DisplayStuInfor (struct student stu[],int m,int n)
 {
 	int i,j;
-	if(flag==0)//Èô»¹Ã»ÓĞ¼ÆËãÑ§ÉúµÄ×Ü³É¼¨£¬Ôòµ÷ÓÃ StuTotalScore( )º¯Êı½øĞĞ¼ÆËã
+	if(flag==0)//è‹¥è¿˜æ²¡æœ‰è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©ï¼Œåˆ™è°ƒç”¨ StuTotalScore( )å‡½æ•°è¿›è¡Œè®¡ç®—
 		StuTotalScore(stu,m,n);
-	printf("\tÑ§ºÅ\tĞÕÃû\t\t¿Î³Ì1\t¿Î³Ì2\t¿Î³Ì3\t×Ü³É¼¨\n");
+	printf("\tå­¦å·\tå§“å\t\tè¯¾ç¨‹1\tè¯¾ç¨‹2\tè¯¾ç¨‹3\tæ€»æˆç»©\n");
 	for(i=0;i<m;i++)
 	{ 
-		printf("\t%ld%-8s",stu[i].sno,stu[i].sname);//Êä³öÑ§ºÅÓëĞÕÃû
-		for(j=0;j<m;j++)//Êä³önÃÅ¿Î³ÌµÄ³É¼¨
+		printf("\t%ld%-8s",stu[i].sno,stu[i].sname);//è¾“å‡ºå­¦å·ä¸å§“å
+		for(j=0;j<m;j++)//è¾“å‡ºné—¨è¯¾ç¨‹çš„æˆç»©
 			printf("\t%.1f",stu[i].score[j]);
-		printf("\t%.1f\n",stu[i].total);//Êä³ö×Ü³É¼¨
+		printf("\t%.1f\n",stu[i].total);//è¾“å‡ºæ€»æˆç»©
 	}
 }
-//²Ëµ¥º¯Êı£»ÏÔÊ¾²Ëµ¥£¬»ñÈ¡²¢·µ»ØÓÃ»§Ñ¡ÔñµÄ¹¦ÄÜÏîĞäºÅ¡£
+//èœå•å‡½æ•°ï¼›æ˜¾ç¤ºèœå•ï¼Œè·å–å¹¶è¿”å›ç”¨æˆ·é€‰æ‹©çš„åŠŸèƒ½é¡¹è¢–å·ã€‚
 int Menu(void)
-{ //ÓÃ»§²Ëµ¥
+{ //ç”¨æˆ·èœå•
 	int item;
-	system("cls");/*ÇåÆÁ²Ù×÷*/
-	printf("\n\tÕâÊÇ°à¼¶¹ÜÀíÏµÍ³£¬ÇëÑ¡ÔñÄãÒªµÄ²Ù×÷:\n\n");
-	printf("\t\t1:ÊäÈëÑ§ÉúĞÅÏ¢\n");
-	printf("\t\t2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢\n");
-	printf("\t\t3:¼ÆËãÑ§ÉúµÄ×Ü³É¼¨\n");
-	printf("\t\t4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö\n");
-	printf("\t\t5:°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò\n");
-	printf("\t\t6:Êä³öÑ§ÉúĞÅÏ¢\n");
-	printf("\t\t0:ÍË³ö\n");
+	system("cls");/*æ¸…å±æ“ä½œ*/
+	printf("\n\tè¿™æ˜¯ç­çº§ç®¡ç†ç³»ç»Ÿï¼Œè¯·é€‰æ‹©ä½ è¦çš„æ“ä½œ:\n\n");
+	printf("\t\t1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t3:è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©\n");
+	printf("\t\t4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†\n");
+	printf("\t\t5:æŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº\n");
+	printf("\t\t6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t0:é€€å‡º\n");
 
 
-	printf("\n\nÇëÊäÈëÃüÁî:");
-	scanf("%d",&item); /*¶ÁÓÃ»§Ñ¡ÔñµÄÃüÁî*/
+	printf("\n\nè¯·è¾“å…¥å‘½ä»¤:");
+	scanf("%d",&item); /*è¯»ç”¨æˆ·é€‰æ‹©çš„å‘½ä»¤*/
 	return item;
 }
+
 

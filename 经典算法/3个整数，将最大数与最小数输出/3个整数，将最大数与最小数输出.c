@@ -15,3 +15,4 @@ void main()
 		min=c;
 	printf("max=%d,min=%d",max,min);
 }
+

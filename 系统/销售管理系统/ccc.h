@@ -2,13 +2,14 @@
 void ccc()
 {
 	int n;
-	printf("ÊäÈëÏúÊÛÔ±ÊıÁ¿\n");
+	printf("è¾“å…¥é”€å”®å‘˜æ•°é‡\n");
 	scanf("%d",&n);
 	struct node OL;
 	Write(&OL,n);
 	Sort(&OL,n); 
  } 
 
-//Ö÷º¯Êı
+//ä¸»å‡½æ•°
+
 
 

@@ -1,6 +1,6 @@
 # include <stdio.h>
 
-// isPrime1: Èç¹ûnÊÇËØÊı·µ»ØÖµ1£¬·ñÔò·µ»ØÖµ0
+// isPrime1: å¦‚æœnæ˜¯ç´ æ•°è¿”å›å€¼1ï¼Œå¦åˆ™è¿”å›å€¼0
 int isPrime1(int n)
 {
 	int chushu;
@@ -14,7 +14,7 @@ int isPrime1(int n)
 	return 1;
 }
 
-// ÎŞ·µ»ØÖµ£¬Èç¹ûnÊÇËØÊıÔòÊä³ö¡°nÊÇËØÊı¡±£¬·ñÔòÊä³ö¡°nÊÇºÏÊı¡±
+// æ— è¿”å›å€¼ï¼Œå¦‚æœnæ˜¯ç´ æ•°åˆ™è¾“å‡ºâ€œnæ˜¯ç´ æ•°â€ï¼Œå¦åˆ™è¾“å‡ºâ€œnæ˜¯åˆæ•°â€
 void isPrime2(int n)
 {
 	int chushu;
@@ -22,17 +22,17 @@ void isPrime2(int n)
 	{
 		if(n%chushu==0)
 		{
-			// Èç¹ûnÄÜ±»chushuÕû³ıÔònÒ»¶¨ÊÇºÏÊıÇÒÃ»±ØÒª¼ÌĞøÑ­»·ÏÂÈ¥
+			// å¦‚æœnèƒ½è¢«chushuæ•´é™¤åˆ™nä¸€å®šæ˜¯åˆæ•°ä¸”æ²¡å¿…è¦ç»§ç»­å¾ªç¯ä¸‹å»
 			break;
 		}
 	}
-	if(chushu==n)	// Ö»ÓĞnÊÇËØÊıÊ±£¬forÑ­»·²Å»áÕı³£½áÊø£¨²»ÊÇÓÉbreakÌáÇ°½áÊø£©£¬Õı³£½áÊøforºó£¬chushuÕıºÃµÈÓÚn
+	if(chushu==n)	// åªæœ‰næ˜¯ç´ æ•°æ—¶ï¼Œforå¾ªç¯æ‰ä¼šæ­£å¸¸ç»“æŸï¼ˆä¸æ˜¯ç”±breakæå‰ç»“æŸï¼‰ï¼Œæ­£å¸¸ç»“æŸforåï¼Œchushuæ­£å¥½ç­‰äºn
 	{
-		printf("%d ÊÇËØÊı\n", n);
+		printf("%d æ˜¯ç´ æ•°\n", n);
 	}
 	else
 	{
-		printf("%d ÊÇºÏÊı\n", n);
+		printf("%d æ˜¯åˆæ•°\n", n);
 	}
 }
 
@@ -40,16 +40,16 @@ void main()
 {
 	int x;
 	scanf("%d", &x);
-	// µ÷ÓÃisPrime1
+	// è°ƒç”¨isPrime1
 	if(isPrime1(x))
 	{
-		printf("ËØÊı\n");
+		printf("ç´ æ•°\n");
 	}
 	else
 	{
-		printf("ºÏÊı\n");
+		printf("åˆæ•°\n");
 	}
 
-	// µ÷ÓÃisPrime2
+	// è°ƒç”¨isPrime2
 	isPrime2(x);
 }

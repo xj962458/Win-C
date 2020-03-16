@@ -3,11 +3,11 @@ void exchange(int *pointer1, int *pointer2)
 	int temp;
 	temp=*pointer1, *pointer1=*pointer2, *pointer2=temp;
 }
-/*Ö÷º¯Êımain()*/ 
+/*ä¸»å‡½æ•°main()*/ 
 void main()
 {	
 	int num1,num2,num3;
-	/*´Ó¼üÅÌÉÏÊäÈë 3 ¸öÕûÊı*/
+	/*ä»é”®ç›˜ä¸Šè¾“å…¥ 3 ä¸ªæ•´æ•°*/
 	printf("Input the first number: "); 
 	scanf("%d", &num1);
 	printf("Input the second number: "); 
@@ -15,14 +15,15 @@ void main()
 	printf("Input the third number: "); 
 	scanf("%d",&num3); 
 	printf("num1=%d,num2=%d, num3=%d\n", num1, num2, num3);
-	/*Êä³ö 3 ¸ö±äÁ¿µÄ³õÖµ*/
-	/*ÅÅĞò*/
+	/*è¾“å‡º 3 ä¸ªå˜é‡çš„åˆå€¼*/
+	/*æ’åº*/
 	if( num1 < num2 )	/*num1<num2*/
-	exchange(  &num1, &num2);	/*Ö¸Õë×÷Êµ²Îµ÷ÓÃº¯Êı exchange()£¬»¥»»num1 ºÍnum2 µÄÖµ*/ 
+	exchange(  &num1, &num2);	/*æŒ‡é’ˆä½œå®å‚è°ƒç”¨å‡½æ•° exchange()ï¼Œäº’æ¢num1 å’Œnum2 çš„å€¼*/ 
 	if( num1 < num3 ) 
 		exchange( &num1,&num3 );
 	if(num2<num3 ) 
 		exchange( &num2,&num3 );
-	/*Êä³öÅÅĞò½á¹û*/
-	printf("ÅÅĞò½á¹û: %d, %d, %d\n",num1,num2,num3);
+	/*è¾“å‡ºæ’åºç»“æœ*/
+	printf("æ’åºç»“æœ: %d, %d, %d\n",num1,num2,num3);
 }
+

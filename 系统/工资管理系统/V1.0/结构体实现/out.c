@@ -1,8 +1,8 @@
 //out.c
 #pragma once
 #include "preProcess.h"
-/*printheader()º¯ÊıÓÃÓÚÔÚÆÁÄ»ÉÏÒÔ±í¸ñĞÎÊ½ÏÔÊ¾¼ÇÂ¼¡£¼ÇÂ¼µÄÏÔÊ¾¾­³£Òª½øĞĞ£¬Òò´Ëµ¥¶ÀÉèÖÃ
-printheader()º¯Êı£¬±ãÓÚÆäËûÄ£¿éµ÷ÓÃ£¬¼õÉÙ´úÂëµÄÖØ¸´
+/*printheader()å‡½æ•°ç”¨äºåœ¨å±å¹•ä¸Šä»¥è¡¨æ ¼å½¢å¼æ˜¾ç¤ºè®°å½•ã€‚è®°å½•çš„æ˜¾ç¤ºç»å¸¸è¦è¿›è¡Œï¼Œå› æ­¤å•ç‹¬è®¾ç½®
+printheader()å‡½æ•°ï¼Œä¾¿äºå…¶ä»–æ¨¡å—è°ƒç”¨ï¼Œå‡å°‘ä»£ç çš„é‡å¤
 */
 void printheader(){
 	printf(HEADER1);
@@ -10,12 +10,12 @@ void printheader(){
 	printf(HEADER3);
 }
  
-void PRINTdata(ZGGZ pp){/*¸ñÊ½»¯Êä³ö±íÖĞÊı¾İ*/
+void PRINTdata(ZGGZ pp){/*æ ¼å¼åŒ–è¾“å‡ºè¡¨ä¸­æ•°æ®*/
 	ZGGZ *p;
 	p=&pp;
 	printf(FORMAT,DATA);
 }
-void disp(ZGGZ tp[],int n){/*ÏÔÊ¾Êı×étp[]ÖĞ´æ´¢µÄ¼ÇÂ¼£¬ÄÚÈİÎª*/
+void disp(ZGGZ tp[],int n){/*æ˜¾ç¤ºæ•°ç»„tp[]ä¸­å­˜å‚¨çš„è®°å½•ï¼Œå†…å®¹ä¸º*/
 	int i;
 	if (n==0)
 	{
@@ -25,9 +25,9 @@ void disp(ZGGZ tp[],int n){/*ÏÔÊ¾Êı×étp[]ÖĞ´æ´¢µÄ¼ÇÂ¼£¬ÄÚÈİÎª*/
 		return ;
 	}
 	printf("\n\n");
-	printheader();		/*Êä³ö±í¸ñÍ·²¿*/
+	printheader();		/*è¾“å‡ºè¡¨æ ¼å¤´éƒ¨*/
 	i=0;
-	while(i<n){	/*ÖğÌõÊä³öÊı×éÖĞ´æ´¢µÄÔ±¹¤ĞÅÏ¢*/
+	while(i<n){	/*é€æ¡è¾“å‡ºæ•°ç»„ä¸­å­˜å‚¨çš„å‘˜å·¥ä¿¡æ¯*/
 		PRINTdata(tp[i]);
 		i++;
 		printf(HEADER3);
@@ -35,10 +35,10 @@ void disp(ZGGZ tp[],int n){/*ÏÔÊ¾Êı×étp[]ÖĞ´æ´¢µÄ¼ÇÂ¼£¬ÄÚÈİÎª*/
 	getchar();
 }
  
-void wrong(){	/*Êä³ö°´¼ü´íÎóĞÅÏ¢*/
+void wrong(){	/*è¾“å‡ºæŒ‰é”®é”™è¯¯ä¿¡æ¯*/
 	printf("\n\n\n\n*******Error:input has wrong!press any key to continue*******\n");
 	getchar();
 }
-void nofind(){	/*Êä³öÎ´²éÕÒµ½´ËÔ±¹¤µÄĞÅÏ¢*/
+void nofind(){	/*è¾“å‡ºæœªæŸ¥æ‰¾åˆ°æ­¤å‘˜å·¥çš„ä¿¡æ¯*/
 	printf("\n====>Not find this employee record!\n");
 }

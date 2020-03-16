@@ -5,9 +5,9 @@ void main(void)
 {
 	char strA[N];	
 	char strB[N];
-	printf("ÇëÊäÈë×Ö·û´®:\n");
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸²:\n");
 	gets(strA); fun(strA, strB);
-	printf("¸´ÖÆºóµÄ×Ö·û´®:\n");
+	printf("å¤åˆ¶åçš„å­—ç¬¦ä¸²:\n");
 	puts(strB);
 }
 void fun(char *strA, char *strB)
@@ -19,3 +19,4 @@ void fun(char *strA, char *strB)
 			strB[k++] = strA[i];
 	strB[k]='\0';
 }
+

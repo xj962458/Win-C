@@ -1,11 +1,11 @@
-// շת����������Լ��
+// 辗转相除法求最大公约数
 # include <stdio.h>
 
 void main()
 {
 	int x, y, t, yu;
 	scanf("%d %d", &x, &y);
-	// շת�����Ҫ���1�������ڵ��ڵ�2����
+	// 辗转相除法要求第1个数大于等于第2个数
 	if(x<y)
 	{
 		t=x;
@@ -22,5 +22,6 @@ void main()
 	}
 	printf("%d\n", y);
 }
+
 
 

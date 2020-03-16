@@ -1,27 +1,27 @@
 //add.c
-/*Ôö¼Ó¼ÇÂ¼*/
+/*å¢åŠ è®°å½•*/
 #pragma once
 #include "preProcess.h"
 void disp(ZGGZ tp[],int n);
 void wrong();
-void stringinput(char *t,int lens,char *notice);/*ÊäÈë×Ö·û´®£¬²¢½øĞĞ³¤¶ÈÑéÖ¤Ã÷£¬³¤¶È±ØĞëĞ¡ÓÚlens£¬*/
-float numberinput(char *notice);/*ÊäÈëÊıÖµ¸¡µãÊı£¬¶ÔÊıÖµ¼ìÑéºó·µ»Ø¸ÃÖµ£¬ÊıÖµ±ØĞë´óÓÚµÈÓÚ0*/
+void stringinput(char *t,int lens,char *notice);/*è¾“å…¥å­—ç¬¦ä¸²ï¼Œå¹¶è¿›è¡Œé•¿åº¦éªŒè¯æ˜ï¼Œé•¿åº¦å¿…é¡»å°äºlensï¼Œ*/
+float numberinput(char *notice);/*è¾“å…¥æ•°å€¼æµ®ç‚¹æ•°ï¼Œå¯¹æ•°å€¼æ£€éªŒåè¿”å›è¯¥å€¼ï¼Œæ•°å€¼å¿…é¡»å¤§äºç­‰äº0*/
 int add(ZGGZ tp[],int n){
 	char ch,num[10];
 	int i,flag=0;
-	system("cls");	/*ÇåÆÁ*/
-	disp(tp,n);		/*ÏÔÊ¾ÒÑÓĞÔ±¹¤¹¤×ÊĞÅÏ¢*/
-	while(1){		/*Ò»´Î¿ÉÊäÈë¶àÌõ¼ÇÂ¼£¬Ö±µ½ÊäÈë±àºÅÎª0µÄ¼ÇÂ¼²Å½áÊøÌí¼Ó*/
-		while(1){		/*ÊäÈëÔ±¹¤±àºÅ£¬±£Ö¤¸Ã±àºÅÃ»ÓĞ±»Ê¹ÓÃ£¬ÈôÊäÈë±àºÅÎª0 £¬ÔòÍË³öÌí¼Ó²Ù×÷*/
-			stringinput(num,10,"input number(press '0' return menu):");/*¸ñÊ½»¯ÊäÈë±àºÅ²¢¼ìÑé*/
+	system("cls");	/*æ¸…å±*/
+	disp(tp,n);		/*æ˜¾ç¤ºå·²æœ‰å‘˜å·¥å·¥èµ„ä¿¡æ¯*/
+	while(1){		/*ä¸€æ¬¡å¯è¾“å…¥å¤šæ¡è®°å½•ï¼Œç›´åˆ°è¾“å…¥ç¼–å·ä¸º0çš„è®°å½•æ‰ç»“æŸæ·»åŠ */
+		while(1){		/*è¾“å…¥å‘˜å·¥ç¼–å·ï¼Œä¿è¯è¯¥ç¼–å·æ²¡æœ‰è¢«ä½¿ç”¨ï¼Œè‹¥è¾“å…¥ç¼–å·ä¸º0 ï¼Œåˆ™é€€å‡ºæ·»åŠ æ“ä½œ*/
+			stringinput(num,10,"input number(press '0' return menu):");/*æ ¼å¼åŒ–è¾“å…¥ç¼–å·å¹¶æ£€éªŒ*/
 			flag=0;
-			if (strcmp(num,"0")==0)	/*ÊäÈëÎª0£¬ÔòÍË³öÌí¼Ó²Ù×÷£¬·µ»ØÖ÷½çÃæ*/
+			if (strcmp(num,"0")==0)	/*è¾“å…¥ä¸º0ï¼Œåˆ™é€€å‡ºæ·»åŠ æ“ä½œï¼Œè¿”å›ä¸»ç•Œé¢*/
 			{
 				/* code */
 				return n;
 			}
 			i=0;
-			while(i<n){		/*²éÑ¯¸Ã±àºÅÊÇ·ñÒÑ¾­´æÔÚ£¬Èô´æÔÚ£¬ÔòÖØĞÂÊäÈëÒ»¸öÎ´±»Õ¼ÓÃµÄ±àºÅ*/
+			while(i<n){		/*æŸ¥è¯¢è¯¥ç¼–å·æ˜¯å¦å·²ç»å­˜åœ¨ï¼Œè‹¥å­˜åœ¨ï¼Œåˆ™é‡æ–°è¾“å…¥ä¸€ä¸ªæœªè¢«å ç”¨çš„ç¼–å·*/
 				if (strcmp(tp[i].num,num)==0)
 				{
 					/* code */
@@ -30,7 +30,7 @@ int add(ZGGZ tp[],int n){
 				}
 				i++;
 			}
-			if (flag==1)	/*ÌáÊ¾ÓÃ»§ÊÇ·ñÖØĞÂÊäÈë*/
+			if (flag==1)	/*æç¤ºç”¨æˆ·æ˜¯å¦é‡æ–°è¾“å…¥*/
 			{
 				/* code */
 				getchar();
@@ -47,14 +47,14 @@ int add(ZGGZ tp[],int n){
 			else
 				break;
 		}
-		strcpy(tp[n].num,num);		/*½«×Ö·û´®num¸´ÖÆµ½tp[n].numÖĞ*/
+		strcpy(tp[n].num,num);		/*å°†å­—ç¬¦ä¸²numå¤åˆ¶åˆ°tp[n].numä¸­*/
 		stringinput(tp[n].name,15,"Name:");		
-		tp[n].jbgz=numberinput("jbgz:");			/*ÊäÈë²¢Ğ£Ñé»ù±¾¹¤×Ê*/
-		tp[n].jj=numberinput("jiangjin:");		/*ÊäÈë²¢¼ìÑé½±½ğ*/
-		tp[n].kk=numberinput("koukuan:");		/*ÊäÈë²¢¼ìÑé¿Û¿î*/
-		tp[n].yfgz=tp[n].jbgz+tp[n].jj-tp[n].kk;	/*¼ÆËãÓ¦·¢¹¤×Ê*/
-		tp[n].sk=tp[n].yfgz*0.12l;		/*¼ÆËãË°½ğ£¬¼Ù¶¨È¡Ó¦·¢¹¤×ÊµÄ12%*/
-		tp[n].sfgz=tp[n].yfgz-tp[n].sk;			/*¼ÆËãÊµ·¢¹¤×Ê*/
+		tp[n].jbgz=numberinput("jbgz:");			/*è¾“å…¥å¹¶æ ¡éªŒåŸºæœ¬å·¥èµ„*/
+		tp[n].jj=numberinput("jiangjin:");		/*è¾“å…¥å¹¶æ£€éªŒå¥–é‡‘*/
+		tp[n].kk=numberinput("koukuan:");		/*è¾“å…¥å¹¶æ£€éªŒæ‰£æ¬¾*/
+		tp[n].yfgz=tp[n].jbgz+tp[n].jj-tp[n].kk;	/*è®¡ç®—åº”å‘å·¥èµ„*/
+		tp[n].sk=tp[n].yfgz*0.12l;		/*è®¡ç®—ç¨é‡‘ï¼Œå‡å®šå–åº”å‘å·¥èµ„çš„12%*/
+		tp[n].sfgz=tp[n].yfgz-tp[n].sk;			/*è®¡ç®—å®å‘å·¥èµ„*/
 		n++;
 	}
 	return n;

@@ -13,3 +13,4 @@ void main()
 	w.ch[0]='a';
 	printf("the number is %x\n",w.n);
 }
+

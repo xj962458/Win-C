@@ -1,13 +1,13 @@
-//ÊäÈë¸÷ÏúÊÛÔ±µÄÏà¹ØÊı¾İ
+//è¾“å…¥å„é”€å”®å‘˜çš„ç›¸å…³æ•°æ®
 #include<x.h>
 void Write(LinkList head, int n)
 {
-	printf("ÊäÈëÏúÊÛÔ±ĞòºÅ£¬ĞÕÃû¼°ÏúÊÛ¶î\n");
+	printf("è¾“å…¥é”€å”®å‘˜åºå·ï¼Œå§“ååŠé”€å”®é¢\n");
     LinkList p;
     int i;
     for(i=0;i<n;i++)
 	{
-		printf("µÚ%dÎ»:",i+1);
+		printf("ç¬¬%dä½:",i+1);
         p=(LinkList)malloc(sizeof(Node));
         scanf("%s%s%f",p->no,p->name,&p->sales);
         p->link=head->link;

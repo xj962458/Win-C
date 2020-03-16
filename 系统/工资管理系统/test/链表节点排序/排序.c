@@ -9,8 +9,8 @@ struct student
 	char x[10];
 	struct student *next;
 }*head, *end, *New, *get, *stu;
-int input(int N, char **G)//Êý¾ÝÊäÈë
-//±äÁ¿ËµÃ÷£º¡°N¡±Îª¿¼ÊÔµÄ¿ÆÄ¿ÊýÁ¿£¬´Ë´¦**GÎª×Ö·û´®Ö¸ÕëÊý×é£¬ÆäÖÐ´æ´¢×Å¿¼ÊÔ¿ÆÄ¿¡£
+int input(int N, char **G)//æ•°æ®è¾“å…¥
+//å˜é‡è¯´æ˜Žï¼šâ€œNâ€ä¸ºè€ƒè¯•çš„ç§‘ç›®æ•°é‡ï¼Œæ­¤å¤„**Gä¸ºå­—ç¬¦ä¸²æŒ‡é’ˆæ•°ç»„ï¼Œå…¶ä¸­å­˜å‚¨ç€è€ƒè¯•ç§‘ç›®ã€‚
 {
 	int i, c = 1, icount = 0, s[10], j, k, d;
 	char r[10];
@@ -19,18 +19,18 @@ int input(int N, char **G)//Êý¾ÝÊäÈë
 	while (c)
 	{
 		New = (struct student *)malloc(sizeof(struct student));
-		printf("\t\tÊäÈë¸ÃÃûÑ§ÉúÐÕÃû(½áÊøÇë°´¡®0¡¯):");
+		printf("\t\tè¾“å…¥è¯¥åå­¦ç”Ÿå§“å(ç»“æŸè¯·æŒ‰â€˜0â€™):");
 		scanf("%s", New->name);
 		if (New->name[0] != 48)
 		{
-			printf("\t\tÊäÈë¸ÃÃûÑ§ÉúÑ§ºÅ:");
+			printf("\t\tè¾“å…¥è¯¥åå­¦ç”Ÿå­¦å·:");
 			scanf("%s", r);
 			icount++;
 			strcpy(New->x, r);
 			New->grade[N] = 0;
 			for (i = 0; i < N; i++)
 			{
-				printf("\t\t%s³É¼¨:", G[i]);
+				printf("\t\t%sæˆç»©:", G[i]);
 				scanf("%f", &New->grade[i]);
 				if (New->grade[i] < 60)
 					s[i]++;
@@ -48,12 +48,13 @@ int input(int N, char **G)//Êý¾ÝÊäÈë
 		c = 0;
 	}
 }
-int paixu(int N)//³É¼¨ÅÅÐò
+int paixu(int N)//æˆç»©æŽ’åº
 {
-	int i;//ÔÚ³ÌÐòµÄºó±ã»áÈÃÓÃ»§Ñ¡ÔñÉýÐò»¹ÊÇ½µÐòÅÅÐò£¬±äÁ¿iµÄ×÷ÓÃÊÇ¸ù¾ÝiµÄÖµÑ¡ÔñÅÅÐò·½Ê½¡£ÈôiÎª1Ôò½µÐòÅÅÁÐ£¬0ÔòÉýÐòÅÅÁÐ
+	int i;//åœ¨ç¨‹åºçš„åŽä¾¿ä¼šè®©ç”¨æˆ·é€‰æ‹©å‡åºè¿˜æ˜¯é™åºæŽ’åºï¼Œå˜é‡içš„ä½œç”¨æ˜¯æ ¹æ®içš„å€¼é€‰æ‹©æŽ’åºæ–¹å¼ã€‚è‹¥iä¸º1åˆ™é™åºæŽ’åˆ—ï¼Œ0åˆ™å‡åºæŽ’åˆ—
 	struct student *min, *xunow, *uend;
 	uend = (struct student *)malloc(sizeof(struct student));
 	uend->grade[0] = -1;
 	uend->next = NULL;
 	uend->ahead = end;
 	end->next = uend;
+

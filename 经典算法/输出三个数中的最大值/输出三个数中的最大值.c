@@ -10,3 +10,4 @@ void main()
 		max=c;
 	printf("max is:%d\n",max);
 }
+

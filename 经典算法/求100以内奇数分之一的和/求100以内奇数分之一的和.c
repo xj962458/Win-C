@@ -7,3 +7,4 @@ void main()
 	s=s+1.0/i;
 	printf("s=%f\n",s);
 }
+

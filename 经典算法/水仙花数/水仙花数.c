@@ -10,3 +10,4 @@ int main()
 			printf("%d\n",i*100+j*10+k);
 	}
 }
+

@@ -1,26 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//数据
+//鏁版嵁
 struct  Data
 {
-    int x;      //两个数据
+    int x;      //涓や釜鏁版嵁
     int y;
 };
 
-//结点
+//缁撶偣
 struct Node
 {
-    struct Data data;  //数据
-    struct Node *pnext; //指针
+    struct Data data;  //鏁版嵁
+    struct Node *pnext; //鎸囬拡
 };
 
-//链表
+//閾捐〃
 struct List
 {
-    struct Node* pfront;    //第一个节点的指针
-    struct Node* prear;     //最后一个节点的指针
-    struct Node  const;     //有多少个结点
+    struct Node* pfront;    //绗竴涓妭鐐圭殑鎸囬拡
+    struct Node* prear;     //鏈�鍚庝竴涓妭鐐圭殑鎸囬拡
+    struct Node  const;     //鏈夊灏戜釜缁撶偣
 
 
 };

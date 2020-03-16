@@ -1,82 +1,82 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define STU_NUM 40 //×î¶àÑ§ÉúÈËÊı
-#define COURSE_NUM 3 //×î¶à¿Î³ÌÃÅÊı
-#define NAME_LEN 15 //×î³¤ĞÕÃû°üº¬µÄ×Ö·ûÊıÄ¿
-//ËùÓĞº¯ÊıµÄÔ­ĞÍÉùÃ÷·ÅÔÚ´Ë´¦
-//¹¦ÄÜ 1:ÊäÈëÑ§ÉúĞÅÏ¢
+#define STU_NUM 40 //æœ€å¤šå­¦ç”Ÿäººæ•°
+#define COURSE_NUM 3 //æœ€å¤šè¯¾ç¨‹é—¨æ•°
+#define NAME_LEN 15 //æœ€é•¿å§“ååŒ…å«çš„å­—ç¬¦æ•°ç›®
+//æ‰€æœ‰å‡½æ•°çš„åŸå‹å£°æ˜æ”¾åœ¨æ­¤å¤„
+//åŠŸèƒ½ 1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 void InputStuInfor(long sno[], char sname[][NAME_LEN],float score[][COURSE_NUM],int m, int n);
-//¹¦ÄÜ 2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 void QueryByName(long sno[], char sname[][NAME_LEN],float score[][COURSE_NUM],float tscore[],int m,int n);
-//¹¦ÄÜ 3:¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+//åŠŸèƒ½ 3:è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 void StuTotalScore(float score[][COURSE_NUM],float tscore[],int m,int n);
-//¹¦ÄÜ 4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+//åŠŸèƒ½ 4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 void CourseAverageScore(float score[][COURSE_NUM], float avecourse[], int m, int n);
-//¹¦ÄÜ 5:°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò
+//åŠŸèƒ½ 5:æŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº
 void SortbyTotalScore(long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM], float tscore[],int m,int n);
-//¹¦ÄÜ 6:Êä³öÑ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 void DisplayStuInfor(long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM],float tscore[],int m,int n);
-//²Ëµ¥º¯Êı:ÏÔÊ¾²Ëµ¥,£¬»ñÈ¡²¢·µ»ØÓÃ»§Ñ¡ÔñµÄ¹¦ÄÜÏî±àºÅ
+//èœå•å‡½æ•°:æ˜¾ç¤ºèœå•,ï¼Œè·å–å¹¶è¿”å›ç”¨æˆ·é€‰æ‹©çš„åŠŸèƒ½é¡¹ç¼–å·
 int Menu(void);
 
 void main()
 {
-	long sno[STU_NUM];//snoÊı×é´æ´¢Ñ§ÉúÑ§ºÅ
-	char sname[STU_NUM][NAME_LEN];//snameÊı×é´æ´¢Ñ§ÉúĞÕÃû
-	float score[STU_NUM][COURSE_NUM];//scoreÊı×é´æ´¢Ñ§Éú³É¼¨
-	float avecourse[COURSE_NUM]={0};//avercourseÊı×é´æ´¢¿Î³ÌÆ½¾ù·Ö
-	float tscore[STU_NUM]={0};/*tscoreÊı×é´æ´¢Ã¿Î»Ñ§Éú³É¼¨µÄ×Ü·Ö£¬
-								ÆäÖĞtscoreµÄ³õÖµÉè¶¨Îª0£¬¿ÉÒÔ×÷ÎªÊÇ·ñ¼ÆËã×Ü³É¼¨²Ù×÷µÄ±êÖ¾*/
+	long sno[STU_NUM];//snoæ•°ç»„å­˜å‚¨å­¦ç”Ÿå­¦å·
+	char sname[STU_NUM][NAME_LEN];//snameæ•°ç»„å­˜å‚¨å­¦ç”Ÿå§“å
+	float score[STU_NUM][COURSE_NUM];//scoreæ•°ç»„å­˜å‚¨å­¦ç”Ÿæˆç»©
+	float avecourse[COURSE_NUM]={0};//avercourseæ•°ç»„å­˜å‚¨è¯¾ç¨‹å¹³å‡åˆ†
+	float tscore[STU_NUM]={0};/*tscoreæ•°ç»„å­˜å‚¨æ¯ä½å­¦ç”Ÿæˆç»©çš„æ€»åˆ†ï¼Œ
+								å…¶ä¸­tscoreçš„åˆå€¼è®¾å®šä¸º0ï¼Œå¯ä»¥ä½œä¸ºæ˜¯å¦è®¡ç®—æ€»æˆç»©æ“ä½œçš„æ ‡å¿—*/
 
-	int m=2,n=3;	//mÎªÊµ¼ÊÑ§ÉúÊı£»nÎªÊµ¼Ê¿Î³ÌÊı¡£ÕâÀïÊÂÏÈÉè¶¨n=3
+	int m=2,n=3;	//mä¸ºå®é™…å­¦ç”Ÿæ•°ï¼›nä¸ºå®é™…è¯¾ç¨‹æ•°ã€‚è¿™é‡Œäº‹å…ˆè®¾å®šn=3
 	int i,j;
 	int item;
 
 
-	printf("ÇëÊäÈëÑ§ÉúµÄ×ÜÈËÊı");
+	printf("è¯·è¾“å…¥å­¦ç”Ÿçš„æ€»äººæ•°");
 	scanf("%d",&m);
 	while(1)
 	{
-		item=Menu();//²Ëµ¥ÏÔÊ¾£¬²¢»ñÈ¡ÓÃ»§Ñ¡ÔñµÄ²Ëµ¥¹¦ÄÜÏî±àºÅ
+		item=Menu();//èœå•æ˜¾ç¤ºï¼Œå¹¶è·å–ç”¨æˆ·é€‰æ‹©çš„èœå•åŠŸèƒ½é¡¹ç¼–å·
 	
 
-		//¸ù¾İÓÃ»§µÄÑ¡Ôñ£¬Íê³ÉÏàÓ¦µÄ²Ù×÷£¨±¾½ÚÖ»Íê³ÉÊäÈë¡¢Êä³ö£¬¼ÆËã×Ü·ÖºÍÍË³ö²Ù×÷£©
+		//æ ¹æ®ç”¨æˆ·çš„é€‰æ‹©ï¼Œå®Œæˆç›¸åº”çš„æ“ä½œï¼ˆæœ¬èŠ‚åªå®Œæˆè¾“å…¥ã€è¾“å‡ºï¼Œè®¡ç®—æ€»åˆ†å’Œé€€å‡ºæ“ä½œï¼‰
 		switch(item)
 		{
 		case 1:
 			InputStuInfor(sno,sname,score,m,n);
-			getchar(); //ÊäÈëÑ§ÉúĞÅÏ¢
+			getchar(); //è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 			getchar();
 			break;
 		case 2:
-			QueryByName(sno,sname,score,tscore,m,n); //°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+			QueryByName(sno,sname,score,tscore,m,n); //æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 			getchar();
 			getchar();
 			break;
 		case 3:
-			StuTotalScore(score,tscore,m,n); //¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+			StuTotalScore(score,tscore,m,n); //è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 			getchar(); getchar();
 			break;
 		case 4:
-			CourseAverageScore(score,avecourse,m,n); // ¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+			CourseAverageScore(score,avecourse,m,n); // è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 			getchar();getchar();
 			break;
 		case 5:
-			SortbyTotalScore(sno,sname,score,tscore,m,n); //°´×Ü³É¼¨½µĞòÅÅ
+			SortbyTotalScore(sno,sname,score,tscore,m,n); //æŒ‰æ€»æˆç»©é™åºæ’
 			getchar();getchar();
 			break;
 		case 6:
-			DisplayStuInfor(sno,sname,score,tscore,m,n); //Êä³öÑ§ÉúĞÅÏ¢
+			DisplayStuInfor(sno,sname,score,tscore,m,n); //è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 			getchar();getchar();
 			break;
-		case 0:/*ÍË³ö*/
+		case 0:/*é€€å‡º*/
 			exit(0);
-			printf("³ÌĞò½áÊø\n");
+			printf("ç¨‹åºç»“æŸ\n");
 			getchar();getchar();
 			break;
 		default:
-			printf("\n\nÊäÈëµÄÃüÁî²»¶Ô,ÇëÖØĞÂÊäÈë!!\n");
+			printf("\n\nè¾“å…¥çš„å‘½ä»¤ä¸å¯¹,è¯·é‡æ–°è¾“å…¥!!\n");
 			getchar();getchar();
 			break;
 		}
@@ -86,33 +86,33 @@ void main()
 
 
 
-//ÏÂÃæÊÇËùÓĞº¯ÊıµÄ¾ßÌåÊµÏÖ
-//¹¦ÄÜ1:ÊäÈëÑ§ÉúĞÅÏ¢
+//ä¸‹é¢æ˜¯æ‰€æœ‰å‡½æ•°çš„å…·ä½“å®ç°
+//åŠŸèƒ½1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯
 void InputStuInfor(long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM],int m,int n)
 {
 	int i,j;
 	for(i=0;i<m;i++)
 	{
-		printf("ÇëÊäÈëµÚ%dÎ»Ñ§ÉúµÄÑ§ºÅ¡¢ĞÕÃûºÍ¸÷ÃÅ¿Î³Ì³É¼¨\n",i+1);
-		printf("Ñ§ ºÅ:");
+		printf("è¯·è¾“å…¥ç¬¬%dä½å­¦ç”Ÿçš„å­¦å·ã€å§“åå’Œå„é—¨è¯¾ç¨‹æˆç»©\n",i+1);
+		printf("å­¦ å·:");
 		scanf("%ld",&sno[i]);
-		getchar(); //¹ıÂËµô»Ø³µ¼ü
-		printf("ĞÕ Ãû:");
+		getchar(); //è¿‡æ»¤æ‰å›è½¦é”®
+		printf("å§“ å:");
 		gets(sname[i]);
 		for(j=0;j<n;j++)
 		{
-			printf("¿Î³Ì%d³É¼¨:",j+1);
+			printf("è¯¾ç¨‹%dæˆç»©:",j+1);
 			scanf("%f",&score[i][j]);
 		}
 	}
 }
 
-//¹¦ÄÜ 2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯
 void QueryByName(long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM],float tscore[],int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!!\n");
+	printf("å‡½æ•°å®ç°ä¸­!!\n");
 }
-//¹¦ÄÜ 3;¼ÆËãÑ§ÉúµÄ×Ü³É¼¨
+//åŠŸèƒ½ 3;è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©
 void StuTotalScore(float score[][COURSE_NUM],float tscore[],int m,int n)
 {
 	int i,j;
@@ -122,50 +122,51 @@ void StuTotalScore(float score[][COURSE_NUM],float tscore[],int m,int n)
 		for(j=0;j<n;j++)
 			tscore[i]+=score[i][j];
 	}
-	printf("¸÷¸öÑ§ÉúµÄ×Ü³É¼¨¼ÆËãÍê±Ï!\n");
+	printf("å„ä¸ªå­¦ç”Ÿçš„æ€»æˆç»©è®¡ç®—å®Œæ¯•!\n");
 }
-//¹¦ÄÜ 4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö
+//åŠŸèƒ½ 4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†
 void CourseAverageScore(float score[][COURSE_NUM],float avecourse[], int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!\n");
+	printf("å‡½æ•°å®ç°ä¸­!\n");
 }
-//¹¦ÄÜ 5£º°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò
+//åŠŸèƒ½ 5ï¼šæŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº
 void SortbyTotalScore(long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM],float tscore[],int m,int n)
 {
-	printf("º¯ÊıÊµÏÖÖĞ!!\n");
+	printf("å‡½æ•°å®ç°ä¸­!!\n");
 }
-//¹¦ÄÜ 6:Êä³öÑ§ÉúĞÅÏ¢
+//åŠŸèƒ½ 6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯
 void DisplayStuInfor (long sno[],char sname[][NAME_LEN],float score[][COURSE_NUM],float tscore[],int m,int n)
 {
 	int i,j;
-	if(tscore[0]==0)//Èô»¹Ã»ÓĞ¼ÆËãÑ§ÉúµÄ×Ü³É¼¨£¬Ôòµ÷ÓÃ StuTotalScore( )º¯Êı½øĞĞ¼ÆËã
+	if(tscore[0]==0)//è‹¥è¿˜æ²¡æœ‰è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©ï¼Œåˆ™è°ƒç”¨ StuTotalScore( )å‡½æ•°è¿›è¡Œè®¡ç®—
 		StuTotalScore(score,tscore,m,n);
-	printf("\tÑ§ºÅ\tĞÕÃû\t\t¿Î³Ì1\t¿Î³Ì2\t¿Î³Ì3\t×Ü³É¼¨\n");
+	printf("\tå­¦å·\tå§“å\t\tè¯¾ç¨‹1\tè¯¾ç¨‹2\tè¯¾ç¨‹3\tæ€»æˆç»©\n");
 	for(i=0;i<m;i++)
 	{ 
-		printf("\t%ld%-8s",sno[i],sname[i]);//Êä³öÑ§ºÅÓëĞÕÃû
-		for(j=0;j<m;j++)//Êä³önÃÅ¿Î³ÌµÄ³É¼¨
+		printf("\t%ld%-8s",sno[i],sname[i]);//è¾“å‡ºå­¦å·ä¸å§“å
+		for(j=0;j<m;j++)//è¾“å‡ºné—¨è¯¾ç¨‹çš„æˆç»©
 			printf("\t%.1f",score[i][j]);
-		printf("\t%.1f\n",tscore[i]);//Êä³ö×Ü³É¼¨
+		printf("\t%.1f\n",tscore[i]);//è¾“å‡ºæ€»æˆç»©
 	}
 }
-//²Ëµ¥º¯Êı£»ÏÔÊ¾²Ëµ¥£¬»ñÈ¡²¢·µ»ØÓÃ»§Ñ¡ÔñµÄ¹¦ÄÜÏîĞäºÅ¡£
+//èœå•å‡½æ•°ï¼›æ˜¾ç¤ºèœå•ï¼Œè·å–å¹¶è¿”å›ç”¨æˆ·é€‰æ‹©çš„åŠŸèƒ½é¡¹è¢–å·ã€‚
 int Menu(void)
-{ //ÓÃ»§²Ëµ¥
+{ //ç”¨æˆ·èœå•
 	int item;
-	system("cls");/*ÇåÆÁ²Ù×÷*/
-	printf("\n\tÕâÊÇ°à¼¶¹ÜÀíÏµÍ³£¬ÇëÑ¡ÔñÄãÒªµÄ²Ù×÷:\n\n");
-	printf("\t\t1:ÊäÈëÑ§ÉúĞÅÏ¢\n");
-	printf("\t\t2:°´ĞÕÃû²éÑ¯Ñ§ÉúĞÅÏ¢\n");
-	printf("\t\t3:¼ÆËãÑ§ÉúµÄ×Ü³É¼¨\n");
-	printf("\t\t4:¼ÆËã¸÷ÃÅ¿Î³ÌµÄÆ½¾ù·Ö\n");
-	printf("\t\t5:°´Ñ§Éú×Ü³É¼¨ÓÉ¸ßµ½µÍÅÅĞò\n");
-	printf("\t\t6:Êä³öÑ§ÉúĞÅÏ¢\n");
-	printf("\t\t0:ÍË³ö\n");
+	system("cls");/*æ¸…å±æ“ä½œ*/
+	printf("\n\tè¿™æ˜¯ç­çº§ç®¡ç†ç³»ç»Ÿï¼Œè¯·é€‰æ‹©ä½ è¦çš„æ“ä½œ:\n\n");
+	printf("\t\t1:è¾“å…¥å­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t2:æŒ‰å§“åæŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t3:è®¡ç®—å­¦ç”Ÿçš„æ€»æˆç»©\n");
+	printf("\t\t4:è®¡ç®—å„é—¨è¯¾ç¨‹çš„å¹³å‡åˆ†\n");
+	printf("\t\t5:æŒ‰å­¦ç”Ÿæ€»æˆç»©ç”±é«˜åˆ°ä½æ’åº\n");
+	printf("\t\t6:è¾“å‡ºå­¦ç”Ÿä¿¡æ¯\n");
+	printf("\t\t0:é€€å‡º\n");
 
 
-	printf("\n\nÇëÊäÈëÃüÁî:");
-	scanf("%d",&item); /*¶ÁÓÃ»§Ñ¡ÔñµÄÃüÁî*/
+	printf("\n\nè¯·è¾“å…¥å‘½ä»¤:");
+	scanf("%d",&item); /*è¯»ç”¨æˆ·é€‰æ‹©çš„å‘½ä»¤*/
 	return item;
 }
+
 

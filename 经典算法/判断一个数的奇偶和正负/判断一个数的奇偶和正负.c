@@ -20,3 +20,4 @@ void main()
 	else
 		printf("It is ZERO");
 }
+

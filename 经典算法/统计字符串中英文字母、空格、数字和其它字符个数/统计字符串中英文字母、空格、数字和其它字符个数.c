@@ -18,3 +18,4 @@ void main()
 	printf("letter=%d,space=%d,digtal=%d,other=%d",letter,space,digtal,other);
 }
 
+

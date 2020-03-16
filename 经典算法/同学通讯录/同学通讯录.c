@@ -23,3 +23,4 @@ void main()
 	for(i=0;i<NUM;i++)
 		printf("%s\t\t%s\t\t%s\n",man[i].name,man[i].phone, man[i].addr);
 }
+

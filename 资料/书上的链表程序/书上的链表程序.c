@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//¹¹ÔìÁ´±í½ÚµãµÄÊı¾İÀàĞÍ
+//æ„é€ é“¾è¡¨èŠ‚ç‚¹çš„æ•°æ®ç±»å‹
 struct Node
 {
     int data;
     struct Node *next;
 };
 
-//¶ÔÁ´±í½øĞĞ³õÊ¼»¯²Ù×÷
+//å¯¹é“¾è¡¨è¿›è¡Œåˆå§‹åŒ–æ“ä½œ
 struct Node *InitList(struct Node *L)
 {
     struct Node *head = NULL;
@@ -21,7 +21,7 @@ struct Node *InitList(struct Node *L)
     return L;
 }
 
-//ÇóÁ´±íÖĞ½ÚµãµÄ¸öÊı£¬¼´Á´±í³¤¶È
+//æ±‚é“¾è¡¨ä¸­èŠ‚ç‚¹çš„ä¸ªæ•°ï¼Œå³é“¾è¡¨é•¿åº¦
 int ListLength(struct Node *L)
 {
     struct Node *p = NULL;
@@ -35,14 +35,14 @@ int ListLength(struct Node *L)
     return count;
 }
 
-//´´½¨Á´±í£¬½«ĞÂÉú³ÉµÄ½Úµã²åÈëµ½Á´±íµÄ±íÍ·
+//åˆ›å»ºé“¾è¡¨ï¼Œå°†æ–°ç”Ÿæˆçš„èŠ‚ç‚¹æ’å…¥åˆ°é“¾è¡¨çš„è¡¨å¤´
 struct Node *CreateList(struct Node *L, int n)
 {
     int i;
     struct Node *p = NULL;
     for (i = n; i > 0; i--)
     {
-        //½«ĞÂÉú³ÉµÄ½Úµã²åÈëµ½Á´±íÖĞ
+        //å°†æ–°ç”Ÿæˆçš„èŠ‚ç‚¹æ’å…¥åˆ°é“¾è¡¨ä¸­
         p = (struct Node *)malloc(sizeof(struct Node));
         scanf("%d", &p->data);
         p->next = L->next;
@@ -51,7 +51,7 @@ struct Node *CreateList(struct Node *L, int n)
     return L;
 }
 
-//¶ÔÁ´±í½øĞĞ½ÚµãµÄ²åÈë²Ù×÷
+//å¯¹é“¾è¡¨è¿›è¡ŒèŠ‚ç‚¹çš„æ’å…¥æ“ä½œ
 struct Node *ListInsert(struct Node *L, int i, int e)
 {
     int j = 0;
@@ -64,26 +64,26 @@ struct Node *ListInsert(struct Node *L, int i, int e)
     }
     if (!p || j > i - 1)
     {
-        printf("ÊäÈëµÄÎ»ÖÃ²»ºÏ·¨£¡\n");
+        printf("è¾“å…¥çš„ä½ç½®ä¸åˆæ³•ï¼\n");
         return L;
     }
-    //Éú³ÉÒ»¸öĞÂ½Úµãs
+    //ç”Ÿæˆä¸€ä¸ªæ–°èŠ‚ç‚¹s
     s = (struct Node *)malloc(sizeof(struct Node));
     s->data = e;
-    //½ÚµãµÄºó²å²Ù×÷
+    //èŠ‚ç‚¹çš„åæ’æ“ä½œ
     s->next = p->next;
     p->next = s;
     return L;
 }
 
-//¶ÔÁ´±í¼°ÄæĞĞ½ÚµãµÄÉ¾³ı²Ù×÷
+//å¯¹é“¾è¡¨åŠé€†è¡ŒèŠ‚ç‚¹çš„åˆ é™¤æ“ä½œ
 struct Node *ListDelete(struct Node *L, int i)
 {
     int j;
     struct Node *q = NULL, *p = NULL;
     p = L;
     j = 0;
-    //²éÑ¯Ö»µ±Î»ÖÃÉÏµÄ½Úµã
+    //æŸ¥è¯¢åªå½“ä½ç½®ä¸Šçš„èŠ‚ç‚¹
     while (p->next && j < i - 1)
     {
         p = p->next;
@@ -91,24 +91,24 @@ struct Node *ListDelete(struct Node *L, int i)
     }
     if (!(p->next) || j > i - 1)
     {
-        printf("ÊäÈëµÄÎ»ÖÃ²»ºÏ·¨£¡");
+        printf("è¾“å…¥çš„ä½ç½®ä¸åˆæ³•ï¼");
         return L;
     }
-    //É¾³ıÖ¸¶¨½Úµã
+    //åˆ é™¤æŒ‡å®šèŠ‚ç‚¹
     q = p->next;
     p->next = q->next;
     free(q);
     return L;
 }
 
-//¶ÔÁ´±íµÄÏµšGµ«½øĞĞ²éÑ¯²Ù×÷
+//å¯¹é“¾è¡¨çš„ç³»æ¬¸ä½†è¿›è¡ŒæŸ¥è¯¢æ“ä½œ
 int GetElem(struct Node *L, int i)
 {
     int j, e;
     struct Node *p = NULL;
     if (i < 1 || i > ListLength(L))
     {
-        printf("ÊäÈëµÄÎ»ÖÃ²»ºÏ·¨£¡");
+        printf("è¾“å…¥çš„ä½ç½®ä¸åˆæ³•ï¼");
         return 0;
     }
     p = L->next;
@@ -119,41 +119,41 @@ int GetElem(struct Node *L, int i)
         j++;
     }
     e = p->data;
-    printf("µÚ%d¸öÔªËØµÄÊı¾İÎª%d\n", i, e);
+    printf("ç¬¬%dä¸ªå…ƒç´ çš„æ•°æ®ä¸º%d\n", i, e);
 }
 
-//Á´±íµÄ²Ù×÷
+//é“¾è¡¨çš„æ“ä½œ
 void menu()
 {
-    printf("*****************Ä¿Â¼***************\n");
-    printf("1¡¢Êä³öÕâÖ§µ¥Á´±í                     \n");
-    printf("2¡¢ÔÚµ¥Á´±íÖĞ²åÈëÒ»¸öĞÂ½Úµã            \n");
-    printf("3¡¢ÔÚµ¥Á´±íÖĞÉ¾³ıÖ¸¶¨½Úµã              \n");
-    printf("4¡¢²éÑ¯µ¥Á´±íÖĞµÄ½Úµã                  \n");
-    printf("0¡¢ÍË³ö                               \n");
+    printf("*****************ç›®å½•***************\n");
+    printf("1ã€è¾“å‡ºè¿™æ”¯å•é“¾è¡¨                     \n");
+    printf("2ã€åœ¨å•é“¾è¡¨ä¸­æ’å…¥ä¸€ä¸ªæ–°èŠ‚ç‚¹            \n");
+    printf("3ã€åœ¨å•é“¾è¡¨ä¸­åˆ é™¤æŒ‡å®šèŠ‚ç‚¹              \n");
+    printf("4ã€æŸ¥è¯¢å•é“¾è¡¨ä¸­çš„èŠ‚ç‚¹                  \n");
+    printf("0ã€é€€å‡º                               \n");
     printf("**************************************\n");
 }
 
-//Ö÷³ÌĞò
+//ä¸»ç¨‹åº
 int main()
 {
     int n, m, i, e;
     struct Node *L = NULL, *p = NULL;
     L = InitList(L);
-    printf("ÇëÊäÈëÔªËØÊı£º");
+    printf("è¯·è¾“å…¥å…ƒç´ æ•°ï¼š");
     scanf("%d", &n);
-    printf("ÒÀ´ÎÊäÈë%d¸öÔªËØµÄÊı¾İ£¨ÓÃ¿Õ¸ñ¸ô¿ª£©:", n);
+    printf("ä¾æ¬¡è¾“å…¥%dä¸ªå…ƒç´ çš„æ•°æ®ï¼ˆç”¨ç©ºæ ¼éš”å¼€ï¼‰:", n);
     L = CreateList(L, n);
     do
     {
         printf("\n\n");
         menu();
-        printf("ÊäÈëÄãµÄÑ¡Ôñ£º");
+        printf("è¾“å…¥ä½ çš„é€‰æ‹©ï¼š");
         scanf("%d", &m);
         switch (m)
         {
         case 1:
-            printf("ÕâÖ§µ¥Á´±íÎª:");
+            printf("è¿™æ”¯å•é“¾è¡¨ä¸º:");
             p = L->next;
             while (p != NULL)
             {
@@ -164,26 +164,27 @@ int main()
             printf("\n");
             break;
         case 2:
-            printf("ÒÀ´ÎÊäÈë²åÈëÎ»ÖÃºÍÊı¾İÔªËØ(¿Õ¸ñ¸ô¿ª)£º");
+            printf("ä¾æ¬¡è¾“å…¥æ’å…¥ä½ç½®å’Œæ•°æ®å…ƒç´ (ç©ºæ ¼éš”å¼€)ï¼š");
             scanf("%d %d", &i, &e);
             L = ListInsert(L, i, e);
             break;
         case 3:
-            printf("ÊäÈëÄãÒªÉ¾³ıµÄÔªËØÎ»ÖÃ:");
+            printf("è¾“å…¥ä½ è¦åˆ é™¤çš„å…ƒç´ ä½ç½®:");
             scanf("%d", &i);
             L = ListDelete(L, i);
             break;
         case 4:
-            printf("ÊäÈëĞèÒª²éÑ¯ÔªËØµÄÎ»ÖÃ£º");
+            printf("è¾“å…¥éœ€è¦æŸ¥è¯¢å…ƒç´ çš„ä½ç½®ï¼š");
             scanf("%d", &i);
             GetElem(L, i);
             break;
         case 0:
-            printf("ÍË³ö\n");
+            printf("é€€å‡º\n");
             exit(0);
             break;
         default:
-            printf("ÊäÈë´íÎó£¡\n");
+            printf("è¾“å…¥é”™è¯¯ï¼\n");
         }
     } while (m != 0);
 }
+

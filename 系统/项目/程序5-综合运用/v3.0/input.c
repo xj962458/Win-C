@@ -14,3 +14,4 @@ void input(stu* p)	//输入
 		}
 	}
 }
+

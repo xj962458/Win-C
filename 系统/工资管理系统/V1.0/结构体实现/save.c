@@ -1,8 +1,8 @@
 //save.c
 #pragma once
 #include "preProcess.h"
-extern int saveflag;				/*ĞèÒª´æÅÌµÄ±êÖ¾±äÁ¿*/
-/*´æ´¢¼ÇÂ¼*/
+extern int saveflag;				/*éœ€è¦å­˜ç›˜çš„æ ‡å¿—å˜é‡*/
+/*å­˜å‚¨è®°å½•*/
 void save(ZGGZ tp[],int n){
 	FILE *fp;
 	int i=0;
@@ -17,7 +17,7 @@ void save(ZGGZ tp[],int n){
 	for (i = 0; i < n; ++i)
 	{
 		/* code */
-		if (fwrite(&tp[i],sizeof(ZGGZ),1,fp)==1)	/*Ã¿´ÎĞ´Ò»Ìõ¼ÇÂ¼»òÒ»¸ö½á¹¹Êı×éÔªËØµ½ÎÄ¼şÖĞ²İÒ©*/
+		if (fwrite(&tp[i],sizeof(ZGGZ),1,fp)==1)	/*æ¯æ¬¡å†™ä¸€æ¡è®°å½•æˆ–ä¸€ä¸ªç»“æ„æ•°ç»„å…ƒç´ åˆ°æ–‡ä»¶ä¸­è‰è¯*/
 		{
 			/* code */
 			continue;

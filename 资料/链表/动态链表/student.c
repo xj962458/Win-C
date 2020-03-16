@@ -8,26 +8,26 @@ struct student
     int math;
 };
 struct Node{
-    struct student data;   //Êı¾İÓò
-    struct Node* next;  //Ö¸ÕëÓò
+    struct student data;   //æ•°æ®åŸŸ
+    struct Node* next;  //æŒ‡é’ˆåŸŸ
 };
-struct Node* createList()   //´´½¨Ò»¸öÁ´±íÍ·
+struct Node* createList()   //åˆ›å»ºä¸€ä¸ªé“¾è¡¨å¤´
 {
     struct Node* headNode=(struct Node*)malloc(sizeof(struct Node));
-    //Í¨¹ı¶¯Ì¬ÄÚ´æÉêÇëÊ¹½á¹¹ÌåÖ¸ÕëheadNode³ÉÎª½á¹¹Ìå±äÁ¿
-    //±äÁ¿Ê¹ÓÃÇ°±ØĞë³õÊ¼»¯
+    //é€šè¿‡åŠ¨æ€å†…å­˜ç”³è¯·ä½¿ç»“æ„ä½“æŒ‡é’ˆheadNodeæˆä¸ºç»“æ„ä½“å˜é‡
+    //å˜é‡ä½¿ç”¨å‰å¿…é¡»åˆå§‹åŒ–
     //headNode->data.num=1;
     headNode->next=NULL;
     return headNode;
 }
-struct Node* createNode(struct student data)   //´´½¨Ò»¸öÁ´±í½áµã
+struct Node* createNode(struct student data)   //åˆ›å»ºä¸€ä¸ªé“¾è¡¨ç»“ç‚¹
 {
     struct Node* newNode=(struct Node*)malloc(sizeof(struct Node));
     newNode->data=data;
     newNode->next=NULL;
     return newNode;
 }
-//´òÓ¡Á´±í
+//æ‰“å°é“¾è¡¨
 void printList(struct Node* headNode)
 {
     struct Node* pMove=headNode->next;
@@ -39,21 +39,21 @@ void printList(struct Node* headNode)
     }
     printf("\n");
 }
-//²åÈë½áµã£¬²ÎÊı£º²åÈëÄÇ¸öÁ´±í£¬²åÈë½áµãµÄÊı¾İÊÇ¶àÉÙ
+//æ’å…¥ç»“ç‚¹ï¼Œå‚æ•°ï¼šæ’å…¥é‚£ä¸ªé“¾è¡¨ï¼Œæ’å…¥ç»“ç‚¹çš„æ•°æ®æ˜¯å¤šå°‘
 void insertNodeByHead(struct Node* headNode,struct student data)
 {
-    //´´½¨ĞÂµÄ½áµã
+    //åˆ›å»ºæ–°çš„ç»“ç‚¹
     struct  Node* newNode=createNode(data);
     newNode->next=headNode->next;
     headNode->next=newNode;
 }
-//°´ÕÕÖ¸¶¨numÉ¾³ıÁ´±í
+//æŒ‰ç…§æŒ‡å®šnumåˆ é™¤é“¾è¡¨
 void deleteNodeByAppoinNum(struct Node* headNode,int num)
 {
     struct Node* posNode=headNode->next;
     struct Node* posNodeFront=headNode;
     if(posNode==NULL)
-        printf("ÎŞ·¨É¾³ı£¬Á´±íÎª¿Õ\n");
+        printf("æ— æ³•åˆ é™¤ï¼Œé“¾è¡¨ä¸ºç©º\n");
     else
     {
         while(posNode->data.num!=num)
@@ -62,7 +62,7 @@ void deleteNodeByAppoinNum(struct Node* headNode,int num)
             posNode=posNodeFront->next;
             if(posNode==NULL)
             {
-                printf("Ã»ÓĞÕÒµ½Ïà¹ØĞÅÏ¢£¬ÎŞ·¨É¾³ı\n");
+                printf("æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ä¿¡æ¯ï¼Œæ— æ³•åˆ é™¤\n");
                 return;
             }
         }
@@ -79,7 +79,7 @@ int main()
     struct  student info;
     while(1)
     {
-        printf("ÇëÊäÈëÑ§ÉúµÄĞÕÃû    Ñ§ºÅ    ÊıÑ§³É¼¨£º\n");
+        printf("è¯·è¾“å…¥å­¦ç”Ÿçš„å§“å    å­¦å·    æ•°å­¦æˆç»©ï¼š\n");
         scanf("%s %d %d",&info.name,&info.num,info.math);
         insertNodeByHead(list,info);
         printf("continue(Y/N)?\n"); 
@@ -89,7 +89,7 @@ int main()
             break;
     }
     printList(list);
-    printf("ÇëÊäÈëÒªÉ¾³ıµÄÑ§ÉúÑ§ºÅ£º");
+    printf("è¯·è¾“å…¥è¦åˆ é™¤çš„å­¦ç”Ÿå­¦å·ï¼š");
     scanf("%d",&info.num);
     deleteNodeByAppoinNum(list,info.num);
     printList(list);

@@ -1,9 +1,9 @@
-//´´½¨¾²Ì¬Á´±í
+//åˆ›å»ºé™æ€é“¾è¡¨
 #include<stdio.h>
 #include<stdlib.h>
 struct Node{
-    int data;   //Êı¾İÓò
-    struct Node* next;  //Ö¸ÕëÓò
+    int data;   //æ•°æ®åŸŸ
+    struct Node* next;  //æŒ‡é’ˆåŸŸ
 };
 int main()
 {

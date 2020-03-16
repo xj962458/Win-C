@@ -6,15 +6,15 @@
 int temp, hh;
 typedef struct
 {
-	char stu_name[40];	//ĞÕÃû
-	int stu_id;			//Ñ§ºÅ
-	char stu_clas[40];	//°à¼¶
-	double stu_cj1;		//³É¼¨1
-	double stu_cj2;		//³É¼¨2
-	double stu_cj3;		//³É¼¨3
-	double stu_cj4;		//³É¼¨4
-	double stu_cj5;		//³É¼¨5
-	double avg_grade;	//Æ½¾ù³É¼¨
+	char stu_name[40];	//å§“å
+	int stu_id;			//å­¦å·
+	char stu_clas[40];	//ç­çº§
+	double stu_cj1;		//æˆç»©1
+	double stu_cj2;		//æˆç»©2
+	double stu_cj3;		//æˆç»©3
+	double stu_cj4;		//æˆç»©4
+	double stu_cj5;		//æˆç»©5
+	double avg_grade;	//å¹³å‡æˆç»©
 } student;
 student all_stu[200], a[200];
 int stu_number = 0;
@@ -35,63 +35,63 @@ int main()
 	do
 	{
 		printf("\n\n\n\n");
-		printf("\t\t=====================Ñ§Éú³É¼¨¹ÜÀíÏµÍ³==================\n");
-		printf("\t\t* ×÷Õß£º***  °à¼¶£º**** Ñ§ºÅ£º********      *\n");
+		printf("\t\t=====================å­¦ç”Ÿæˆç»©ç®¡ç†ç³»ç»Ÿ==================\n");
+		printf("\t\t* ä½œè€…ï¼š***  ç­çº§ï¼š**** å­¦å·ï¼š********      *\n");
 		printf("\t\t*                                                     *\n");
-		printf("\t\t*          1>. ÊäÈëÑ§Éú³É¼¨                           *\n");
-		printf("\t\t*          2>. ÏÔÊ¾Ñ§Éú³É¼¨                           *\n");
-		printf("\t\t*          3>. ²é¿´Ñ§Éú³É¼¨                           *\n");
-		printf("\t\t*          4>. É¾¼õÑ§Éú³É¼¨                           *\n");
-		printf("\t\t*          5>. ĞŞ¸ÄÑ§Éú³É¼¨                           *\n");
-		printf("\t\t*          6>. ±£´æÑ§ÉúĞÅÏ¢                           *\n");
-		printf("\t\t*          7>. Æ½¾ù³É¼¨ÅÅÃû                           *\n");
-		printf("\t\t*          8>. ¶ÁÈ¡ÎÄµµĞÅÏ¢                           *\n");
-		printf("\t\t*          0>. ÍË³ö¹ÜÀíÏµÍ³                           *\n");
-		printf("\t\t*                                    »¶Ó­Ê¹ÓÃ±¾ÏµÍ³£¡ *\n");
+		printf("\t\t*          1>. è¾“å…¥å­¦ç”Ÿæˆç»©                           *\n");
+		printf("\t\t*          2>. æ˜¾ç¤ºå­¦ç”Ÿæˆç»©                           *\n");
+		printf("\t\t*          3>. æŸ¥çœ‹å­¦ç”Ÿæˆç»©                           *\n");
+		printf("\t\t*          4>. åˆ å‡å­¦ç”Ÿæˆç»©                           *\n");
+		printf("\t\t*          5>. ä¿®æ”¹å­¦ç”Ÿæˆç»©                           *\n");
+		printf("\t\t*          6>. ä¿å­˜å­¦ç”Ÿä¿¡æ¯                           *\n");
+		printf("\t\t*          7>. å¹³å‡æˆç»©æ’å                           *\n");
+		printf("\t\t*          8>. è¯»å–æ–‡æ¡£ä¿¡æ¯                           *\n");
+		printf("\t\t*          0>. é€€å‡ºç®¡ç†ç³»ç»Ÿ                           *\n");
+		printf("\t\t*                                    æ¬¢è¿ä½¿ç”¨æœ¬ç³»ç»Ÿï¼ *\n");
 		printf("\t\t=======================================================\n");
-		printf("\t\tÊäÈëÑ¡Ïî£¬°´»Ø³µ½øÈëÑ¡Ïî: ");
+		printf("\t\tè¾“å…¥é€‰é¡¹ï¼ŒæŒ‰å›è½¦è¿›å…¥é€‰é¡¹: ");
 		scanf("%d", &option);
 		switch (option)
 		{
 		case 1:
 			first();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 2:
 			third();
 			getchar();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 3:
 			secend();
 			getchar();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 4:
 			fourth();
 			getchar();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 5:
 			fifth();
 			getchar();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 6:
 			sixth();
-			printf("\n\n\nÒÑ½«ÄúÊäÈëµÄÑ§ÉúĞÅÏ¢´æµµ£¬Ç×£¬ÎÒºÜÅ¬Á¦µÄ¼Ç×¡ÁËßÏ¡£");
+			printf("\n\n\nå·²å°†æ‚¨è¾“å…¥çš„å­¦ç”Ÿä¿¡æ¯å­˜æ¡£ï¼Œäº²ï¼Œæˆ‘å¾ˆåŠªåŠ›çš„è®°ä½äº†å‘¦ã€‚");
 			getchar();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
@@ -99,19 +99,19 @@ int main()
 			seventh();
 			getchar();
 			printf("\n\n\n===============================================================================");
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 8:
 			DQ();
-			printf("\nÉÙÄê£¬Çë°´ÈÎÒâ¼ü·µ»ØÖ÷²Ëµ¥\n");
+			printf("\nå°‘å¹´ï¼Œè¯·æŒ‰ä»»æ„é”®è¿”å›ä¸»èœå•\n");
 			getchar();
 			system("cls");
 			break;
 		case 0:
 			TC();
-			printf("\n\n\n\n\n\n\n\n\t\t\t        ¸ĞĞ»ÄúµÄÊ¹ÓÃ.\n\n\n\t     ±¾ÏµÍ³×÷Õß£º³ÂÓ¢½Ü  °à¼¶£ºJava(2) Ñ§ºÅ£º621413530204  \n\n    \t        Èô¸Ğ¾õ±¾ÏµÍ³ºÜºÃÓÃ£¬¼ÇµÃÔÚĞÄÖĞÄ¬Ä¬¸ø¸öÔŞßÏ£¡\n\n\t\t\tÃ´Ã´ßÕ~~Çë°´ÈÎÒâ¼üÍË³ö¡£\n");
+			printf("\n\n\n\n\n\n\n\n\t\t\t        æ„Ÿè°¢æ‚¨çš„ä½¿ç”¨.\n\n\n\t     æœ¬ç³»ç»Ÿä½œè€…ï¼šé™ˆè‹±æ°  ç­çº§ï¼šJava(2) å­¦å·ï¼š621413530204  \n\n    \t        è‹¥æ„Ÿè§‰æœ¬ç³»ç»Ÿå¾ˆå¥½ç”¨ï¼Œè®°å¾—åœ¨å¿ƒä¸­é»˜é»˜ç»™ä¸ªèµå‘¦ï¼\n\n\t\t\tä¹ˆä¹ˆå“’~~è¯·æŒ‰ä»»æ„é”®é€€å‡ºã€‚\n");
 			getchar();
 			exit(0);
 			;
@@ -126,13 +126,13 @@ void first()
 {
 thefirst:
 	system("cls");
-	printf("********************************ÊäÈëÑ§ÉúĞÅÏ¢*********************************");
+	printf("********************************è¾“å…¥å­¦ç”Ÿä¿¡æ¯*********************************");
 	printf("\n\n");
 	int cw, cx, temp, hh;
 	char op;
-	printf("\n>>>>>>>>ÇëÊäÈëĞÕÃû: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥å§“å: ");
 	scanf("%s", all_stu[stu_number].stu_name);
-	printf("\n>>>>>>>>ÇëÊäÈëÑ§ºÅ: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥å­¦å·: ");
 	scanf("%d", &temp);
 	all_stu[stu_number].stu_id = temp;
 	getchar();
@@ -140,7 +140,7 @@ thefirst:
 	{
 		if (all_stu[stu_number].stu_id == all_stu[cx].stu_id)
 		{
-			printf("Ñ§ºÅÊäÈë´íÎó£¬ÈçĞèÖØĞÂÊäÈëÇë°´(Y)ÍË³öÇë°´(N)");
+			printf("å­¦å·è¾“å…¥é”™è¯¯ï¼Œå¦‚éœ€é‡æ–°è¾“å…¥è¯·æŒ‰(Y)é€€å‡ºè¯·æŒ‰(N)");
 			cw = getchar();
 			if (cw == 'y' || cw == 'Y')
 				goto thefirst;
@@ -148,53 +148,53 @@ thefirst:
 				goto thefirstend;
 		}
 	}
-	printf("\n>>>>>>>>ÇëÊäÈë°à¼¶£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç­çº§ï¼š ");
 	scanf("%s", all_stu[stu_number].stu_clas);
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÒ»ÃÅ³É¼¨(Ğ¡ÓÚµÈÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬ä¸€é—¨æˆç»©(å°äºç­‰äº100)ï¼š ");
 	scanf("%lf", &all_stu[stu_number].stu_cj1);
 	if (all_stu[stu_number].stu_cj1 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬ÇëÊäÈëÕıÈ·µÄ³É¼¨ĞÅÏ¢£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¾“å…¥æ­£ç¡®çš„æˆç»©ä¿¡æ¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefirst;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚ¶şÃÅ³É¼¨(Ğ¡ÓÚµÈÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬äºŒé—¨æˆç»©(å°äºç­‰äº100)ï¼š ");
 	scanf("%lf", &all_stu[stu_number].stu_cj2);
 	if (all_stu[stu_number].stu_cj2 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬ÇëÊäÈëÕıÈ·µÄ³É¼¨ĞÅÏ¢£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¾“å…¥æ­£ç¡®çš„æˆç»©ä¿¡æ¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefirst;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÈıÃÅ³É¼¨(Ğ¡ÓÚµÈÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬ä¸‰é—¨æˆç»©(å°äºç­‰äº100)ï¼š ");
 	scanf("%lf", &all_stu[stu_number].stu_cj3);
 	if (all_stu[stu_number].stu_cj3 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬ÇëÇëÊäÈëÕıÈ·µÄ³É¼¨ĞÅÏ¢£¬°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¯·è¾“å…¥æ­£ç¡®çš„æˆç»©ä¿¡æ¯ï¼ŒæŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefirst;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚËÄÃÅ³É¼¨(Ğ¡ÓÚµÈÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬å››é—¨æˆç»©(å°äºç­‰äº100)ï¼š ");
 	scanf("%lf", &all_stu[stu_number].stu_cj4);
 	if (all_stu[stu_number].stu_cj4 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬ÇëÊäÈëÕıÈ·µÄ³É¼¨ĞÅÏ¢£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¾“å…¥æ­£ç¡®çš„æˆç»©ä¿¡æ¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefirst;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÎåÃÅ³É¼¨(Ğ¡ÓÚµÈÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬äº”é—¨æˆç»©(å°äºç­‰äº100)ï¼š ");
 	scanf("%lf", &all_stu[stu_number].stu_cj5);
 	if (all_stu[stu_number].stu_cj5 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬ÇëÊäÈëÕıÈ·µÄ³É¼¨ĞÅÏ¢£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·è¾“å…¥æ­£ç¡®çš„æˆç»©ä¿¡æ¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
@@ -202,12 +202,12 @@ thefirst:
 	}
 	hh = (all_stu[stu_number].stu_cj1 + all_stu[stu_number].stu_cj2 + all_stu[stu_number].stu_cj3 + all_stu[stu_number].stu_cj4 + all_stu[stu_number].stu_cj5) / 5;
 	all_stu[stu_number].avg_grade = hh;
-	printf("\n>>>>>>>>>>Æ½¾ùÖµÎª__: ");
+	printf("\n>>>>>>>>>>å¹³å‡å€¼ä¸º__: ");
 	printf("%.2lf", all_stu[stu_number].avg_grade);
 
 	stu_number++;
 thefirstone:
-	printf("\nÊÇ·ñ¼ÌĞøÊäÈë£¬ÈçÊÇÇë°´(Y),·ñÇë°´(N): ");
+	printf("\næ˜¯å¦ç»§ç»­è¾“å…¥ï¼Œå¦‚æ˜¯è¯·æŒ‰(Y),å¦è¯·æŒ‰(N): ");
 	getchar();
 	scanf("%c", &op);
 	if (op == 'y' || op == 'Y')
@@ -225,10 +225,10 @@ void secend()
 {
 thesecend:
 	system("cls");
-	printf("\n\n**************************ÏÔÊ¾Ñ§Éú³É¼¨*************************");
+	printf("\n\n**************************æ˜¾ç¤ºå­¦ç”Ÿæˆç»©*************************");
 	int num, cw, cx, ai, i = 0;
 	char op;
-	printf("\n>>>>>>>>ÇëÊäÈëÒª²éÕÒÑ§ÉúµÄÑ§ºÅ: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥è¦æŸ¥æ‰¾å­¦ç”Ÿçš„å­¦å·: ");
 	scanf("%d", &num);
 	for (ai = 0; ai < stu_number; ai++)
 	{
@@ -240,7 +240,7 @@ thesecend:
 	}
 	if (i == 0)
 	{
-		printf("Î´²éÕÒµ½´ËÑ§ºÅ£¬Ç×Êä´íÁË°É = =..ÊÇ·ñÒªÖØĞÂÊäÈëÑ½£¬Ç×~~ÈçĞèÒªÇë°´(Y)£¬Èç²»ĞèÒªÇë°´(N)½«·µ»ØÖ÷²Ëµ¥: ");
+		printf("æœªæŸ¥æ‰¾åˆ°æ­¤å­¦å·ï¼Œäº²è¾“é”™äº†å§ = =..æ˜¯å¦è¦é‡æ–°è¾“å…¥å‘€ï¼Œäº²~~å¦‚éœ€è¦è¯·æŒ‰(Y)ï¼Œå¦‚ä¸éœ€è¦è¯·æŒ‰(N)å°†è¿”å›ä¸»èœå•: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
@@ -252,29 +252,29 @@ thesecend:
 	{
 
 		printf("\n***************************************************************************");
-		printf("\n*ĞÕÃû___: ");
+		printf("\n*å§“å___: ");
 		printf("%s", all_stu[ai].stu_name);
-		printf("\n*Ñ§ºÅ___: ");
+		printf("\n*å­¦å·___: ");
 		printf("%d", all_stu[ai].stu_id);
-		printf("\n*°à¼¶___: ");
+		printf("\n*ç­çº§___: ");
 		printf("%s", all_stu[ai].stu_clas);
-		printf("\n*³É¼¨Ò»_: ");
+		printf("\n*æˆç»©ä¸€_: ");
 		printf("%.2lf", all_stu[ai].stu_cj1);
-		printf("\n*³É¼¨¶ş_: ");
+		printf("\n*æˆç»©äºŒ_: ");
 		printf("%.2lf", all_stu[ai].stu_cj2);
-		printf("\n*³É¼¨Èı_: ");
+		printf("\n*æˆç»©ä¸‰_: ");
 		printf("%.2lf", all_stu[ai].stu_cj3);
-		printf("\n*³É¼¨ËÄ_: ");
+		printf("\n*æˆç»©å››_: ");
 		printf("%.2lf", all_stu[ai].stu_cj4);
-		printf("\n*³É¼¨Îå_: ");
+		printf("\n*æˆç»©äº”_: ");
 		printf("%.2lf", all_stu[ai].stu_cj5);
-		printf("\n*Æ½¾ù³É¼¨___: ");
+		printf("\n*å¹³å‡æˆç»©___: ");
 		printf("%.2lf", all_stu[ai].avg_grade);
 		printf("\n***************************************************************************");
 	}
 thesecendone:
 	getchar();
-	printf("\n\nÇ×~Òª²éÑ°µÃ³É¼¨ĞÅÏ¢ÒÔÏÔÊ¾£¬ÊÇ·ñ¼ÌĞø²éÔÄ£¿\nĞèÒªÇë°²(Y),Èç²»ĞèÒªÇë°²(N)£¬½«·µ»ØÖ÷½çÃæ__: ");
+	printf("\n\näº²~è¦æŸ¥å¯»å¾—æˆç»©ä¿¡æ¯ä»¥æ˜¾ç¤ºï¼Œæ˜¯å¦ç»§ç»­æŸ¥é˜…ï¼Ÿ\néœ€è¦è¯·å®‰(Y),å¦‚ä¸éœ€è¦è¯·å®‰(N)ï¼Œå°†è¿”å›ä¸»ç•Œé¢__: ");
 	scanf("%c", &op);
 	if (op == 'y' || op == 'Y')
 		goto thesecend;
@@ -289,17 +289,17 @@ void third()
 {
 thethird:
 	system("cls");
-	printf("\n\n**************************ÏÔÊ¾Ñ§ÉúĞÅÏ¢*********************************");
+	printf("\n\n**************************æ˜¾ç¤ºå­¦ç”Ÿä¿¡æ¯*********************************");
 	int n = 0;
-	printf("\n\n>>ĞÕÃû");
-	printf("\tÑ§ºÅ");
-	printf("\t°à¼¶");
-	printf("\t³É¼¨Ò»");
-	printf("\t³É¼¨¶ş");
-	printf("\t³É¼¨Èı");
-	printf("\t³É¼¨ËÄ");
-	printf("\t³É¼¨Îå");
-	printf("\tÆ½¾ùÖµ");
+	printf("\n\n>>å§“å");
+	printf("\tå­¦å·");
+	printf("\tç­çº§");
+	printf("\tæˆç»©ä¸€");
+	printf("\tæˆç»©äºŒ");
+	printf("\tæˆç»©ä¸‰");
+	printf("\tæˆç»©å››");
+	printf("\tæˆç»©äº”");
+	printf("\tå¹³å‡å€¼");
 	//for (n=0;n<stu_number;n++);
 	do
 	{
@@ -320,11 +320,11 @@ void fourth()
 {
 thefourth:
 	system("cls");
-	printf("\n\n\n\n**************************É¾¼õÑ§Éú³É¼¨************************************");
+	printf("\n\n\n\n**************************åˆ å‡å­¦ç”Ÿæˆç»©************************************");
 	printf("\n\n");
 	int num, cw, cx, ai, i = 0;
 	char op;
-	printf("\n>>>>>>>>ÇëÊäÈëÒª²éÕÒÑ§ÉúµÄÑ§ºÅ: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥è¦æŸ¥æ‰¾å­¦ç”Ÿçš„å­¦å·: ");
 	scanf("%d", &num);
 	for (ai = 0; ai < stu_number; ai++)
 	{
@@ -336,7 +336,7 @@ thefourth:
 	}
 	if (i == 0)
 	{
-		printf("Î´²éÕÒµ½ÒªÉ¾³ıµÄÑ§ÉúĞÅÏ¢£¬ÊÇ·ñÒªÖØĞÂÊäÈë£¬Ç×~~ÈçĞèÒªÇë°´(Y)£¬Èç²»ĞèÒªÇë°´(N)½«·µ»ØÖ÷²Ëµ¥: ");
+		printf("æœªæŸ¥æ‰¾åˆ°è¦åˆ é™¤çš„å­¦ç”Ÿä¿¡æ¯ï¼Œæ˜¯å¦è¦é‡æ–°è¾“å…¥ï¼Œäº²~~å¦‚éœ€è¦è¯·æŒ‰(Y)ï¼Œå¦‚ä¸éœ€è¦è¯·æŒ‰(N)å°†è¿”å›ä¸»èœå•: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
@@ -352,11 +352,11 @@ thefourth:
 			all_stu[ai] = all_stu[ai + 1];
 		}
 	}
-	printf("\n\n´ËÑ§ºÅµÄÑ§Éú³É¼¨ĞÅÏ¢ÒÑÉ¾³ı£¬Ğ»Ğ»Ê¹ÓÃ±¾´Î¹¦ÄÜ£¬¼ÇµÃ¸øÔŞÅ¶.ºÃÈËÒ»ÉúÆ½°²¡£");
+	printf("\n\næ­¤å­¦å·çš„å­¦ç”Ÿæˆç»©ä¿¡æ¯å·²åˆ é™¤ï¼Œè°¢è°¢ä½¿ç”¨æœ¬æ¬¡åŠŸèƒ½ï¼Œè®°å¾—ç»™èµå“¦.å¥½äººä¸€ç”Ÿå¹³å®‰ã€‚");
 	getchar();
 thefourthone:
 	getchar();
-	printf("\nÇ×~ÒªÉ¾³ıµÄ³É¼¨ĞÅÏ¢ÒÔÉ¾³ı£¬ÊÇ·ñ¼ÌĞø£¿\nĞèÒªÇë°²(Y),Èç²»ĞèÒªÇë°²(N)£¬½«·µ»ØÖ÷½çÃæ__: ");
+	printf("\näº²~è¦åˆ é™¤çš„æˆç»©ä¿¡æ¯ä»¥åˆ é™¤ï¼Œæ˜¯å¦ç»§ç»­ï¼Ÿ\néœ€è¦è¯·å®‰(Y),å¦‚ä¸éœ€è¦è¯·å®‰(N)ï¼Œå°†è¿”å›ä¸»ç•Œé¢__: ");
 	scanf("%c", &op);
 	if (op == 'y' || op == 'Y')
 		goto thefourth;
@@ -371,11 +371,11 @@ void fifth()
 {
 thefifth:
 	system("cls");
-	printf("**************************ĞŞ¸ÄÑ§Éú³É¼¨*************************");
+	printf("**************************ä¿®æ”¹å­¦ç”Ÿæˆç»©*************************");
 	printf("\n\n");
 	int num, cw, cx, ai, i = 0, cy, team;
 	char op;
-	printf("\n>>>>>>>>ÇëÊäÈëÒª²éÕÒÑ§ÉúµÄÑ§ºÅ: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥è¦æŸ¥æ‰¾å­¦ç”Ÿçš„å­¦å·: ");
 	scanf("%d", &num);
 	for (ai = 0; ai < stu_number; ai++)
 	{
@@ -387,7 +387,7 @@ thefifth:
 	}
 	if (i == 0)
 	{
-		printf("Î´²éÕÒµ½ÒªĞŞ¸ÄµÄÑ§ÉúĞÅÏ¢£¬ÊÇ·ñÒªÖØĞÂÊäÈë£¬ÈçĞèÒªÇë°´(Y)£¬Èç²»ĞèÒªÇë°´(N)½«·µ»ØÖ÷²Ëµ¥: ");
+		printf("æœªæŸ¥æ‰¾åˆ°è¦ä¿®æ”¹çš„å­¦ç”Ÿä¿¡æ¯ï¼Œæ˜¯å¦è¦é‡æ–°è¾“å…¥ï¼Œå¦‚éœ€è¦è¯·æŒ‰(Y)ï¼Œå¦‚ä¸éœ€è¦è¯·æŒ‰(N)å°†è¿”å›ä¸»èœå•: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
@@ -399,26 +399,26 @@ thefifth:
 	{
 
 		printf("***************************************************************************");
-		printf("\n*ĞÕÃû___: ");
+		printf("\n*å§“å___: ");
 		printf("%s", all_stu[ai].stu_name);
-		printf("\n*Ñ§ºÅ___: ");
+		printf("\n*å­¦å·___: ");
 		printf("%d", all_stu[ai].stu_id);
-		printf("\n*°à¼¶___: ");
+		printf("\n*ç­çº§___: ");
 		printf("%s", all_stu[ai].stu_clas);
-		printf("\n*³É¼¨Ò»_: ");
+		printf("\n*æˆç»©ä¸€_: ");
 		printf("%.2lf", all_stu[ai].stu_cj1);
-		printf("\n*³É¼¨¶ş_: ");
+		printf("\n*æˆç»©äºŒ_: ");
 		printf("%.2lf", all_stu[ai].stu_cj2);
-		printf("\n*³É¼¨Èı_: ");
+		printf("\n*æˆç»©ä¸‰_: ");
 		printf("%.2lf", all_stu[ai].stu_cj3);
-		printf("\n*³É¼¨ËÄ_: ");
+		printf("\n*æˆç»©å››_: ");
 		printf("%.2lf", all_stu[ai].stu_cj4);
-		printf("\n*³É¼¨Îå_: ");
+		printf("\n*æˆç»©äº”_: ");
 		printf("%.2lf", all_stu[ai].stu_cj5);
 		printf("\n***************************************************************************");
 	}
 	getchar();
-	printf("\n\nÊÇ·ñÈ·ÈÏĞŞ¸Ä´ËÑ§Éú³É¼¨ĞÅÏ¢£¿(×¢£ºĞŞ¸Äºó½«²»¿É»¹Ô­)ÈçĞèĞŞ¸ÄÇë°²(Y)£¬Èç²»ĞèĞŞ¸ÄÑ§ÉúĞÅÏ¢Çë°²(N)·µ»Ø__: ");
+	printf("\n\næ˜¯å¦ç¡®è®¤ä¿®æ”¹æ­¤å­¦ç”Ÿæˆç»©ä¿¡æ¯ï¼Ÿ(æ³¨ï¼šä¿®æ”¹åå°†ä¸å¯è¿˜åŸ)å¦‚éœ€ä¿®æ”¹è¯·å®‰(Y)ï¼Œå¦‚ä¸éœ€ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯è¯·å®‰(N)è¿”å›__: ");
 thefifthone:
 	cw = getchar();
 	if (cw == 'y' || cw == 'Y')
@@ -429,9 +429,9 @@ thefifthone:
 		goto thefifthone;
 thefifthtwo:
 	system("cls");
-	printf("\n>>>>>>>>ÇëÊäÈëĞÕÃû: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥å§“å: ");
 	scanf("%s", all_stu[ai].stu_name);
-	printf("\n>>>>>>>>ÇëÊäÈëÑ§ºÅ: ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥å­¦å·: ");
 	scanf("%d", &temp);
 	all_stu[ai].stu_id = temp;
 	getchar();
@@ -439,7 +439,7 @@ thefifthtwo:
 	{
 		if (all_stu[ai].stu_id == all_stu[cy].stu_id)
 		{
-			printf("Ñ§ºÅÊäÈë´íÎó£¬ÈçĞèÖØĞÂÊäÈëÇë°´(Y)ÍË³öÇë°´(N)");
+			printf("å­¦å·è¾“å…¥é”™è¯¯ï¼Œå¦‚éœ€é‡æ–°è¾“å…¥è¯·æŒ‰(Y)é€€å‡ºè¯·æŒ‰(N)");
 			cw = getchar();
 			if (cw == 'y' || cw == 'Y')
 				goto thefifthtwo;
@@ -447,53 +447,53 @@ thefifthtwo:
 				goto thefifthend;
 		}
 	}
-	printf("\n>>>>>>>>ÇëÊäÈë°à¼¶£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç­çº§ï¼š ");
 	scanf("%s", all_stu[ai].stu_clas);
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÒ»ÃÅ³É¼¨(Ğ¡ÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬ä¸€é—¨æˆç»©(å°äº100)ï¼š ");
 	scanf("%lf", &all_stu[ai].stu_cj1);
 	if (all_stu[ai].stu_cj1 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefifthtwo;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚ¶şÃÅ³É¼¨(Ğ¡ÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬äºŒé—¨æˆç»©(å°äº100)ï¼š ");
 	scanf("%lf", &all_stu[ai].stu_cj2);
 	if (all_stu[ai].stu_cj2 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefifthtwo;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÈıÃÅ³É¼¨(Ğ¡ÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬ä¸‰é—¨æˆç»©(å°äº100)ï¼š ");
 	scanf("%lf", &all_stu[ai].stu_cj3);
 	if (all_stu[ai].stu_cj3 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefifthtwo;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚËÄÃÅ³É¼¨(Ğ¡ÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬å››é—¨æˆç»©(å°äº100)ï¼š ");
 	scanf("%lf", &all_stu[ai].stu_cj4);
 	if (all_stu[ai].stu_cj4 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
 			goto thefifthtwo;
 	}
-	printf("\n>>>>>>>>ÇëÊäÈëµÚÎåÃÅ³É¼¨(Ğ¡ÓÚ100)£º ");
+	printf("\n>>>>>>>>è¯·è¾“å…¥ç¬¬äº”é—¨æˆç»©(å°äº100)ï¼š ");
 	scanf("%lf", &all_stu[ai].stu_cj5);
 	if (all_stu[ai].stu_cj5 > 100)
 	{
-		printf("ÊäÈëÓĞÎó£¬Çë°´(Y)ÖØĞÂÊäÈë: ");
+		printf("è¾“å…¥æœ‰è¯¯ï¼Œè¯·æŒ‰(Y)é‡æ–°è¾“å…¥: ");
 		getchar();
 		cw = getchar();
 		if (cw == 'y' || cw == 'Y')
@@ -501,14 +501,14 @@ thefifthtwo:
 	}
 	hh = (all_stu[ai].stu_cj1 + all_stu[ai].stu_cj2 + all_stu[ai].stu_cj3 + all_stu[ai].stu_cj4 + all_stu[ai].stu_cj5) / 5;
 	all_stu[ai].avg_grade = hh;
-	printf("\n>>>>>>>>>>Æ½¾ùÖµÎª__: ");
+	printf("\n>>>>>>>>>>å¹³å‡å€¼ä¸º__: ");
 	printf("%.2lf", all_stu[ai].avg_grade);
 	getchar();
 	printf("\n\n");
-	printf("\n OK ´ËÑ§Éú³É¼¨ĞÅÏ¢ÒÑĞŞ¸ÄÍê³É£¬¸ĞĞ»ÄúµÄÊ¹ÓÃ¡£");
+	printf("\n OK æ­¤å­¦ç”Ÿæˆç»©ä¿¡æ¯å·²ä¿®æ”¹å®Œæˆï¼Œæ„Ÿè°¢æ‚¨çš„ä½¿ç”¨ã€‚");
 thefifthfanhui:
 	getchar();
-	printf("\nÇ×~ÒªĞŞ¸ÄµÄ³É¼¨ĞÅÏ¢ÒÑĞŞ¸Ä£¬ÊÇ·ñ¼ÌĞø£¿\nĞèÒªÇë°²(Y),Èç²»ĞèÒªÇë°²(N)£¬½«·µ»ØÖ÷½çÃæ__: ");
+	printf("\näº²~è¦ä¿®æ”¹çš„æˆç»©ä¿¡æ¯å·²ä¿®æ”¹ï¼Œæ˜¯å¦ç»§ç»­ï¼Ÿ\néœ€è¦è¯·å®‰(Y),å¦‚ä¸éœ€è¦è¯·å®‰(N)ï¼Œå°†è¿”å›ä¸»ç•Œé¢__: ");
 	scanf("%c", &op);
 	if (op == 'y' || op == 'Y')
 		goto thefifth;
@@ -523,19 +523,19 @@ void sixth()
 {
 thesixth:
 	system("cls");
-	printf("\n\n\n\t**************************±£´æÊäÈëµÄ×ÊÁÏ*************************");
+	printf("\n\n\n\t**************************ä¿å­˜è¾“å…¥çš„èµ„æ–™*************************");
 	int i = 0;
 	FILE *fp;
 	if ((fp = fopen("stu_dat.txt", "wb")) == NULL)
 	{
-		printf("ÎŞ·¨´ò¿ªµÄ²Ù×÷!");
+		printf("æ— æ³•æ‰“å¼€çš„æ“ä½œ!");
 		return;
 	}
 
 	//for(i=0;i<stu_number;i++)
 	do
 	{
-		printf("\n\n±¾´Î²Ù×÷½«ÎªÄú°ÑÄúÊäÈëµÄËùÓĞÑ§Éú³É¼¨ĞÅÏ¢´æµµ¡£\n\nÇë°´ÈÎÒâ¼ü½øĞĞ´æµµ£¬ÎÒ»áÅ¬Á¦¼Ç×¡µÄ£¡£¡");
+		printf("\n\næœ¬æ¬¡æ“ä½œå°†ä¸ºæ‚¨æŠŠæ‚¨è¾“å…¥çš„æ‰€æœ‰å­¦ç”Ÿæˆç»©ä¿¡æ¯å­˜æ¡£ã€‚\n\nè¯·æŒ‰ä»»æ„é”®è¿›è¡Œå­˜æ¡£ï¼Œæˆ‘ä¼šåŠªåŠ›è®°ä½çš„ï¼ï¼");
 		getchar();
 		fprintf(fp, "%s", all_stu[i].stu_name);
 		fprintf(fp, "%d", all_stu[i].stu_id);
@@ -557,7 +557,7 @@ void seventh()
 {
 theseventh:
 	system("cls");
-	printf("\n\n**************************²é¿´Ñ§ÉúÆ½¾ù³É¼¨ÅÅÃû*********************************");
+	printf("\n\n**************************æŸ¥çœ‹å­¦ç”Ÿå¹³å‡æˆç»©æ’å*********************************");
 	int i;
 	int t = 1;
 	int j;
@@ -572,15 +572,15 @@ theseventh:
 				all_stu[j + 1] = a[t];
 			}
 		}
-	printf("\n\n>>ĞÕÃû");
-	printf("\tÑ§ºÅ");
-	printf("\t°à¼¶");
-	printf("\t³É¼¨Ò»");
-	printf("\t³É¼¨¶ş");
-	printf("\t³É¼¨Èı");
-	printf("\t³É¼¨ËÄ");
-	printf("\t³É¼¨Îå");
-	printf("\tÆ½¾ùÖµ");
+	printf("\n\n>>å§“å");
+	printf("\tå­¦å·");
+	printf("\tç­çº§");
+	printf("\tæˆç»©ä¸€");
+	printf("\tæˆç»©äºŒ");
+	printf("\tæˆç»©ä¸‰");
+	printf("\tæˆç»©å››");
+	printf("\tæˆç»©äº”");
+	printf("\tå¹³å‡å€¼");
 	for (i = 0; i < stu_number; i++)
 	//do
 	{
@@ -610,14 +610,14 @@ void TC()
 void DQ()
 {
 	system("cls");
-	printf("\n\n**************************¶ÁÈ¡ÎÄµµĞÅÏ¢*********************************");
+	printf("\n\n**************************è¯»å–æ–‡æ¡£ä¿¡æ¯*********************************");
 	getchar();
 	student a[200], p;
 	int n, i = 0;
 	FILE *fp;
 	if ((fp = fopen("stu_dat.txt", "rb")) == NULL)
 	{
-		printf("´ò¿ªÎÄ¼şÊ§°Ü£¬Çë²é¿´ÎÄ¼şÃûÊÇ·ñÕıÈ·£¡\n");
+		printf("æ‰“å¼€æ–‡ä»¶å¤±è´¥ï¼Œè¯·æŸ¥çœ‹æ–‡ä»¶åæ˜¯å¦æ­£ç¡®ï¼\n");
 		getchar();
 		goto theDQend;
 	}
@@ -636,14 +636,14 @@ void DQ()
 		//n++;
 	} //while(!feof(fp));
 	fclose(fp);
-	printf("\tÑ§ºÅ");
-	printf("\t°à¼¶");
-	printf("\t³É¼¨Ò»");
-	printf("\t³É¼¨¶ş");
-	printf("\t³É¼¨Èı");
-	printf("\t³É¼¨ËÄ");
-	printf("\t³É¼¨Îå");
-	printf("\tÆ½¾ùÖµ");
+	printf("\tå­¦å·");
+	printf("\tç­çº§");
+	printf("\tæˆç»©ä¸€");
+	printf("\tæˆç»©äºŒ");
+	printf("\tæˆç»©ä¸‰");
+	printf("\tæˆç»©å››");
+	printf("\tæˆç»©äº”");
+	printf("\tå¹³å‡å€¼");
 	for (i = 0; i < n; i++)
 	//do
 	{
@@ -660,3 +660,4 @@ void DQ()
 	} //while(i<n);
 theDQend:;
 }
+

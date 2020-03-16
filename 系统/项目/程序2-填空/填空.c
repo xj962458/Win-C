@@ -11,3 +11,4 @@ void main()
     printf("%x\n",a.i);
     printf("%x%x\n",a.c[1],a.c[0]);
 }
+

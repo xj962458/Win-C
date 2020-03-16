@@ -16,3 +16,4 @@ void main()
 	a[l1+l2]='\0';
 	puts(a);
 }
+

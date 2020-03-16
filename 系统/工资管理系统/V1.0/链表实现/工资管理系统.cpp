@@ -4,28 +4,28 @@
 
 typedef struct worker
 {
-    char no[12];         //Ö°¹¤¹¤ºÅ
-    char name[40];       //ĞÕÃû
-    int month[12];       //ÔÂ·İ
-    float gz[12];        //ÔÂ¹¤×Ê
-    float total;         //Äê¶È×Ü¹¤×Ê
-    struct worker *next; //Ö¸ÏòÏÂÒ»½ÚµãµÄÖ¸Õë
+    char no[12];         //èŒå·¥å·¥å·
+    char name[40];       //å§“å
+    int month[12];       //æœˆä»½
+    float gz[12];        //æœˆå·¥èµ„
+    float total;         //å¹´åº¦æ€»å·¥èµ„
+    struct worker *next; //æŒ‡å‘ä¸‹ä¸€èŠ‚ç‚¹çš„æŒ‡é’ˆ
 } Worker;
 
-//Ïà¹ØµÄº¯ÊıÉùÃ÷
-Worker *InitList(Worker *L);                        //³õÊ¼»¯Á´±í£¬ÓÃÓÚ´´ÔìÍ·½Úµã
-Worker *CreateList(Worker *L);                      //¸ù¾İÊäÈëµÄÖ°¹¤ÈËÊı£¬ÅúÁ¿´´½¨½Úµã
-void DeleteList(Worker *L, char n[]);               //É¾³ı½Úµã
-void LIstSearch(Worker *L, char n[]);               //²éÕÒÖ°¹¤¹¤×ÊĞÅÏ¢
-void InsertInfo(Worker *L);                         //²åÈëÖ°¹¤¹¤×ÊĞÅÏ¢
-void SearchMonthSalary(Worker *L, char n[], int m); //²éÕÒÄ³¸öÖ°¹¤µÄÄ³¸öÔÂµÄ¹¤×Ê
-void input(Worker *p, int i);                       //Îª½ÚµãµÄÊı¾İÓò¸³Öµ
-void output(Worker *L);                             //Êä³öÕû¸öÁ´±íµÄÊı¾İ
-void Modify(Worker *L, char n[], int m[]);          //ĞŞ¸ÄÄ³¸öÖ°¹¤µÄ¹¤×Ê
-void menu();                                        //¹¤×Ê¹ÜÀíÏµÍ³µÄ²Ëµ¥
-void Save(Worker *L);                               //½«Ö°¹¤µÄ¹¤×ÊĞÅÏ¢±£´æÖÁÎÄ¼ş
+//ç›¸å…³çš„å‡½æ•°å£°æ˜
+Worker *InitList(Worker *L);                        //åˆå§‹åŒ–é“¾è¡¨ï¼Œç”¨äºåˆ›é€ å¤´èŠ‚ç‚¹
+Worker *CreateList(Worker *L);                      //æ ¹æ®è¾“å…¥çš„èŒå·¥äººæ•°ï¼Œæ‰¹é‡åˆ›å»ºèŠ‚ç‚¹
+void DeleteList(Worker *L, char n[]);               //åˆ é™¤èŠ‚ç‚¹
+void LIstSearch(Worker *L, char n[]);               //æŸ¥æ‰¾èŒå·¥å·¥èµ„ä¿¡æ¯
+void InsertInfo(Worker *L);                         //æ’å…¥èŒå·¥å·¥èµ„ä¿¡æ¯
+void SearchMonthSalary(Worker *L, char n[], int m); //æŸ¥æ‰¾æŸä¸ªèŒå·¥çš„æŸä¸ªæœˆçš„å·¥èµ„
+void input(Worker *p, int i);                       //ä¸ºèŠ‚ç‚¹çš„æ•°æ®åŸŸèµ‹å€¼
+void output(Worker *L);                             //è¾“å‡ºæ•´ä¸ªé“¾è¡¨çš„æ•°æ®
+void Modify(Worker *L, char n[], int m[]);          //ä¿®æ”¹æŸä¸ªèŒå·¥çš„å·¥èµ„
+void menu();                                        //å·¥èµ„ç®¡ç†ç³»ç»Ÿçš„èœå•
+void Save(Worker *L);                               //å°†èŒå·¥çš„å·¥èµ„ä¿¡æ¯ä¿å­˜è‡³æ–‡ä»¶
 
-//³õÊ¼»¯Á´±í£¬ÓÃÓÚ´´ÔìÍ·½Úµã
+//åˆå§‹åŒ–é“¾è¡¨ï¼Œç”¨äºåˆ›é€ å¤´èŠ‚ç‚¹
 Worker *InitList(Worker *L)
 {
     Worker *head = NULL;
@@ -35,29 +35,29 @@ Worker *InitList(Worker *L)
     return L;
 }
 
-//¸ù¾İÊäÈëµÄÖ°¹¤ÈËÊı£¬ÅúÁ¿´´½¨½Úµã
-Worker *CreateList(Worker *L, int n) //nÎªÊäÈëµÄÖ°¹¤ÈËÊı
+//æ ¹æ®è¾“å…¥çš„èŒå·¥äººæ•°ï¼Œæ‰¹é‡åˆ›å»ºèŠ‚ç‚¹
+Worker *CreateList(Worker *L, int n) //nä¸ºè¾“å…¥çš„èŒå·¥äººæ•°
 {
     int i;
     for (i = 0; i < n; i++)
     {
         Worker *p;
-        //½«ĞÂÉú³ÉµÄ½Úµã²åÈëµ½Á´±íÖĞ
+        //å°†æ–°ç”Ÿæˆçš„èŠ‚ç‚¹æ’å…¥åˆ°é“¾è¡¨ä¸­
         p = NULL;
         p = (Worker *)malloc(sizeof(Worker));
-        input(p, i); //Îª½ÚµãµÄÊı¾İÓò¸³Öµ
+        input(p, i); //ä¸ºèŠ‚ç‚¹çš„æ•°æ®åŸŸèµ‹å€¼
         p->next = L->next;
         L->next = p;
     }
     return L;
 }
 
-void DeleteList(Worker *L, char n[]) //°´ĞÕÃûÉ¾³ıÖ°¹¤ĞÅÏ¢
+void DeleteList(Worker *L, char n[]) //æŒ‰å§“ååˆ é™¤èŒå·¥ä¿¡æ¯
 {
     int i;
-    Worker *p = L->next, *pre = L; //¶¨ÒåpÖ¸ÕëÖ¸ÏòÍ·½ÚµãµÄÖ¸Ïò£¬¶¨ÒåpreÖ¸ÏòÍ·½Úµã£¬preÊ¼ÖÕÖ¸ÏòpµÄÇ°Çı½Úµã
+    Worker *p = L->next, *pre = L; //å®šä¹‰pæŒ‡é’ˆæŒ‡å‘å¤´èŠ‚ç‚¹çš„æŒ‡å‘ï¼Œå®šä¹‰preæŒ‡å‘å¤´èŠ‚ç‚¹ï¼Œpreå§‹ç»ˆæŒ‡å‘pçš„å‰é©±èŠ‚ç‚¹
     if (p == NULL)
-        printf("Êı¾İÎª¿Õ£¬ÎŞ·¨É¾³ı£¡");
+        printf("æ•°æ®ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤ï¼");
     else
     {
         while (strcmp(p->name, n) != 0)
@@ -66,38 +66,38 @@ void DeleteList(Worker *L, char n[]) //°´ĞÕÃûÉ¾³ıÖ°¹¤ĞÅÏ¢
             p = pre->next;
             if (p == NULL)
             {
-                printf("Ã»ÓĞÕÒµ½Ïà¹ØĞÅÏ¢£¬ÎŞ·¨É¾³ı\n");
+                printf("æ²¡æœ‰æ‰¾åˆ°ç›¸å…³ä¿¡æ¯ï¼Œæ— æ³•åˆ é™¤\n");
                 return;
             }
         }
         pre->next = p->next;
         free(p);
-        printf("É¾³ı³É¹¦");
+        printf("åˆ é™¤æˆåŠŸ");
     }
 }
 
-//ÏòÁ´±íÖĞ²åÈëÖ°¹¤¹¤×ÊĞÅÏ¢
+//å‘é“¾è¡¨ä¸­æ’å…¥èŒå·¥å·¥èµ„ä¿¡æ¯
 void InsertInfo(Worker *L)
 {
     int j, k;
     Worker *p = NULL;
-    p = (Worker *)malloc(sizeof(Worker)); //Éú³ÉÒ»¸öĞÂ½Úµãp
+    p = (Worker *)malloc(sizeof(Worker)); //ç”Ÿæˆä¸€ä¸ªæ–°èŠ‚ç‚¹p
     p->total = 0;
-    printf("ÇëÊäÈëÒª²åÈëµÄÖ°¹¤µÄÖ°¹¤¹¤ºÅ:");
+    printf("è¯·è¾“å…¥è¦æ’å…¥çš„èŒå·¥çš„èŒå·¥å·¥å·:");
     scanf("%s", &p->no);
-    printf("ÇëÊäÈëÒª²åÈëµÄÖ°¹¤µÄĞÕÃû:");
+    printf("è¯·è¾“å…¥è¦æ’å…¥çš„èŒå·¥çš„å§“å:");
     scanf("%s", &p->name);
     for (k = 0, j = 1; j <= 12, k < 12; j++, k++)
         p->month[k] = j;
-    printf("ÇëÊäÈëÒª²åÈëµÄÖ°¹¤µÄÔÂ¹¤×Ê(ÓÃ¿Õ¸ñ¸ô¿ª):");
+    printf("è¯·è¾“å…¥è¦æ’å…¥çš„èŒå·¥çš„æœˆå·¥èµ„(ç”¨ç©ºæ ¼éš”å¼€):");
     for (j = 0; j < 12; j++)
     {
-        scanf("%f", &p->gz[j]); //ÊäÈëÃ¿¸öÔÂµÄ¹¤×Ê
-        p->total += p->gz[j];   //¼ÆËã×Ü¹¤×Ê
+        scanf("%f", &p->gz[j]); //è¾“å…¥æ¯ä¸ªæœˆçš„å·¥èµ„
+        p->total += p->gz[j];   //è®¡ç®—æ€»å·¥èµ„
     }
     p->next = L->next;
     L->next = p;
-    printf("²åÈë³É¹¦!");
+    printf("æ’å…¥æˆåŠŸ!");
 }
 
 void LIstSearch(Worker *L, char n[])
@@ -108,15 +108,15 @@ void LIstSearch(Worker *L, char n[])
     {
         if (strcmp(p->name, n) == 0)
         {
-            printf("\n¸ÃÖ°¹¤µÄ¹¤×ÊµÄĞÅÏ¢ÈçÏÂ:\n");
-            printf("Ö°¹¤±àºÅ:");
+            printf("\nè¯¥èŒå·¥çš„å·¥èµ„çš„ä¿¡æ¯å¦‚ä¸‹:\n");
+            printf("èŒå·¥ç¼–å·:");
             printf("%s\t\n", p->no);
-            printf("ĞÕÃû:");
+            printf("å§“å:");
             printf("%s\n", p->name);
-            printf("¸ÃÖ°¹¤12¸öÔÂµÄÔÂ¹¤×ÊÈçÏÂ:");
+            printf("è¯¥èŒå·¥12ä¸ªæœˆçš„æœˆå·¥èµ„å¦‚ä¸‹:");
             for (i = 0; i < 12; i++)
                 printf("%.2f ", p->gz[i]);
-            printf("\n¸ÃÖ°¹¤µÄÄê¶È×Ü¹¤×ÊÎª:");
+            printf("\nè¯¥èŒå·¥çš„å¹´åº¦æ€»å·¥èµ„ä¸º:");
             printf("%.2f", p->total);
             printf("\n\n");
             printf("\n");
@@ -138,40 +138,40 @@ void SearchMonthSalary(Worker *L, char n[], int m)
             switch (m)
             {
             case 1:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[0], p->gz[0]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[0], p->gz[0]);
                 break;
             case 2:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[1], p->gz[1]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[1], p->gz[1]);
                 break;
             case 3:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[2], p->gz[2]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[2], p->gz[2]);
                 break;
             case 4:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[3], p->gz[3]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[3], p->gz[3]);
                 break;
             case 5:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[4], p->gz[4]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[4], p->gz[4]);
                 break;
             case 6:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[5], p->gz[5]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[5], p->gz[5]);
                 break;
             case 7:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[6], p->gz[6]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[6], p->gz[6]);
                 break;
             case 8:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[7], p->gz[7]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[7], p->gz[7]);
                 break;
             case 9:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[8], p->gz[8]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[8], p->gz[8]);
                 break;
             case 10:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[9], p->gz[9]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[9], p->gz[9]);
                 break;
             case 11:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[10], p->gz[10]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[10], p->gz[10]);
                 break;
             case 12:
-                printf("¸ÃÖ°¹¤%dÔÂµÄ¹¤×ÊÎª%.2f", p->month[11], p->gz[11]);
+                printf("è¯¥èŒå·¥%dæœˆçš„å·¥èµ„ä¸º%.2f", p->month[11], p->gz[11]);
                 break;
             default:
                 break;
@@ -237,23 +237,23 @@ void Modify(Worker *L, char n[], int m, float s)
         else
             p = p->next;
     }
-    printf("ĞŞ¸Ä³É¹¦!");
+    printf("ä¿®æ”¹æˆåŠŸ!");
 }
 void input(Worker *p, int i)
 {
     int j, k;
     p->total = 0;
-    printf("ÇëÊäÈëµÚ%dÃûÖ°¹¤µÄÖ°¹¤¹¤ºÅ:", i + 1);
+    printf("è¯·è¾“å…¥ç¬¬%dåèŒå·¥çš„èŒå·¥å·¥å·:", i + 1);
     scanf("%s", &p->no);
-    printf("ÇëÊäÈëµÚ%dÃûÖ°¹¤µÄĞÕÃû:", i + 1);
+    printf("è¯·è¾“å…¥ç¬¬%dåèŒå·¥çš„å§“å:", i + 1);
     scanf("%s", &p->name);
     for (k = 0, j = 1; j <= 12, k < 12; j++, k++)
         p->month[k] = j;
-    printf("ÇëÊäÈëµÚ%dÃûÖ°¹¤µÄÔÂ¹¤×Ê(ÓÃ¿Õ¸ñ¸ô¿ª):", i + 1);
+    printf("è¯·è¾“å…¥ç¬¬%dåèŒå·¥çš„æœˆå·¥èµ„(ç”¨ç©ºæ ¼éš”å¼€):", i + 1);
     for (j = 0; j < 12; j++)
     {
-        scanf("%f", &p->gz[j]); //ÊäÈëÃ¿¸öÔÂµÄ¹¤×Ê
-        p->total += p->gz[j];   //¼ÆËã×Ü¹¤×Ê
+        scanf("%f", &p->gz[j]); //è¾“å…¥æ¯ä¸ªæœˆçš„å·¥èµ„
+        p->total += p->gz[j];   //è®¡ç®—æ€»å·¥èµ„
     }
 }
 
@@ -263,14 +263,14 @@ void output(Worker *L)
     Worker *p = L->next;
     while (p != NULL)
     {
-        printf("Ö°¹¤±àºÅ:");
+        printf("èŒå·¥ç¼–å·:");
         printf("%s\t\n", p->no);
-        printf("ĞÕÃû:");
+        printf("å§“å:");
         printf("%s\n", p->name);
-        printf("¸ÃÖ°¹¤12¸öÔÂµÄÔÂ¹¤×ÊÈçÏÂ:");
+        printf("è¯¥èŒå·¥12ä¸ªæœˆçš„æœˆå·¥èµ„å¦‚ä¸‹:");
         for (i = 0; i < 12; i++)
             printf("%.2f ", p->gz[i]);
-        printf("\n¸ÃÖ°¹¤µÄÄê¶È×Ü¹¤×ÊÎª:");
+        printf("\nè¯¥èŒå·¥çš„å¹´åº¦æ€»å·¥èµ„ä¸º:");
         printf("%.2f", p->total);
         printf("\n\n");
         p = p->next;
@@ -284,42 +284,42 @@ void Save(Worker *L)
     FILE *fp = fopen("WorkerSalaryInfo.txt", "w");
     while (p != NULL)
     {
-        fprintf(fp, "Ö°¹¤±àºÅ:");
+        fprintf(fp, "èŒå·¥ç¼–å·:");
         fprintf(fp, "%s\t\n", p->no);
-        fprintf(fp, "ĞÕÃû:");
+        fprintf(fp, "å§“å:");
         fprintf(fp, "%s\n", p->name);
-        fprintf(fp, "¸ÃÖ°¹¤12¸öÔÂµÄÔÂ¹¤×ÊÈçÏÂ:");
+        fprintf(fp, "è¯¥èŒå·¥12ä¸ªæœˆçš„æœˆå·¥èµ„å¦‚ä¸‹:");
         for (i = 0; i < 12; i++)
             fprintf(fp, "%.2f ", p->gz[i]);
-        fprintf(fp, "\n¸ÃÖ°¹¤µÄÄê¶È×Ü¹¤×ÊÎª:");
+        fprintf(fp, "\nè¯¥èŒå·¥çš„å¹´åº¦æ€»å·¥èµ„ä¸º:");
         fprintf(fp, "%.2f", p->total);
         fprintf(fp, "\n\n");
         p = p->next;
     }
     fclose(fp);
-    printf("±£´æ³É¹¦£¬ÒÑ±£´æÖÁµ±Ç°Ä¿Â¼ÏÂµÄ¡®WorkerSalaryInfo.txt¡¯ÎÄ¼şÖĞ");
+    printf("ä¿å­˜æˆåŠŸï¼Œå·²ä¿å­˜è‡³å½“å‰ç›®å½•ä¸‹çš„â€˜WorkerSalaryInfo.txtâ€™æ–‡ä»¶ä¸­");
 }
 
 void menu()
 {
-    printf("¨‰¨‰¨‰¨‰¨‰¨‰»¶Ó­½øÈë¹¤×Ê¹ÜÀíÏµÍ³¨‰¨‰¨‰¨‰¨‰¨‰\n");
-    printf(" 1.Â¼ÈëÖ°¹¤Ã¿¸öÔÂµÄ¹¤×ÊĞÅÏ¢                \n");
-    printf(" 2.²éÕÒÄ³¸öÔ±¹¤¸÷ÔÂµÄ¹¤×Ê                  \n");
-    printf(" 3.²éÕÒÄ³¸öÖ°¹¤µÄÄ³¸öÔÂµÄ¹¤×Ê              \n");
-    printf(" 4.ĞŞ¸ÄÄ³¸öÖ°¹¤Ä³¸öÔÂµÄ¹¤×Ê                \n");
-    printf(" 5.É¾³ıÄ³¸öÖ°¹¤µÄÏà¹ØĞÅÏ¢                  \n");
-    printf(" 6.²åÈëÖ°¹¤¹¤×ÊĞÅÏ¢                        \n");
-    printf(" 7.Í³¼ÆÄ³¸öÖ°¹¤Äê¶È×Ü¹¤×Ê                  \n");
-    printf(" 8.¶ÔÖ°¹¤µÄÔÂ¹¤×Ê»òÄê¹¤×Ê½øĞĞÅÅÃû           \n");
-    printf(" 9.Êä³öËùÓĞÖ°¹¤¹¤×ÊĞÅÏ¢                    \n");
-    printf(" 10¡¢½«ËùÓĞÖ°¹¤µÄ¹¤×ÊĞÅÏ¢±£´æÖÁÎÄ¼ş         \n");
-    printf(" 0.ÍË³ö                                   \n");
-    printf("-¨x¨x¨x¨x¨x¨x¨x¨x¨xĞ»Ğ»Ê¹ÓÃ¨x¨x¨x¨x¨x¨x¨x¨x¨x\n");
+    printf("â–”â–”â–”â–”â–”â–”æ¬¢è¿è¿›å…¥å·¥èµ„ç®¡ç†ç³»ç»Ÿâ–”â–”â–”â–”â–”â–”\n");
+    printf(" 1.å½•å…¥èŒå·¥æ¯ä¸ªæœˆçš„å·¥èµ„ä¿¡æ¯                \n");
+    printf(" 2.æŸ¥æ‰¾æŸä¸ªå‘˜å·¥å„æœˆçš„å·¥èµ„                  \n");
+    printf(" 3.æŸ¥æ‰¾æŸä¸ªèŒå·¥çš„æŸä¸ªæœˆçš„å·¥èµ„              \n");
+    printf(" 4.ä¿®æ”¹æŸä¸ªèŒå·¥æŸä¸ªæœˆçš„å·¥èµ„                \n");
+    printf(" 5.åˆ é™¤æŸä¸ªèŒå·¥çš„ç›¸å…³ä¿¡æ¯                  \n");
+    printf(" 6.æ’å…¥èŒå·¥å·¥èµ„ä¿¡æ¯                        \n");
+    printf(" 7.ç»Ÿè®¡æŸä¸ªèŒå·¥å¹´åº¦æ€»å·¥èµ„                  \n");
+    printf(" 8.å¯¹èŒå·¥çš„æœˆå·¥èµ„æˆ–å¹´å·¥èµ„è¿›è¡Œæ’å           \n");
+    printf(" 9.è¾“å‡ºæ‰€æœ‰èŒå·¥å·¥èµ„ä¿¡æ¯                    \n");
+    printf(" 10ã€å°†æ‰€æœ‰èŒå·¥çš„å·¥èµ„ä¿¡æ¯ä¿å­˜è‡³æ–‡ä»¶         \n");
+    printf(" 0.é€€å‡º                                   \n");
+    printf("-â–â–â–â–â–â–â–â–â–è°¢è°¢ä½¿ç”¨â–â–â–â–â–â–â–â–â–\n");
 }
 
 int main()
 {
-    int item, n, m; //itemÓÃÓÚ½ÓÊÕÊäÈëµÄÃüÁî£¬nÓÃÓÚ½ÓÊÕÊäÈëµÄÖ°¹¤ÈËÊı
+    int item, n, m; //itemç”¨äºæ¥æ”¶è¾“å…¥çš„å‘½ä»¤ï¼Œnç”¨äºæ¥æ”¶è¾“å…¥çš„èŒå·¥äººæ•°
     float s;
     char nam[10];
     Worker *L = NULL;
@@ -327,38 +327,38 @@ int main()
     do
     {
         menu();
-        printf("ÇëÊäÈëÏàÓ¦µÄÊı×Ö£¬½øĞĞÏàÓ¦µÄ²Ù×÷:\n");
+        printf("è¯·è¾“å…¥ç›¸åº”çš„æ•°å­—ï¼Œè¿›è¡Œç›¸åº”çš„æ“ä½œ:\n");
         scanf("%d", &item);
         switch (item)
         {
         case 1:
-            printf("ÇëÊäÈëÄúÒªÂ¼ÈëµÄÖ°¹¤ÈËÊı:");
+            printf("è¯·è¾“å…¥æ‚¨è¦å½•å…¥çš„èŒå·¥äººæ•°:");
             scanf("%d", &n);
             L = CreateList(L, n);
             break;
         case 2:
-            printf("ÇëÊäÈëÄúÒª²éÕÒµÄÖ°¹¤ĞÕÃû:");
+            printf("è¯·è¾“å…¥æ‚¨è¦æŸ¥æ‰¾çš„èŒå·¥å§“å:");
             scanf("%s", &nam);
             LIstSearch(L, nam);
             break;
         case 3:
-            printf("ÇëÊäÈëÄúÒª²éÕÒµÄÖ°¹¤µÄĞÕÃû:");
+            printf("è¯·è¾“å…¥æ‚¨è¦æŸ¥æ‰¾çš„èŒå·¥çš„å§“å:");
             scanf("%s", &nam);
-            printf("ÇëÊäÈëÄúÒª²éÕÒ¸ÃÖ°¹¤µÚ¼¸¸öÔÂµÄ¹¤×Ê(1µ½12):");
+            printf("è¯·è¾“å…¥æ‚¨è¦æŸ¥æ‰¾è¯¥èŒå·¥ç¬¬å‡ ä¸ªæœˆçš„å·¥èµ„(1åˆ°12):");
             scanf("%d", &m);
             SearchMonthSalary(L, nam, m);
             break;
         case 4:
-            printf("ÇëÊäÈëÄúÒªĞŞ¸ÄµÄÖ°¹¤ĞÕÃû:");
+            printf("è¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„èŒå·¥å§“å:");
             scanf("%s", &nam);
-            printf("\nÇëÊäÈëÄúÒªĞŞ¸ÄµÄÔÂ·İ:");
+            printf("\nè¯·è¾“å…¥æ‚¨è¦ä¿®æ”¹çš„æœˆä»½:");
             scanf("%d", &m);
-            printf("\nÇëÊäÈëÄúĞŞ¸ÄºóµÄÊı¾İ:");
+            printf("\nè¯·è¾“å…¥æ‚¨ä¿®æ”¹åçš„æ•°æ®:");
             scanf("%f", &s);
             Modify(L, nam, m, s);
             break;
         case 5:
-            printf("ÇëÊäÈëÄúÒªÉ¾³ıµÄÖ°¹¤ĞÕÃû:");
+            printf("è¯·è¾“å…¥æ‚¨è¦åˆ é™¤çš„èŒå·¥å§“å:");
             scanf("%s", &nam);
             DeleteList(L, nam);
             break;
@@ -366,20 +366,20 @@ int main()
             InsertInfo(L);
             break;
         case 7:
-            printf("¹¦ÄÜÍêÉÆÖĞ!");
+            printf("åŠŸèƒ½å®Œå–„ä¸­!");
             break;
         case 8:
-            printf("¹¦ÄÜÍêÉÆÖĞ!");
+            printf("åŠŸèƒ½å®Œå–„ä¸­!");
             break;
         case 9:
-            printf("È«²¿Ö°¹¤µÄĞÅÏ¢ÈçÏÂ:\n\n");
+            printf("å…¨éƒ¨èŒå·¥çš„ä¿¡æ¯å¦‚ä¸‹:\n\n");
             output(L);
             break;
         case 10:
             Save(L);
             break;
         case 0:
-            printf("Ğ»Ğ»ÄúÊ¹ÓÃ¹¤×Ê¹ÜÀíÏµÍ³£¬¼´½«ÍË³ö¹¤×Ê¹ÜÀíÏµÍ³.....");
+            printf("è°¢è°¢æ‚¨ä½¿ç”¨å·¥èµ„ç®¡ç†ç³»ç»Ÿï¼Œå³å°†é€€å‡ºå·¥èµ„ç®¡ç†ç³»ç»Ÿ.....");
             exit(0);
             break;
         }

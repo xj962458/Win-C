@@ -18,3 +18,4 @@ void main()
 	else	
 		printf("YES");
 }
+

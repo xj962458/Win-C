@@ -47,7 +47,7 @@ void main()
 							{"Sunyang",03,81,79,90},
 							{"Liudong",04,68,78,89}
 							};
-	printf("姓名 学号 英语 数学 物理 平均成绩\n");
+	printf("濮撳悕 瀛﹀彿 鑻辫 鏁板 鐗╃悊 骞冲潎鎴愮哗\n");
 	aver(stu,4);
 	sort(stu,4);
 	output(stu,4);

@@ -8,3 +8,4 @@ void main()
 	c=b-a;
 	printf("%.2f=%d+%.2f",b,a,c);
 }
+

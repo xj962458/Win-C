@@ -16,3 +16,4 @@ void main()
 	printf("Number=%d\nName=%s\nSex=%c\nScore=%.1f\n",ps->num,ps->name, ps->sex,ps->score);
 	free(ps);
 }
+

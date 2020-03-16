@@ -1,5 +1,5 @@
 #include<x.h>
-//±È½Ï£¬µÃ×îÖµ¼°ºÍ
+//æ¯”è¾ƒï¼Œå¾—æœ€å€¼åŠå’Œ
 void Sort(LinkList head, int n)
 {
 	float sum;
@@ -15,7 +15,8 @@ void Sort(LinkList head, int n)
 		if((min->sales)>=(p->sales)) min=p; 
         p=p->link;
     }
-    printf("ÏúÊÛ¶î×î¸ßÕß:\n±àºÅ:%s  ĞÕÃû:%s  ÏúÊÛ¶î:%f\n",max->no,max->name,max->sales);
-    printf("ÏúÊÛ¶î×îµÍÕß:\n±àºÅ:%s  ĞÕÃû:%s  ÏúÊÛ¶î:%f\n",min->no,min->name,min->sales);
-    printf("×ÜÏúÊÛ¶î:%f\n",sum);
+    printf("é”€å”®é¢æœ€é«˜è€…:\nç¼–å·:%s  å§“å:%s  é”€å”®é¢:%f\n",max->no,max->name,max->sales);
+    printf("é”€å”®é¢æœ€ä½è€…:\nç¼–å·:%s  å§“å:%s  é”€å”®é¢:%f\n",min->no,min->name,min->sales);
+    printf("æ€»é”€å”®é¢:%f\n",sum);
 }
+

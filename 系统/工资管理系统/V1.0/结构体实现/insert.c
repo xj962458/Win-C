@@ -7,12 +7,12 @@ void PRINTdata(ZGGZ pp);
 void disp(ZGGZ tp[],int n);
 void wrong();
 void nofind();
-void stringinput(char *t,int lens,char *notice);/*ÊäÈë×Ö·û´®£¬²¢½øĞĞ³¤¶ÈÑéÖ¤Ã÷£¬³¤¶È±ØĞëĞ¡ÓÚlens£¬*/
-float numberinput(char *notice);/*ÊäÈëÊıÖµ¸¡µãÊı£¬¶ÔÊıÖµ¼ìÑéºó·µ»Ø¸ÃÖµ£¬ÊıÖµ±ØĞë´óÓÚµÈÓÚ0*/
-extern int saveflag;				/*ĞèÒª´æÅÌµÄ±êÖ¾±äÁ¿*/
-/*²åÈë¼ÇÂ¼*/
+void stringinput(char *t,int lens,char *notice);/*è¾“å…¥å­—ç¬¦ä¸²ï¼Œå¹¶è¿›è¡Œé•¿åº¦éªŒè¯æ˜ï¼Œé•¿åº¦å¿…é¡»å°äºlensï¼Œ*/
+float numberinput(char *notice);/*è¾“å…¥æ•°å€¼æµ®ç‚¹æ•°ï¼Œå¯¹æ•°å€¼æ£€éªŒåè¿”å›è¯¥å€¼ï¼Œæ•°å€¼å¿…é¡»å¤§äºç­‰äº0*/
+extern int saveflag;				/*éœ€è¦å­˜ç›˜çš„æ ‡å¿—å˜é‡*/
+/*æ’å…¥è®°å½•*/
 int insert(ZGGZ tp[],int n){
-	char ch,num[10],s[10];	/*sÊı×é±£´æ²åÈëµãÖ®Ç°µÄ±àºÅ£¬numÊı×é±£´æÊäÈëµÄĞÂ¼ÇÂ¼±àºÅ*/
+	char ch,num[10],s[10];	/*sæ•°ç»„ä¿å­˜æ’å…¥ç‚¹ä¹‹å‰çš„ç¼–å·ï¼Œnumæ•°ç»„ä¿å­˜è¾“å…¥çš„æ–°è®°å½•ç¼–å·*/
 	ZGGZ newinfo;
 	int flag=0,i=0,kkk=0;
 	system("cls");
@@ -20,7 +20,7 @@ int insert(ZGGZ tp[],int n){
 	while(1){
 		stringinput(s,10,"Please input insert location after the Number:");
 		flag=0;i=0;
-		while(i<n){			/*²éÑ¯£¬flag=1Îª±íÊ¾¸Ã±àºÅ´æÔÚ*/
+		while(i<n){			/*æŸ¥è¯¢ï¼Œflag=1ä¸ºè¡¨ç¤ºè¯¥ç¼–å·å­˜åœ¨*/
 			if (strcmp(tp[i].num,s)==0)
 			{
 				/* code */
@@ -33,7 +33,7 @@ int insert(ZGGZ tp[],int n){
 		if (flag==1)
 		{
 			/* code */
-			break;			/* Èô±àºÅ´æÔÚ£¬Ôò½øĞĞ²åÈëÖ®Ç°µÄĞÂ¼ÇÂ¼ÊäÈë²Ù×÷*/
+			break;			/* è‹¥ç¼–å·å­˜åœ¨ï¼Œåˆ™è¿›è¡Œæ’å…¥ä¹‹å‰çš„æ–°è®°å½•è¾“å…¥æ“ä½œ*/
 		}
 		else{
 			getchar();
@@ -48,11 +48,11 @@ int insert(ZGGZ tp[],int n){
 				return n;
 		}
 	}
-	/*ÒÔÏÂĞÂ¼ÇÂ¼µÄ²åÈë²Ù×÷Óëadd()ÏàÍ¬*/
+	/*ä»¥ä¸‹æ–°è®°å½•çš„æ’å…¥æ“ä½œä¸add()ç›¸åŒ*/
 	while(1){
 		stringinput(num,10,"input new employee Number:");
 		i=0;flag=0;
-		while(i<n){				/*²éÑ¯£¬flagÎª1Ê±±íÊ¾¸Ã±àºÅ´æÔÚ*/
+		while(i<n){				/*æŸ¥è¯¢ï¼Œflagä¸º1æ—¶è¡¨ç¤ºè¯¥ç¼–å·å­˜åœ¨*/
 			if (strcmp(tp[i].num,num)==0)
 			{
 				/* code */
@@ -75,15 +75,15 @@ int insert(ZGGZ tp[],int n){
 		}else
 			break;
 	}
-	strcpy(newinfo.num,num);		/*½«×Ö·û´®num¸´ÖÆµ½newinfo.numÖĞ*/
+	strcpy(newinfo.num,num);		/*å°†å­—ç¬¦ä¸²numå¤åˆ¶åˆ°newinfo.numä¸­*/
 	stringinput(newinfo.name,15,"Name:");
-	newinfo.jbgz=numberinput("jbgz:");		/* ÊäÈë²¢Ğ£Ñé»ù±¾¹¤×Ê*/
-	newinfo.jj=numberinput("jiangjin");		/*ÊäÈë²¢ËóÑéjiangjing */
-	newinfo.kk=numberinput("koukuan:");		/*ÊäÈë²¢¼ìÑékoukuan*/
+	newinfo.jbgz=numberinput("jbgz:");		/* è¾“å…¥å¹¶æ ¡éªŒåŸºæœ¬å·¥èµ„*/
+	newinfo.jj=numberinput("jiangjin");		/*è¾“å…¥å¹¶æ¢­éªŒjiangjing */
+	newinfo.kk=numberinput("koukuan:");		/*è¾“å…¥å¹¶æ£€éªŒkoukuan*/
 	newinfo.yfgz=newinfo.jbgz+newinfo.jj-newinfo.kk;
 	newinfo.sk=newinfo.yfgz*0.12;
 	newinfo.sfgz=newinfo.yfgz-newinfo.sk;
-	saveflag=1;			/*ÔÚmain()ÖĞÓĞ¶Ô¸ÃÈ«¾Ö±äÁ¿µÄÅĞ¶Ï£¬ÈôÎª1Ôò´æÅÌ*/
+	saveflag=1;			/*åœ¨main()ä¸­æœ‰å¯¹è¯¥å…¨å±€å˜é‡çš„åˆ¤æ–­ï¼Œè‹¥ä¸º1åˆ™å­˜ç›˜*/
 	for(i=n-1;i>kkk;i--){
 		strcpy(tp[i+1].num,tp[i].num);
 		strcpy(tp[i+1].name,tp[i].name);
@@ -94,7 +94,7 @@ int insert(ZGGZ tp[],int n){
 		tp[i+1].sk=tp[i].sk;
 		tp[i+1].sfgz=tp[i].sfgz;
 	}
-	strcpy(tp[kkk+1].num,newinfo.num);/*ÔÚtp[kkk]ÔªËØÎ»ÖÃºó²åÈëĞÂ¼ÇÂ¼*/
+	strcpy(tp[kkk+1].num,newinfo.num);/*åœ¨tp[kkk]å…ƒç´ ä½ç½®åæ’å…¥æ–°è®°å½•*/
 	strcpy(tp[kkk+1].name,newinfo.name);
 	tp[kkk+1].jbgz=newinfo.jbgz;
 	tp[kkk+1].jj=newinfo.jj;

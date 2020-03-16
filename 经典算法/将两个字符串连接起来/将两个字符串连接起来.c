@@ -12,3 +12,4 @@ void main()
 	a[t]='\0';
 	puts(a);
 }
+

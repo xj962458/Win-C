@@ -1,11 +1,11 @@
 //mainMenu.c
 #pragma once
 #include "preProcess.h"
-/*Ö÷²Ëµ¥½çÃæ*/
+/*ä¸»èœå•ç•Œé¢*/
 void menu(){
-	system("cls");		/*µ÷ÓÃDosÃüÁîÇåÆÁ*/
-	//textcolor(10);		/*ÔÚÎÄ±¾Ä£Ê½ÖĞÑ¡ÔñĞÂµÄ×Ö·ûÑÕÉ«*/
-	//gotoxy(10,5);		/*ÔÚÎÄ±¾´°¿ÚÖĞÉèÖÃ¹â±ê*/
+	system("cls");		/*è°ƒç”¨Doså‘½ä»¤æ¸…å±*/
+	//textcolor(10);		/*åœ¨æ–‡æœ¬æ¨¡å¼ä¸­é€‰æ‹©æ–°çš„å­—ç¬¦é¢œè‰²*/
+	//gotoxy(10,5);		/*åœ¨æ–‡æœ¬çª—å£ä¸­è®¾ç½®å…‰æ ‡*/
 	cprintf("	The employee's Salary Management System\n");
 	//gotoxy(10,8);
 	cprintf("	***************************Menu*******************************	\n");

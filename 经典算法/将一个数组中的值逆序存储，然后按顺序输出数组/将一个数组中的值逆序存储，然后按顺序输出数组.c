@@ -14,3 +14,4 @@ void main()
 	for(i=0;i<n;i++)
 		printf("%5d",a[i]);
 }
+

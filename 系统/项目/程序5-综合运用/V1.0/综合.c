@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define N 5
 
-//¶¨ÒåµÚÒ»Ìâ¸Ä´íÖĞµÄ½á¹¹ÌåÀàĞÍ
+//å®šä¹‰ç¬¬ä¸€é¢˜æ”¹é”™ä¸­çš„ç»“æ„ä½“ç±»å‹
 struct student1
 {  
     int num;
@@ -9,7 +9,7 @@ struct student1
     int score;
 };
 
-//¶¨ÒåµÚËÄÎåÌâÖĞµÄ½á¹¹ÌåÀàĞÍ
+//å®šä¹‰ç¬¬å››äº”é¢˜ä¸­çš„ç»“æ„ä½“ç±»å‹
 struct student2 
 {
 	int num;
@@ -17,38 +17,38 @@ struct student2
 	int score[3];
 };
 
-//×Ô¶¨ÒåËÄÎåÌâÖĞÓÃµ½µÄÊı¾İÀàĞÍ
+//è‡ªå®šä¹‰å››äº”é¢˜ä¸­ç”¨åˆ°çš„æ•°æ®ç±»å‹
 typedef struct student2 stu;
 
-//ËùÓĞº¯ÊıµÄÔ­ĞÍÉùÃ÷·ÅÔÚ´Ë´¦
-void correct();		//µÚ1Ìâ--¸Ä´í
-void fill();		//µÚ2Ìâ--Ìî¿Õ
-void verification();	//µÚ3Ìâ--ÑéÖ¤	
-void program_1();		//µÚ4Ìâ--±à³Ì
-void program_2();		//µÚ5Ìâ--±à³ÌÊä³ötxtÎÄ¼ş
-void input(stu* p);		//ÊäÈë
-void print(stu* p);		//Êä³ö
-void xprint(stu* p ,FILE *fp);	//Êä³öÖÁÎÄ±¾ÎÄ¼ş
-double aver(stu* p);			//¼ÆËãÆ½¾ù·Ö
-int excellect(stu* p);			//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
+//æ‰€æœ‰å‡½æ•°çš„åŸå‹å£°æ˜æ”¾åœ¨æ­¤å¤„
+void correct();		//ç¬¬1é¢˜--æ”¹é”™
+void fill();		//ç¬¬2é¢˜--å¡«ç©º
+void verification();	//ç¬¬3é¢˜--éªŒè¯	
+void program_1();		//ç¬¬4é¢˜--ç¼–ç¨‹
+void program_2();		//ç¬¬5é¢˜--ç¼–ç¨‹è¾“å‡ºtxtæ–‡ä»¶
+void input(stu* p);		//è¾“å…¥
+void print(stu* p);		//è¾“å‡º
+void xprint(stu* p ,FILE *fp);	//è¾“å‡ºè‡³æ–‡æœ¬æ–‡ä»¶
+double aver(stu* p);			//è®¡ç®—å¹³å‡åˆ†
+int excellect(stu* p);			//åˆ¤æ–­æœ€é«˜åˆ†,è¿”å›ä¸‹æ ‡
 
 
-void main()	//Ö÷º¯Êı
+void main()	//ä¸»å‡½æ•°
 {
 	int item;
 	while(1)
 	{
 		int item;
 		system("cls");
-		printf("´°¿Ú²Ëµ¥:\n");
-		printf("µÚ1Ìâ--¸Ä´í\n");
-		printf("µÚ2Ìâ--Ìî¿Õ\n");
-		printf("µÚ3Ìâ--ÑéÖ¤\n");
-		printf("µÚ4Ìâ--±à³Ì\n");
-		printf("µÚ5Ìâ--±à³ÌÊä³öÎÄ±¾ÎÄ¼ş\n");
+		printf("çª—å£èœå•:\n");
+		printf("ç¬¬1é¢˜--æ”¹é”™\n");
+		printf("ç¬¬2é¢˜--å¡«ç©º\n");
+		printf("ç¬¬3é¢˜--éªŒè¯\n");
+		printf("ç¬¬4é¢˜--ç¼–ç¨‹\n");
+		printf("ç¬¬5é¢˜--ç¼–ç¨‹è¾“å‡ºæ–‡æœ¬æ–‡ä»¶\n");
 	
 	
-		printf("ÇëÊäÈëÏàÓ¦µÄÊı×Ö£¬ÔËĞĞÏàÓ¦µÄ³ÌĞò\n");
+		printf("è¯·è¾“å…¥ç›¸åº”çš„æ•°å­—ï¼Œè¿è¡Œç›¸åº”çš„ç¨‹åº\n");
 		scanf("%d",&item);
 	  	switch(item)
 		{
@@ -74,18 +74,18 @@ void main()	//Ö÷º¯Êı
 				break; 
 			case 0:
 				exit(0);
-				printf("³ÌĞò½áÊø\n");
+				printf("ç¨‹åºç»“æŸ\n");
 				getchar();getchar();
 				break;
 			default :
-				printf("\n\nÊäÈëµÄÃüÁî²»¶Ô,ÇëÖØĞÂÊäÈë!!\n");
+				printf("\n\nè¾“å…¥çš„å‘½ä»¤ä¸å¯¹,è¯·é‡æ–°è¾“å…¥!!\n");
 				getchar();getchar();
 				break;
 			
 		}
 	}
 }
-void correct()	//µÚ1Ìâ--¸Ä´í
+void correct()	//ç¬¬1é¢˜--æ”¹é”™
 {
 	struct student1 stud[5];
 	int i,n=0;
@@ -112,7 +112,7 @@ void correct()	//µÚ1Ìâ--¸Ä´í
     printf("n=%d\n",n);
 }
 
-void fill()		//µÚ2Ìâ--Ìî¿Õ
+void fill()		//ç¬¬2é¢˜--å¡«ç©º
 { 
     union un
    {   
@@ -120,13 +120,13 @@ void fill()		//µÚ2Ìâ--Ìî¿Õ
        char c[2];
     };
     union un a;
-	printf("ÇëÊäÈëÁ½¸ö×Ö·û\n");
+	printf("è¯·è¾“å…¥ä¸¤ä¸ªå­—ç¬¦\n");
     scanf("%c,%c",&a.c[0],&a.c[1]);
     printf("%x\n",a.i);
     printf("%x%x\n",a.c[1],a.c[0]);
 }
 
-void verification()		//µÚ3Ìâ--ÑéÖ¤
+void verification()		//ç¬¬3é¢˜--éªŒè¯
 {
 	
 	    int a,b;
@@ -137,25 +137,25 @@ void verification()		//µÚ3Ìâ--ÑéÖ¤
 	    printf("%d,%d \n",a,b);
 }
 
-void program_1()	//µÚ4Ìâ--±à³Ì
+void program_1()	//ç¬¬4é¢˜--ç¼–ç¨‹
 {
 	int i,n;
 	stu a[N];
 	stu* p = a;
 	input(p);
-	printf("Ñ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	printf("å­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	for (i = 0; i < N; i++) 
 	{
 		print(p + i);
 		printf("%.1f\n", aver(p + i));
 	}
-	printf("×î¸ß·ÖµÄÑ§ÉúÊı¾İÈçÏÂ\nÑ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	printf("æœ€é«˜åˆ†çš„å­¦ç”Ÿæ•°æ®å¦‚ä¸‹\nå­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	n = excellect(p);
 	print(p + n);
 	printf("%.1f\n", aver(p + n));
 }
 
-void program_2()	//µÚ5Ìâ--±à³ÌÊä³ötxtÎÄ¼ş
+void program_2()	//ç¬¬5é¢˜--ç¼–ç¨‹è¾“å‡ºtxtæ–‡ä»¶
 {
 	FILE *fp;
 	int i,n;
@@ -163,35 +163,35 @@ void program_2()	//µÚ5Ìâ--±à³ÌÊä³ötxtÎÄ¼ş
 	stu* p = a;
 	fp=fopen("xjt.txt","w");
 	input(p);
-	fprintf(fp,"Ñ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	fprintf(fp,"å­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	for (i = 0; i < N; i++) {
 		xprint(p + i,fp);
 		fprintf(fp,"%.1f\n", aver(p + i));
 	}
-	fprintf(fp,"×î¸ß·ÖµÄÑ§ÉúÊı¾İÈçÏÂ\nÑ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	fprintf(fp,"æœ€é«˜åˆ†çš„å­¦ç”Ÿæ•°æ®å¦‚ä¸‹\nå­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	n =excellect(p);
 	xprint(p + n,fp);
 	fprintf(fp,"%.1f\n", aver(p + n));
 	fclose(fp);
 }
 
-void input(stu* p)	//ÊäÈë
+void input(stu* p)	//è¾“å…¥
 {
 	int i,j;
 	for (i = 0; i < N; ++i) {
-		printf("ÇëÊäÈëµÚ%d¸öÑ§ÉúµÄĞÅÏ¢\n", i + 1);
-		printf("ÇëÊäÈënum\n");
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªå­¦ç”Ÿçš„ä¿¡æ¯\n", i + 1);
+		printf("è¯·è¾“å…¥num\n");
 		scanf("%d", &(p + i)->num);
-		printf("ÇëÊäÈëĞÕÃû\n");
+		printf("è¯·è¾“å…¥å§“å\n");
 		scanf("%s", &(p + i)->name);
 		for (j = 0; j < 3; ++j) {
-			printf("ÇëÊäÈëscore%d\n", j + 1);
+			printf("è¯·è¾“å…¥score%d\n", j + 1);
 			scanf("%d", &(p + i)->score[j]);
 		}
 	}
 }
 
-void print(stu* p)	//Êä³ö
+void print(stu* p)	//è¾“å‡º
 {
 	int j;
 	printf("%d\t", p->num);
@@ -202,7 +202,7 @@ void print(stu* p)	//Êä³ö
 }
 
 
-void xprint(stu* p ,FILE *fp)	//Êä³öÖÁÎÄ±¾ÎÄ¼ş
+void xprint(stu* p ,FILE *fp)	//è¾“å‡ºè‡³æ–‡æœ¬æ–‡ä»¶
 {
 	int j;
 	fprintf(fp,"%d\t", p->num);
@@ -213,7 +213,7 @@ void xprint(stu* p ,FILE *fp)	//Êä³öÖÁÎÄ±¾ÎÄ¼ş
 }
 
 
-double aver(stu* p)		//¼ÆËãÆ½¾ù·Ö
+double aver(stu* p)		//è®¡ç®—å¹³å‡åˆ†
 {
 	int i;
 	double sum = 0;
@@ -225,7 +225,7 @@ double aver(stu* p)		//¼ÆËãÆ½¾ù·Ö
 }
 
 
-int excellect(stu* p)	//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
+int excellect(stu* p)	//åˆ¤æ–­æœ€é«˜åˆ†,è¿”å›ä¸‹æ ‡
 {
 	int i,j;
 	double sum = 0;
@@ -243,6 +243,7 @@ int excellect(stu* p)	//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
 	}
 	return record;
 }
+
 
 
 

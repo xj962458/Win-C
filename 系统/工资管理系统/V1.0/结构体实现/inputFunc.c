@@ -1,28 +1,28 @@
-/*ÊäÈë×Ö·û´®£¬²¢½øÐÐ³¤¶ÈÑéÖ¤Ã÷£¬³¤¶È±ØÐëÐ¡ÓÚlens£¬*/
+/*è¾“å…¥å­—ç¬¦ä¸²ï¼Œå¹¶è¿›è¡Œé•¿åº¦éªŒè¯æ˜Žï¼Œé•¿åº¦å¿…é¡»å°äºŽlensï¼Œ*/
 void stringinput(char *t,int lens,char *notice){
 	char n[255];
 	do{
-		printf(notice);			/*ÏÔÊ¾ÌáÊ¾ÐÅÏ¢*/
-		scanf("%s",n);		/*ÊäÈë×Ö·û´®*/
+		printf(notice);			/*æ˜¾ç¤ºæç¤ºä¿¡æ¯*/
+		scanf("%s",n);		/*è¾“å…¥å­—ç¬¦ä¸²*/
 		if (strlen(n)>lens)
 		{
 			/* code */
-			printf("\n exceed the required length!\n");/*³¤¶ÈÐ£Ñé£¬³¬¹ýlensÖµÖØÐÂÊäÈë*/
+			printf("\n exceed the required length!\n");/*é•¿åº¦æ ¡éªŒï¼Œè¶…è¿‡lenså€¼é‡æ–°è¾“å…¥*/
 		}
 	}while(strlen(n)>lens);
-	strcpy(t,n);		/*½«ÊäÈë×Ö·û´®¸´ÖÆµ½×Ö·û´®tÖÐ*/
+	strcpy(t,n);		/*å°†è¾“å…¥å­—ç¬¦ä¸²å¤åˆ¶åˆ°å­—ç¬¦ä¸²tä¸­*/
 }
  
-/*ÊäÈëÊýÖµ¸¡µãÊý£¬¶ÔÊýÖµ¼ìÑéºó·µ»Ø¸ÃÖµ£¬ÊýÖµ±ØÐë´óÓÚµÈÓÚ0*/
+/*è¾“å…¥æ•°å€¼æµ®ç‚¹æ•°ï¼Œå¯¹æ•°å€¼æ£€éªŒåŽè¿”å›žè¯¥å€¼ï¼Œæ•°å€¼å¿…é¡»å¤§äºŽç­‰äºŽ0*/
 float numberinput(char *notice){
 	float t=0.00;
 	do{
-			printf(notice);/*ÏÔÊ¾ÌáÊ¾ÐÅÏ¢*/
+			printf(notice);/*æ˜¾ç¤ºæç¤ºä¿¡æ¯*/
 			scanf("%f",&t);
 			if (t<0)
 			{
 				/* code */
-				printf("\n score must>=0!\n");/*½øÐÐÊýÖµÐ£Ñé*/
+				printf("\n score must>=0!\n");/*è¿›è¡Œæ•°å€¼æ ¡éªŒ*/
 			}
 	}while(t<0);
 	return t;

@@ -14,3 +14,4 @@ void main()
 	num=len(s); 
 	printf("%d",num);
 }
+

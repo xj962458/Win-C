@@ -1,29 +1,29 @@
 //main.c
 #pragma once
 #include "preProcess.h"
-int saveflag = 0; /*ĞèÒª´æÅÌµÄ±êÖ¾±äÁ¿*/
+int saveflag = 0; /*éœ€è¦å­˜ç›˜çš„æ ‡å¿—å˜é‡*/
 int main()
 {
 
-    ZGGZ gz[N]; /*¶¨ÒåZGGZ½á¹¹Ìå*/
+    ZGGZ gz[N]; /*å®šä¹‰ZGGZç»“æ„ä½“*/
     FILE *fp;
-    int select;    /*±£´æÑ¡Ôñ½á¹û±äÁ¿*/
+    int select;    /*ä¿å­˜é€‰æ‹©ç»“æœå˜é‡*/
     char ch;       /**/
-    int count = 0; /*¶¨Òå±£´æ¼ÇÂ¼Êı*/
+    int count = 0; /*å®šä¹‰ä¿å­˜è®°å½•æ•°*/
 
-    void menu(); /*Ö÷²Ëµ¥½çÃæ*/
+    void menu(); /*ä¸»èœå•ç•Œé¢*/
     void printheader();
     void PRINTdata(ZGGZ pp);
     void disp(ZGGZ tp[], int n);
     void wrong();
     void nofind();
-    void stringinput(char *t, int lens, char *notice); /*ÊäÈë×Ö·û´®£¬²¢½øĞĞ³¤¶ÈÑéÖ¤Ã÷£¬³¤¶È±ØĞëĞ¡ÓÚlens£¬*/
-    float numberinput(char *notice);                   /*ÊäÈëÊıÖµ¸¡µãÊı£¬¶ÔÊıÖµ¼ìÑéºó·µ»Ø¸ÃÖµ£¬ÊıÖµ±ØĞë´óÓÚµÈÓÚ0*/
-    void save(ZGGZ tp[], int n);                       /*´æ´¢¼ÇÂ¼*/
-    int add(ZGGZ tp[], int n);                         /*Ôö¼Ó¼ÇÂ¼*/
-    int insert(ZGGZ tp[], int n);                      /*²åÈë¼ÇÂ¼*/
+    void stringinput(char *t, int lens, char *notice); /*è¾“å…¥å­—ç¬¦ä¸²ï¼Œå¹¶è¿›è¡Œé•¿åº¦éªŒè¯æ˜ï¼Œé•¿åº¦å¿…é¡»å°äºlensï¼Œ*/
+    float numberinput(char *notice);                   /*è¾“å…¥æ•°å€¼æµ®ç‚¹æ•°ï¼Œå¯¹æ•°å€¼æ£€éªŒåè¿”å›è¯¥å€¼ï¼Œæ•°å€¼å¿…é¡»å¤§äºç­‰äº0*/
+    void save(ZGGZ tp[], int n);                       /*å­˜å‚¨è®°å½•*/
+    int add(ZGGZ tp[], int n);                         /*å¢åŠ è®°å½•*/
+    int insert(ZGGZ tp[], int n);                      /*æ’å…¥è®°å½•*/
 
-    fp = fopen("E:\zggz\gzgl.data", "ab+"); /*×·¼Ó·½Ê½´ò¿ª¶ş½øÖÆÎÄ¼ş£¬¿É¶Á/Ğ´¡£´ËÎÄ¼şÈô²»´æÔÚÔòĞÂ½¨*/
+    fp = fopen("E:\zggz\gzgl.data", "ab+"); /*è¿½åŠ æ–¹å¼æ‰“å¼€äºŒè¿›åˆ¶æ–‡ä»¶ï¼Œå¯è¯»/å†™ã€‚æ­¤æ–‡ä»¶è‹¥ä¸å­˜åœ¨åˆ™æ–°å»º*/
     if (fp == NULL)
     {
         /* code */
@@ -44,13 +44,13 @@ int main()
     while (1)
     {
         system("cls");
-        menu(); //µ÷ÓÃÖ÷²Ëµ¥
+        menu(); //è°ƒç”¨ä¸»èœå•
         printf("\n 	Please Enter your choice(0~9):");
         scanf("%d", &select);
         if (select == 0)
         {
             /* code */
-            if (saveflag == 1) /*Èô¶ÔÊı×éÖĞÊı¾İĞŞ¸Ä¹ıÇÒÎ´´æÅÌ£¬Ôò´Ë±êÖ¾Îª1*/
+            if (saveflag == 1) /*è‹¥å¯¹æ•°ç»„ä¸­æ•°æ®ä¿®æ”¹è¿‡ä¸”æœªå­˜ç›˜ï¼Œåˆ™æ­¤æ ‡å¿—ä¸º1*/
             {
                 /* code */
                 getchar();
@@ -70,18 +70,18 @@ int main()
         {
         case 1:
             count = add(gz, count);
-            break; /*Ôö¼Ó¼ÇÂ¼*/
-        //case 2:count=del(gz,count);break;			/*É¾³ı¼ÇÂ¼*/
-        //case 3:qur(gz,count);break;					/*²éÑ¯¼ÇÂ¼*/
-        //case 4:modify(gz,count);break;				/*ĞŞ¸Ä¼ÇÂ¼*/
+            break; /*å¢åŠ è®°å½•*/
+        //case 2:count=del(gz,count);break;			/*åˆ é™¤è®°å½•*/
+        //case 3:qur(gz,count);break;					/*æŸ¥è¯¢è®°å½•*/
+        //case 4:modify(gz,count);break;				/*ä¿®æ”¹è®°å½•*/
         case 5:
             count = insert(gz, count);
-            break; /*²åÈë¼ÇÂ¼*/
+            break; /*æ’å…¥è®°å½•*/
 
         default:
             wrong();
             getchar();
-            break; /*°´¼üÓĞÎó£¬»ò¹¦ÄÜ»¹Î´ÊµÏÖ*/
+            break; /*æŒ‰é”®æœ‰è¯¯ï¼Œæˆ–åŠŸèƒ½è¿˜æœªå®ç°*/
         }
     }
     system("pause");

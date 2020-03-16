@@ -1,4 +1,4 @@
-void inv(int *x,int n)/*ĞÎ²ÎxÎªÖ¸Õë±äÁ¿*/
+void inv(int *x,int n)/*å½¢å‚xä¸ºæŒ‡é’ˆå˜é‡*/
 {
 	int *p,temp,*i,*j,m=(n-1)/2; 
 	i=x;
@@ -24,3 +24,4 @@ void main()
 		printf("%d,",a[i]); 
 	printf("\n");
 }
+
