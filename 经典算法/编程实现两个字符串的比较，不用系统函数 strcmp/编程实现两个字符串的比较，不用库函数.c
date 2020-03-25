@@ -1,14 +1,14 @@
 #include <stdio.h>
-void main()
+int  main()
 {
 	int strcmp(char *p1,char *p2); 
 	int i;
 	char str1[10],str2[10];
-	puts("ÇëÊäÈëÁ½¸ö×Ö·û´®:");
-	puts("×Ö·û´® 1:"); gets(str1);
-	puts("×Ö·û´® 2:");
+	puts("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½:");
+	puts("ï¿½Ö·ï¿½ï¿½ï¿½ 1:"); gets(str1);
+	puts("ï¿½Ö·ï¿½ï¿½ï¿½ 2:");
 	gets(str2);
-	printf("±È½Ï½á¹ûÎª: %d\n",strcmp(str1,str2));
+	printf("ï¿½È½Ï½ï¿½ï¿½Îª: %d\n",strcmp(str1,str2));
 }
 	int strcmp(char *p1,char *p2)
 	{

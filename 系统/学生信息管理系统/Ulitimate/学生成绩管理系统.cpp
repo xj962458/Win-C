@@ -118,6 +118,8 @@ int main()
 			break;
 		}
 	} while (option);
+
+	return 0;
 }
 
 void first()
