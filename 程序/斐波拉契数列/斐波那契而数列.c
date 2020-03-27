@@ -1,7 +1,7 @@
 # include <stdio.h>
 
-// 输出Fibonacci数列，直到最后一个数刚好大于等于1000为止
-void main()
+// 杈撳嚭Fibonacci鏁板垪锛岀洿鍒版渶鍚庝竴涓暟鍒氬ソ澶т簬绛変簬1000涓烘
+int main()
 {
 	int f1=0, f2=1, f;
 	f = f1+f2;
@@ -14,4 +14,5 @@ void main()
 		printf("%d, ", f);
 	}
 	printf("\n");
+	return 0;
 }

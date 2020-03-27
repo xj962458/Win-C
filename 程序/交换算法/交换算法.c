@@ -1,26 +1,26 @@
 # include <stdio.h>
 
-void swap1(int a, int b)	// ĞÎ²ÎÊÇµÚ1ÀàµÄÆÕÍ¨±äÁ¿£¬ĞÎ²ÎµÄ¸Ä±ä²»»áÓ°ÏìÊµ²Î
+void swap1(int a, int b)	// å½¢å‚æ˜¯ç¬¬1ç±»çš„æ™®é€šå˜é‡ï¼Œå½¢å‚çš„æ”¹å˜ä¸ä¼šå½±å“å®å‚
 {
 	int t;
 	t=a;
 	a=b;
 	b=t;
-	printf("%d, %d\n", a, b);	// Êä³ö2, 1
+	printf("%d, %d\n", a, b);	// è¾“å‡º2, 1
 }
 
 void swap2(int *a, int *b)
 {
 	int *t;
-	t=a;	// ½»»»µÄÊÇa£¬bÁ½¸öÖ¸ÕëµÄÖ¸Ïò£¬½»»»ºóaÖ¸Ïòy, bÖ¸Ïòx
+	t=a;	// äº¤æ¢çš„æ˜¯aï¼Œbä¸¤ä¸ªæŒ‡é’ˆçš„æŒ‡å‘ï¼Œäº¤æ¢åaæŒ‡å‘y, bæŒ‡å‘x
 	a=b;
 	b=t;
 }
 
-void swap3(int *a, int *b)	// ²ÎÊı´«µİ£ºa=&x;  b=&y  // *a<=>x  *b<=>y
+void swap3(int *a, int *b)	// å‚æ•°ä¼ é€’ï¼ša=&x;  b=&y  // *a<=>x  *b<=>y
 {
 	int t;
-	t=*a;	// ½»»»*a ºÍ *b£¬µÈ¼ÛÓÚ½»»»x, y
+	t=*a;	// äº¤æ¢*a å’Œ *bï¼Œç­‰ä»·äºäº¤æ¢x, y
 	*a=*b;
 	*b=t;
 }
@@ -29,11 +29,11 @@ void main()
 {
 	int x=1, y=2;
 	swap1(x,y);
-	printf("%d, %d\n", x, y);	// Êä³ö1, 2
+	printf("%d, %d\n", x, y);	// è¾“å‡º1, 2
 
 	swap2(&x, &y);
-	printf("%d, %d\n", x, y);	// Êä³ö1, 2
+	printf("%d, %d\n", x, y);	// è¾“å‡º1, 2
 
 	swap3(&x, &y);
-	printf("%d, %d\n", x, y);	// Êä³ö2, 1
+	printf("%d, %d\n", x, y);	// è¾“å‡º2, 1
 }

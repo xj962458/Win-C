@@ -12,3 +12,4 @@ void main()
 		printf("%c\t",**p);
 	printf("\n");
 }
+

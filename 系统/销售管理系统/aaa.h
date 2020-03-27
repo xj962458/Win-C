@@ -2,7 +2,7 @@
 void aaa()
 {
     int a[100],fz,fm,i,j;
-	printf("请输入一个真分数的分子和分母\n");
+	printf("璇疯緭鍏ヤ竴涓湡鍒嗘暟鐨勫垎瀛愬拰鍒嗘瘝\n");
     scanf("%d%d",&fz,&fm);
     for(i=2;i<=10000;i++)
     {

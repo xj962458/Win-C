@@ -11,3 +11,4 @@ void main()
 	}
 	printf("%ld",sum);
 }
+

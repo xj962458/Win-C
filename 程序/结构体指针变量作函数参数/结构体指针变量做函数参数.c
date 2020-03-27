@@ -30,3 +30,4 @@ void main()
 	fun2(&b);
 	printf("b.year=%d b.month=%d b.day=%d\n",b.year,b.month,b.day);
 }
+

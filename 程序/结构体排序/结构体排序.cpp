@@ -7,7 +7,7 @@ typedef struct stu
 	int s;
 }STU;
 
-// ÏÈ°´ÕÕÑ§Éú·ÖÊý´ÓÐ¡µ½´óÅÅÐò£¬Èç¹û·ÖÊýÏàÍ¬£¬Ôò°´ÕÕÑ§ºÅ½µÐòÅÅÐò
+// å…ˆæŒ‰ç…§å­¦ç”Ÿåˆ†æ•°ä»Žå°åˆ°å¤§æŽ’åºï¼Œå¦‚æžœåˆ†æ•°ç›¸åŒï¼Œåˆ™æŒ‰ç…§å­¦å·é™åºæŽ’åº
 void fun(STU *a)
 {
 	int i, j;
@@ -15,17 +15,17 @@ void fun(STU *a)
 	{
 		for(j=0; j<=3-i; j++)
 		{
-			// ÏÈ°´ÕÕ·ÖÊýÉýÐòÅÅÐò
+			// å…ˆæŒ‰ç…§åˆ†æ•°å‡åºæŽ’åº
 			if(a[j].s > a[j+1].s)
 			{
-				STU  t;		// Îñ±Ø¼Ç×¡£º½»»»µÄ²»½ö½öÊÇÁ½¸öÑ§ÉúµÄ³É¼¨£¬¶øÊÇÁ½¸öÑ§Éú! ÏÂÍ¬
+				STU  t;		// åŠ¡å¿…è®°ä½ï¼šäº¤æ¢çš„ä¸ä»…ä»…æ˜¯ä¸¤ä¸ªå­¦ç”Ÿçš„æˆç»©ï¼Œè€Œæ˜¯ä¸¤ä¸ªå­¦ç”Ÿ! ä¸‹åŒ
 				t = a[j];
 				a[j] = a[j+1];
 				a[j+1] = t;
 			}
 
-			// Èç¹û·ÖÊýÏàÍ¬Ôò°´Ñ§ºÅ½µÐòÅÅÐò
-			if(a[j].s == a[j+1].s && strcmp(a[j].num,  a[j+1].num)== -1)	// ±È½Ï×Ö·û´®´óÐ¡Ö»ÄÜÓÃstrcmp
+			// å¦‚æžœåˆ†æ•°ç›¸åŒåˆ™æŒ‰å­¦å·é™åºæŽ’åº
+			if(a[j].s == a[j+1].s && strcmp(a[j].num,  a[j+1].num)== -1)	// æ¯”è¾ƒå­—ç¬¦ä¸²å¤§å°åªèƒ½ç”¨strcmp
 			{
 				STU t;
 				t = a[j];

@@ -10,3 +10,4 @@ int main()
 			printf("Da=%d,Zhong=%d,Xiao=%d\n",i,j,k);
 	}
 }
+

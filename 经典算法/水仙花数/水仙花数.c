@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
 	int i,j,k; 
 	for(i=1;i<=9;i++)
@@ -10,3 +10,4 @@ void main()
 			printf("%d\n",i*100+j*10+k);
 	}
 }
+

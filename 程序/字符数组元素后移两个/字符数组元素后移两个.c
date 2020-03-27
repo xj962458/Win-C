@@ -16,3 +16,4 @@ void main()
 		puts(a);
 }
 
+

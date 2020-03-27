@@ -7,3 +7,4 @@ void main()
 	b=a+32;
 	printf("%c",b);
 }
+

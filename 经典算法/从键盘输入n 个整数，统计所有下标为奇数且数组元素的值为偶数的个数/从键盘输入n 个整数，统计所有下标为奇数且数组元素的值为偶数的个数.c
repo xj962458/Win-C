@@ -13,3 +13,4 @@ void main()
 		printf("%5d",a[i]);
 	printf("\n%d",num);
 }
+

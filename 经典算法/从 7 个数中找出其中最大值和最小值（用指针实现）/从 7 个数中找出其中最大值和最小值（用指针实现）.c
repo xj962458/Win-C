@@ -22,3 +22,4 @@ void main()
 	max_min_value( number, 7 ) ;
 	printf ("\n max=%d,min=%d\n",max,min) ;
 }
+

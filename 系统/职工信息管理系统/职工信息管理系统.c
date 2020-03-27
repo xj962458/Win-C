@@ -3,7 +3,7 @@
 #include <memory.h>
 
 
-// Ö°¹¤ĞÅÏ¢½á¹¹Ìå
+// èŒå·¥ä¿¡æ¯ç»“æ„ä½“
 struct employee_Info
 {
 	char num;
@@ -16,7 +16,7 @@ struct employee_Info
 };
 typedef struct employee_Info EMP;
 
-// Á´±í½á¹¹Ìå½Úµã
+// é“¾è¡¨ç»“æ„ä½“èŠ‚ç‚¹
 struct message_Info
 {
 	EMP employee_data;
@@ -24,17 +24,17 @@ struct message_Info
 };
 typedef struct message_Info MES;
 
-// Â¼ÈëÊı¾İÄ£¿é
+// å½•å…¥æ•°æ®æ¨¡å—
 void Creat_linklist(MES * head)
 {
 	MES *tail, *pnew;
 	int i, m;
-	printf("ÇëÊäÈëĞèÒª´´½¨ĞÅÏ¢µÄÖ°¹¤ÈËÊı£º");
+	printf("è¯·è¾“å…¥éœ€è¦åˆ›å»ºä¿¡æ¯çš„èŒå·¥äººæ•°ï¼š");
 	scanf("%d", &m);
 
 	tail = head;
 
-	printf("ÇëÊäÈëÖ°¹¤ĞÅ¹¤ĞÅÏ¢£º\n");
+	printf("è¯·è¾“å…¥èŒå·¥ä¿¡å·¥ä¿¡æ¯ï¼š\n");
 	for (i = 0; i < m; i++)
 	{
 
@@ -44,19 +44,19 @@ void Creat_linklist(MES * head)
 			printf("no enough memory!\n");
 			exit(0);
 		}
-		printf("ÇëÊäÈëÖ°¹¤ºÅ£º");
+		printf("è¯·è¾“å…¥èŒå·¥å·ï¼š");
 		scanf("%d", &pnew->employee_data.num);
-		printf("ÇëÊäÈëĞÕÃû£º");
+		printf("è¯·è¾“å…¥å§“åï¼š");
 		scanf("%s", &pnew->employee_data.name);
-		printf("ÇëÊäÈëĞÔ±ğ£º");
+		printf("è¯·è¾“å…¥æ€§åˆ«ï¼š");
 		scanf("%s", &pnew->employee_data.sex);
-		printf("ÇëÊäÈëÄêÁä£º");
+		printf("è¯·è¾“å…¥å¹´é¾„ï¼š");
 		scanf("%d", &pnew->employee_data.age);
-		printf("ÇëÊäÈëÑ§Àú£º");
+		printf("è¯·è¾“å…¥å­¦å†ï¼š");
 		scanf("%s", &pnew->employee_data.xueli);
-		printf("ÇëÊäÈë¹¤×Ê£º");
+		printf("è¯·è¾“å…¥å·¥èµ„ï¼š");
 		scanf("%d", &pnew->employee_data.wage);
-		printf("ÇëÊäÈëµç»°£º");
+		printf("è¯·è¾“å…¥ç”µè¯ï¼š");
 		scanf("%s", &pnew->employee_data.tel);
 		pnew->next = NULL;
 
@@ -66,31 +66,31 @@ void Creat_linklist(MES * head)
 }
 
 
-// ä¯ÀÀÊı¾İ
+// æµè§ˆæ•°æ®
 void Display_Linklist(MES * head)
 {
 	MES *p;
 	for (p = head->next; p != NULL; p = p->next)
 	{
-		printf("Ö°¹¤ºÅ£º%d\n", p->employee_data.num);
-		printf("ĞÕÃû£º%s\n", p->employee_data.name);
-		printf("ĞÔ±ğ£º%s\n", p->employee_data.sex);
-		printf("ÄêÁä£º%d\n", p->employee_data.age);
-		printf("Ñ§Àú£º%s\n", p->employee_data.xueli);
-		printf("¹¤×Ê£º%d\n", p->employee_data.wage);
-		printf("µç»°£º%s\n", p->employee_data.tel);
+		printf("èŒå·¥å·ï¼š%d\n", p->employee_data.num);
+		printf("å§“åï¼š%s\n", p->employee_data.name);
+		printf("æ€§åˆ«ï¼š%s\n", p->employee_data.sex);
+		printf("å¹´é¾„ï¼š%d\n", p->employee_data.age);
+		printf("å­¦å†ï¼š%s\n", p->employee_data.xueli);
+		printf("å·¥èµ„ï¼š%d\n", p->employee_data.wage);
+		printf("ç”µè¯ï¼š%s\n", p->employee_data.tel);
 	}
 	printf("\n");
 }
 
 
-// É¾³ıÊı¾İ
+// åˆ é™¤æ•°æ®
 void Delete_Linklist(MES * head)
 {
 	MES *p, *q;
 	int i, j;
 
-	printf("ÇëÊäÈëÄãÏëÒªÉ¾³ıµÄÖ°¹¤ºÅ£º");
+	printf("è¯·è¾“å…¥ä½ æƒ³è¦åˆ é™¤çš„èŒå·¥å·ï¼š");
 	scanf("%d", &i);
 	if (i == 0)
 		return;
@@ -100,7 +100,7 @@ void Delete_Linklist(MES * head)
 		p = p->next;
 	if (p->next == NULL)
 	{
-		printf("²éÎŞ´ËÖ°¹¤ºÅ£¡");
+		printf("æŸ¥æ— æ­¤èŒå·¥å·ï¼");
 		exit(0);
 	}
 
@@ -109,7 +109,7 @@ void Delete_Linklist(MES * head)
 	free(q);
 }
 
-// Ìí¼ÓÊı¾İ
+// æ·»åŠ æ•°æ®
 void Insert_Linklist(MES * head)
 {
 	MES *p, *pnew;
@@ -122,19 +122,19 @@ void Insert_Linklist(MES * head)
 		exit(0);
 	}
 
-	printf("ÇëÊäÈëÖ°¹¤ºÅ£º");
+	printf("è¯·è¾“å…¥èŒå·¥å·ï¼š");
 	scanf("%d", &pnew->employee_data.num);
-	printf("ÇëÊäÈëĞÕÃû£º");
+	printf("è¯·è¾“å…¥å§“åï¼š");
 	scanf("%s", &pnew->employee_data.name);
-	printf("ÇëÊäÈëĞÔ±ğ£º");
+	printf("è¯·è¾“å…¥æ€§åˆ«ï¼š");
 	scanf("%s", &pnew->employee_data.sex);
-	printf("ÇëÊäÈëÄêÁä£º");
+	printf("è¯·è¾“å…¥å¹´é¾„ï¼š");
 	scanf("%d", &pnew->employee_data.age);
-	printf("ÇëÊäÈëÑ§Àú£º");
+	printf("è¯·è¾“å…¥å­¦å†ï¼š");
 	scanf("%s", &pnew->employee_data.xueli);
-	printf("ÇëÊäÈë¹¤×Ê£º");
+	printf("è¯·è¾“å…¥å·¥èµ„ï¼š");
 	scanf("%d", &pnew->employee_data.wage);
-	printf("ÇëÊäÈëµç»°£º");
+	printf("è¯·è¾“å…¥ç”µè¯ï¼š");
 	scanf("%s", &pnew->employee_data.tel);
 	pnew->next = NULL;
 
@@ -143,96 +143,96 @@ void Insert_Linklist(MES * head)
 }
 
 
-// ĞŞ¸ÄÊı¾İ
+// ä¿®æ”¹æ•°æ®
 void Modify(MES * head)
 {
 	MES *p;
 	int a;
-	printf("ÇëÊäÈëÄãÏëĞŞ¸ÄµÄÖ°¹¤ºÅ£º");
+	printf("è¯·è¾“å…¥ä½ æƒ³ä¿®æ”¹çš„èŒå·¥å·ï¼š");
 	scanf("%d", &a);
 
 	for (p = head->next; p != NULL; p = p->next)
 	{
 		if (p->employee_data.num == a)
 		{
-			printf("ÒÑÕÒµ½Ö°¹¤ĞÅÏ¢£º\n");
-			printf("Ô­Ö°¹¤ºÅ£º%d,ÏÖÖ°¹¤ºÅ£º", p->employee_data.num);
+			printf("å·²æ‰¾åˆ°èŒå·¥ä¿¡æ¯ï¼š\n");
+			printf("åŸèŒå·¥å·ï¼š%d,ç°èŒå·¥å·ï¼š", p->employee_data.num);
 			scanf("%d", &p->employee_data.num);
-			printf("Ô­Ö°¹¤ĞÕÃû£º%s,ÏÖÖ°¹¤ĞÕÃû£º",
+			printf("åŸèŒå·¥å§“åï¼š%s,ç°èŒå·¥å§“åï¼š",
 				   p->employee_data.name);
 			scanf("%s", &p->employee_data.name);
-			printf("Ô­Ö°ĞÔ±ğ£º%s,ÏÖÖ°ĞÔ±ğ£º", p->employee_data.sex);
+			printf("åŸèŒæ€§åˆ«ï¼š%s,ç°èŒæ€§åˆ«ï¼š", p->employee_data.sex);
 			scanf("%s", &p->employee_data.sex);
-			printf("Ô­Ö°¹¤ÄêÁä£º%d,ÏÖÖ°¹¤ÄêÁä£º",
+			printf("åŸèŒå·¥å¹´é¾„ï¼š%d,ç°èŒå·¥å¹´é¾„ï¼š",
 				   p->employee_data.age);
 			scanf("%d", &p->employee_data.age);
-			printf("Ô­Ö°¹¤Ñ§Àú£º%s,ÏÖÖ°¹¤Ñ§Àú£º",
+			printf("åŸèŒå·¥å­¦å†ï¼š%s,ç°èŒå·¥å­¦å†ï¼š",
 				   p->employee_data.xueli);
 			scanf("%s", &p->employee_data.xueli);
-			printf("Ô­Ö°¹¤¹¤×Ê£º%d,ÏÖÖ°¹¤¹¤×Ê£º",
+			printf("åŸèŒå·¥å·¥èµ„ï¼š%d,ç°èŒå·¥å·¥èµ„ï¼š",
 				   p->employee_data.wage);
 			scanf("%d", &p->employee_data.wage);
-			printf("Ô­Ö°¹¤µç»°£º%s,ÏÖÖ°¹¤µç»°£º",
+			printf("åŸèŒå·¥ç”µè¯ï¼š%s,ç°èŒå·¥ç”µè¯ï¼š",
 				   p->employee_data.tel);
 			scanf("%s", &p->employee_data.tel);
 		}
 		if (p == NULL)
-			printf("¶Ô²»Æğ£¬ÄúĞèÒªĞŞ¸ÄµÄĞÅÏ¢²»´æÔÚ£¡");
+			printf("å¯¹ä¸èµ·ï¼Œæ‚¨éœ€è¦ä¿®æ”¹çš„ä¿¡æ¯ä¸å­˜åœ¨ï¼");
 	}
 }
 
 
 
-// °´¹¤ºÅ²éÕÒÊı¾İ
+// æŒ‰å·¥å·æŸ¥æ‰¾æ•°æ®
 void Search_num(MES * head)
 {
 	MES *p;
 	int a;
-	printf("ÇëÊäÈëÄãÒª²éÑ¯µÄÖ°¹¤ºÅ£º");
+	printf("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„èŒå·¥å·ï¼š");
 	scanf("%d", &a);
 
 	for (p = head->next; p != NULL; p = p->next)
 	{
 		if (p->employee_data.num == a)
-			printf("ÒÑÕÒµ½£¬Æä¼ÇÂ¼Îª£º\n");
-		printf("¹¤ºÅ£º%d\n", p->employee_data.num);
-		printf("ĞÕÃû£º%s\n", p->employee_data.name);
-		printf("ĞÔ±ğ£º%s\n", p->employee_data.sex);
-		printf("ÄêÁä£º%d\n", p->employee_data.age);
-		printf("Ñ§Àú£º%s\n", p->employee_data.xueli);
-		printf("¹¤×Ê£º%d\n", p->employee_data.wage);
-		printf("µç»°£º%s\n", p->employee_data.tel);
+			printf("å·²æ‰¾åˆ°ï¼Œå…¶è®°å½•ä¸ºï¼š\n");
+		printf("å·¥å·ï¼š%d\n", p->employee_data.num);
+		printf("å§“åï¼š%s\n", p->employee_data.name);
+		printf("æ€§åˆ«ï¼š%s\n", p->employee_data.sex);
+		printf("å¹´é¾„ï¼š%d\n", p->employee_data.age);
+		printf("å­¦å†ï¼š%s\n", p->employee_data.xueli);
+		printf("å·¥èµ„ï¼š%d\n", p->employee_data.wage);
+		printf("ç”µè¯ï¼š%s\n", p->employee_data.tel);
 	}
 
 	if (p == NULL)
-		printf("¶Ô²»Æğ£¬²éÎŞ´ËÈË£¡");
+		printf("å¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººï¼");
 
 }
 
 
-// °´ĞÕÃû²éÕÒÊı¾İ
+// æŒ‰å§“åæŸ¥æ‰¾æ•°æ®
 void Search_name(MES * head)
 {
 	MES *p;
 	char name[20];
-	printf("ÇëÊäÈëÄãÒª²éÑ¯µÄÖ°¹¤ĞÕÃû£º");
+	printf("è¯·è¾“å…¥ä½ è¦æŸ¥è¯¢çš„èŒå·¥å§“åï¼š");
 	scanf("%s", &name);
 
 	for (p = head->next; p != NULL; p = p->next)
 	{
 		if (p->employee_data.num == name)
-			printf("ÒÑÕÒµ½£¬Æä¼ÇÂ¼Îª£º\n");
-		printf("¹¤ºÅ£º%d\n", p->employee_data.num);
-		printf("ĞÕÃû£º%s\n", p->employee_data.name);
-		printf("ĞÔ±ğ£º%s\n", p->employee_data.sex);
-		printf("ÄêÁä£º%d\n", p->employee_data.age);
-		printf("Ñ§Àú£º%s\n", p->employee_data.xueli);
-		printf("¹¤×Ê£º%d\n", p->employee_data.wage);
-		printf("µç»°£º%s\n", p->employee_data.tel);
+			printf("å·²æ‰¾åˆ°ï¼Œå…¶è®°å½•ä¸ºï¼š\n");
+		printf("å·¥å·ï¼š%d\n", p->employee_data.num);
+		printf("å§“åï¼š%s\n", p->employee_data.name);
+		printf("æ€§åˆ«ï¼š%s\n", p->employee_data.sex);
+		printf("å¹´é¾„ï¼š%d\n", p->employee_data.age);
+		printf("å­¦å†ï¼š%s\n", p->employee_data.xueli);
+		printf("å·¥èµ„ï¼š%d\n", p->employee_data.wage);
+		printf("ç”µè¯ï¼š%s\n", p->employee_data.tel);
 	}
 
 	if (p == NULL)
-		printf("¶Ô²»Æğ£¬²éÎŞ´ËÈË£¡");
+		printf("å¯¹ä¸èµ·ï¼ŒæŸ¥æ— æ­¤äººï¼");
 
 }
 
@@ -240,15 +240,15 @@ void Search_name(MES * head)
 
 
 
-// Ğ´ÈëÎÄ¼ş
+// å†™å…¥æ–‡ä»¶
 void Write_file(MES * head)
 {
 	MES *p;
 	FILE *fp;
 
-	if ((fp = fopen("Ö°¹¤¹ÜÀíÏµÍ³.dat", "wb")) == NULL)
+	if ((fp = fopen("èŒå·¥ç®¡ç†ç³»ç»Ÿ.dat", "wb")) == NULL)
 	{
-		printf("ÎŞ·¨´ò¿ªÎÄ¼ş£¡");
+		printf("æ— æ³•æ‰“å¼€æ–‡ä»¶ï¼");
 		exit(0);
 	}
 
@@ -263,15 +263,15 @@ void Write_file(MES * head)
 	fclose(fp);
 }
 
-// ÏÔÊ¾Êı¾İ
+// æ˜¾ç¤ºæ•°æ®
 void Read_file(MES * head)
 {
 	MES *p;
 	FILE *fp;
 
-	if ((fp = fopen("Ö°¹¤¹ÜÀíÏµÍ³.dat", "rb")) == NULL)
+	if ((fp = fopen("èŒå·¥ç®¡ç†ç³»ç»Ÿ.dat", "rb")) == NULL)
 	{
-		printf("ÎŞ·¨´ò¿ªÎÄ¼ş£¡");
+		printf("æ— æ³•æ‰“å¼€æ–‡ä»¶ï¼");
 		exit(0);
 	}
 
@@ -291,13 +291,13 @@ void Read_file(MES * head)
 
 	for (p = head->next; p != NULL; p = p->next)
 	{
-		printf("¹¤ºÅ£º%d\n", p->employee_data.num);
-		printf("ĞÕÃû£º%s\n", p->employee_data.name);
-		printf("ĞÔ±ğ£º%s\n", p->employee_data.sex);
-		printf("ÄêÁä£º%d\n", p->employee_data.age);
-		printf("Ñ§Àú£º%s\n", p->employee_data.xueli);
-		printf("¹¤×Ê£º%d\n", p->employee_data.wage);
-		printf("µç»°£º%s\n", p->employee_data.tel);
+		printf("å·¥å·ï¼š%d\n", p->employee_data.num);
+		printf("å§“åï¼š%s\n", p->employee_data.name);
+		printf("æ€§åˆ«ï¼š%s\n", p->employee_data.sex);
+		printf("å¹´é¾„ï¼š%d\n", p->employee_data.age);
+		printf("å­¦å†ï¼š%s\n", p->employee_data.xueli);
+		printf("å·¥èµ„ï¼š%d\n", p->employee_data.wage);
+		printf("ç”µè¯ï¼š%s\n", p->employee_data.tel);
 	}
 }
 
@@ -306,8 +306,8 @@ void Read_file(MES * head)
 
 
 
-// Ö÷º¯Êı
-void main()
+// ä¸»å‡½æ•°
+int main()
 {
 	MES *head;
 	int n;
@@ -323,21 +323,21 @@ void main()
 	while (1)
 	{
 		printf
-			("¨¨‰¨‰¨‰¨‰¨‰»¶Ó­½øÈëÖ°¹¤ĞÅÏ¢¹ÜÀíÏµÍ³¨‰¨‰¨‰¨‰¨‰¨\n");
-		printf("              1.Â¼ÈëÖ°¹¤ĞÅÏ¢\n");
-		printf("              2.ä¯ÀÀÖ°¹¤ĞÅÏ¢\n");
-		printf("              3.É¾³ıÖ°¹¤ĞÅÏ¢\n");
-		printf("              4.Ìí¼ÓÖ°¹¤ĞÅÏ¢\n");
-		printf("              5.ĞŞ¸ÄÖ°¹¤ĞÅÏ¢\n");
-		printf("              6.°´¹¤ºÅ²éÑ¯Ö°¹¤ĞÅÏ¢\n");
-		printf("              7.°´ĞÕÃû²éÑ¯Ö°¹¤ĞÅÏ¢\n");
-		printf("              8.ÍË³ö\n");
-		printf("              9.ÎÄ¼şÏÔÊ¾Ö°¹¤ĞÅÏ¢\n");
+			("â—¤â–”â–”â–”â–”â–”æ¬¢è¿è¿›å…¥èŒå·¥ä¿¡æ¯ç®¡ç†ç³»ç»Ÿâ–”â–”â–”â–”â–”â—¥\n");
+		printf("              1.å½•å…¥èŒå·¥ä¿¡æ¯\n");
+		printf("              2.æµè§ˆèŒå·¥ä¿¡æ¯\n");
+		printf("              3.åˆ é™¤èŒå·¥ä¿¡æ¯\n");
+		printf("              4.æ·»åŠ èŒå·¥ä¿¡æ¯\n");
+		printf("              5.ä¿®æ”¹èŒå·¥ä¿¡æ¯\n");
+		printf("              6.æŒ‰å·¥å·æŸ¥è¯¢èŒå·¥ä¿¡æ¯\n");
+		printf("              7.æŒ‰å§“åæŸ¥è¯¢èŒå·¥ä¿¡æ¯\n");
+		printf("              8.é€€å‡º\n");
+		printf("              9.æ–‡ä»¶æ˜¾ç¤ºèŒå·¥ä¿¡æ¯\n");
 		printf
-			("¨¨x¨x¨x¨x¨x¨x¨x¨x¨xĞ»Ğ»Ê¹ÓÃ¨x¨x¨x¨x¨x¨x¨x¨x¨x¨\n");
+			("â—£â–â–â–â–â–â–â–â–â–è°¢è°¢ä½¿ç”¨â–â–â–â–â–â–â–â–â–â—¢\n");
 
 
-		printf("ÇëÊäÈëÄãÏëÒªÖ´ĞĞµÄ¹¦ÄÜ´úºÅ£º");
+		printf("è¯·è¾“å…¥ä½ æƒ³è¦æ‰§è¡Œçš„åŠŸèƒ½ä»£å·ï¼š");
 		scanf("%d", &n);
 
 		switch (n)
@@ -365,7 +365,7 @@ void main()
 			Search_name(head);
 			break;
 		case 8:
-			printf("Ğ»Ğ»Ê¹ÓÃ£¡");
+			printf("è°¢è°¢ä½¿ç”¨ï¼");
 			break;
 		case 9:
 			Read_file(head);
@@ -373,5 +373,7 @@ void main()
 		}
 
 	}
+	return 0;
 }
+
 

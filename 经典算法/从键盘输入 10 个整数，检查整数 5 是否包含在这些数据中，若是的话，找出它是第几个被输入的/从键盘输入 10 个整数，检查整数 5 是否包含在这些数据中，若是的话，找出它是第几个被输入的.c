@@ -13,3 +13,4 @@ void main()
 	if(i>=10)
 	printf("5 is not in data.\n");
 }
+

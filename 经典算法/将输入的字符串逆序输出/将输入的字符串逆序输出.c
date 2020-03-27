@@ -4,10 +4,10 @@ int fun (char *);
 int main()
 {
 	char a[256];
-	printf("ÇëÊäÈë×Ö·û´®:\n"); 
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸²:\n"); 
 	gets(a);
 	fun(a);
-	printf("ÄæĞò×ª»»ºóµÄ×Ö·û´®ÊÇ:\n"); 
+	printf("é€†åºè½¬æ¢åçš„å­—ç¬¦ä¸²æ˜¯:\n"); 
 	puts(a);
 }
 int fun(char *s)
@@ -24,3 +24,4 @@ int fun(char *s)
 	}
 	return 0;
 }
+

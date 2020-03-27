@@ -6,21 +6,21 @@ struct student {
 	int score[3];
 };
 typedef struct student stu;
-void input(stu* p) {//ÊäÈë                                 
+void input(stu* p) {//è¾“å…¥                                 
 	int i,j;
 	for (i = 0; i < N; ++i) {
-		printf("ÇëÊäÈëµÚ%d¸öÑ§ÉúµÄĞÅÏ¢\n", i + 1);
-		printf("ÇëÊäÈënum\n");
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªå­¦ç”Ÿçš„ä¿¡æ¯\n", i + 1);
+		printf("è¯·è¾“å…¥num\n");
 		scanf("%d", &(p + i)->num);
-		printf("ÇëÊäÈëĞÕÃû\n");
+		printf("è¯·è¾“å…¥å§“å\n");
 		scanf("%s", &(p + i)->name);
 		for (j = 0; j < 3; ++j) {
-			printf("ÇëÊäÈëscore%d\n", j + 1);
+			printf("è¯·è¾“å…¥score%d\n", j + 1);
 			scanf("%d", &(p + i)->score[j]);
 		}
 	}
 }
-void print(stu* p,FILE *fp) {//Êä³ö
+void print(stu* p,FILE *fp) {//è¾“å‡º
 	int j;
 	fprintf(fp,"%d\t", p->num);
 	fprintf(fp,"%s\t", p->name);
@@ -28,7 +28,7 @@ void print(stu* p,FILE *fp) {//Êä³ö
 		fprintf(fp,"%d\t", p->score[j]);
 	}
 }
-double aver(stu* p) {//¼ÆËãÆ½¾ù·Ö
+double aver(stu* p) {//è®¡ç®—å¹³å‡åˆ†
 	int i;
 	double sum = 0;
 	for (i = 0; i < 3; ++i) {
@@ -36,7 +36,7 @@ double aver(stu* p) {//¼ÆËãÆ½¾ù·Ö
 	}
 	return sum / 3;
 }
-int excellect(stu* p) {//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
+int excellect(stu* p) {//åˆ¤æ–­æœ€é«˜åˆ†,è¿”å›ä¸‹æ ‡
 	int i,j;
 	double sum = 0;
 	double max = 0;
@@ -60,12 +60,12 @@ void main() {
 	stu* p = a;
 	fp=fopen("xjt.txt","w");
 	input(p);
-	fprintf(fp,"Ñ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	fprintf(fp,"å­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	for (i = 0; i < N; i++) {
 		print(p + i,fp);
 		fprintf(fp,"%.1f\n", aver(p + i));
 	}
-	fprintf(fp,"×î¸ß·ÖµÄÑ§ÉúÊı¾İÈçÏÂ\nÑ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	fprintf(fp,"æœ€é«˜åˆ†çš„å­¦ç”Ÿæ•°æ®å¦‚ä¸‹\nå­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	n = excellect(p);
 	print(p + n,fp);
 	fprintf(fp,"%.1f\n", aver(p + n));

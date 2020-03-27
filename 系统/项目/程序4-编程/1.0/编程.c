@@ -8,24 +8,24 @@ struct student
 };
 typedef struct student stu;
 void input(stu* p) 
-{//ÊäÈë
+{//è¾“å…¥
 	int i,j;
 	for (i = 0; i < N;++i)                                                   						
 	{		
-		printf("ÇëÊäÈëµÚ%d¸öÑ§ÉúµÄĞÅÏ¢\n", i + 1);
-		printf("ÇëÊäÈënum\n");
+		printf("è¯·è¾“å…¥ç¬¬%dä¸ªå­¦ç”Ÿçš„ä¿¡æ¯\n", i + 1);
+		printf("è¯·è¾“å…¥num\n");
 		scanf("%d", &(p + i)->num);
-		printf("ÇëÊäÈëĞÕÃû\n");
+		printf("è¯·è¾“å…¥å§“å\n");
 		scanf("%s", &(p + i)->name);
 		for (j = 0; j < 3; ++j) 
 		{
-			printf("ÇëÊäÈëscore%d\n", j + 1);
+			printf("è¯·è¾“å…¥score%d\n", j + 1);
 			scanf("%d", &(p + i)->score[j]);
 		}
 	}
 }
 void print(stu* p) 
-{//Êä³ö
+{//è¾“å‡º
 	int j;
 	printf("%d\t", p->num);
 	printf("%s\t", p->name);
@@ -34,7 +34,7 @@ void print(stu* p)
 		printf("%d\t", p->score[j]);
 	}
 }
-double ave(stu* p) {//¼ÆËãÆ½¾ù·Ö
+double ave(stu* p) {//è®¡ç®—å¹³å‡åˆ†
 	int i;
 	double sum = 0;
 	for (i = 0; i < 3; ++i) {
@@ -42,7 +42,7 @@ double ave(stu* p) {//¼ÆËãÆ½¾ù·Ö
 	}
 	return sum / 3;
 }
-int max(stu* p) {//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
+int max(stu* p) {//åˆ¤æ–­æœ€é«˜åˆ†,è¿”å›ä¸‹æ ‡
 	int i,j;
 	double sum = 0;
 	double top = 0;
@@ -65,13 +65,14 @@ int main()
 	stu a[N];
 	stu* p = a;
 	input(p);
-	printf("Ñ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	printf("å­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	for (i = 0; i < N; i++) {
 		print(p + i);
 		printf("%.1f\n", ave(p + i));
 	}
-	printf("×î¸ß·ÖµÄÑ§ÉúÊı¾İÈçÏÂ\nÑ§ºÅ\tĞÕÃû\t³É¼¨1\t³É¼¨2\t³É¼¨3\tÆ½¾ù\n");
+	printf("æœ€é«˜åˆ†çš„å­¦ç”Ÿæ•°æ®å¦‚ä¸‹\nå­¦å·\tå§“å\tæˆç»©1\tæˆç»©2\tæˆç»©3\tå¹³å‡\n");
 	n=max(p);
 	print(p + n);
 	printf("%.1f\n", ave(p + n));
 }
+

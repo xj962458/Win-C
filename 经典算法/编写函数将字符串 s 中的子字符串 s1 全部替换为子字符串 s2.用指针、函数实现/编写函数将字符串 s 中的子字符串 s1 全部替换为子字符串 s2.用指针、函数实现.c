@@ -34,14 +34,15 @@ void main()
 	char str[MAXLENGTH]={NULL}; 
 	char str1[MAXLENGTH]={NULL}; 
 	char str2[MAXLENGTH]={NULL};
-	printf("ÇëÊäÈë×Ö·û´® s: \n");
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸² s: \n");
 	gets(str); 
 	fflush(stdin);
-	printf("ÇëÊäÈë×Ö·û´® s1: \n");
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸² s1: \n");
 	gets(str1); 
 	fflush(stdin);
-	printf("ÇëÊäÈë×Ö·û´® s2: \n");
+	printf("è¯·è¾“å…¥å­—ç¬¦ä¸² s2: \n");
 	gets(str2);  
 	replace(str, str1, str2);
-	printf("Ìæ»»ºóµÄ×Ö·û´®: %s\n",str);
+	printf("æ›¿æ¢åçš„å­—ç¬¦ä¸²: %s\n",str);
 }
+

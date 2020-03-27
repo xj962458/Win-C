@@ -15,3 +15,4 @@ void main()
 	else
 	printf("4\n");
 }
+

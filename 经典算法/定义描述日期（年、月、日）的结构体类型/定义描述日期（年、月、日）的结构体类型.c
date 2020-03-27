@@ -58,3 +58,4 @@ void calculate(struct dat*date)
 	}
 }
 
+

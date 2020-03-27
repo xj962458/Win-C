@@ -1,14 +1,15 @@
 void string_copy(char *str_from, char *str_to)
 {	
 	int i=0;
-	for(;(*(str_to+i)=*(str_from+i))!='\0'; i++) ;	/*Ñ­»·ÌåÎª¿ÕÓï¾ä*/
+	for(;(*(str_to+i)=*(str_from+i))!='\0'; i++) ;	/*å¾ªç¯ä½“ä¸ºç©ºè¯­å¥*/
 }
 void main()
 {
 	static char array_str1[20]="I am a teacher."; 
 	char array_str2[20];
-	string_copy(array_str1, array_str2);/*Êı×éÃû×÷Êµ²Î*/ 
+	string_copy(array_str1, array_str2);/*æ•°ç»„åä½œå®å‚*/ 
 	printf("array_str2=%s\n", array_str2);
 }
-/*string_copy()º¯Êı£º¸´ÖÆÒ»¸ö×Ö·û´®*/
-/*ĞÎ²Î£º×Ö·ûÖ¸Õë str_from ½ÓÊÕÔ´´®£¬×Ö·ûÖ¸Õë str_to ´æ´¢Ä¿±ê´® */
+/*string_copy()å‡½æ•°ï¼šå¤åˆ¶ä¸€ä¸ªå­—ç¬¦ä¸²*/
+/*å½¢å‚ï¼šå­—ç¬¦æŒ‡é’ˆ str_from æ¥æ”¶æºä¸²ï¼Œå­—ç¬¦æŒ‡é’ˆ str_to å­˜å‚¨ç›®æ ‡ä¸² */
+

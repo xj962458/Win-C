@@ -8,3 +8,4 @@ void main()
 	d=a%10;
 	printf("%d %d %d",b,c,d);
 }
+

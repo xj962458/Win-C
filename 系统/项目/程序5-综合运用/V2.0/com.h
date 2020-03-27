@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define N 5
 
-//¶¨ÒåµÚÒ»Ìâ¸Ä´íÖĞµÄ½á¹¹ÌåÀàĞÍ
+//å®šä¹‰ç¬¬ä¸€é¢˜æ”¹é”™ä¸­çš„ç»“æ„ä½“ç±»å‹
 struct student1
 {  
     int num;
@@ -9,7 +9,7 @@ struct student1
     int score;
 };
 
-//¶¨ÒåµÚËÄÎåÌâÖĞµÄ½á¹¹ÌåÀàĞÍ
+//å®šä¹‰ç¬¬å››äº”é¢˜ä¸­çš„ç»“æ„ä½“ç±»å‹
 struct student2 
 {
 	int num;
@@ -17,18 +17,19 @@ struct student2
 	int score[3];
 };
 
-//×Ô¶¨ÒåËÄÎåÌâÖĞÓÃµ½µÄÊı¾İÀàĞÍ
+//è‡ªå®šä¹‰å››äº”é¢˜ä¸­ç”¨åˆ°çš„æ•°æ®ç±»å‹
 typedef struct student2 stu;
 
-//ËùÓĞº¯ÊıµÄÔ­ĞÍÉùÃ÷·ÅÔÚ´Ë´¦
-void correct();		//µÚ1Ìâ--¸Ä´í
-void fill();		//µÚ2Ìâ--Ìî¿Õ
-void verification();	//µÚ3Ìâ--ÑéÖ¤	
-void program_1();		//µÚ4Ìâ--±à³Ì
-void program_2();		//µÚ5Ìâ--±à³ÌÊä³ötxtÎÄ¼ş
-void input(stu* p);		//ÊäÈë
-void print(stu* p);		//Êä³ö
-void xprint(stu* p ,FILE *fp);	//Êä³öÖÁÎÄ±¾ÎÄ¼ş
-double aver(stu* p);			//¼ÆËãÆ½¾ù·Ö
-int excellect(stu* p);			//ÅĞ¶Ï×î¸ß·Ö,·µ»ØÏÂ±ê
-void menu();                    //Êä³ö²Ëµ¥
+//æ‰€æœ‰å‡½æ•°çš„åŸå‹å£°æ˜æ”¾åœ¨æ­¤å¤„
+void correct();		//ç¬¬1é¢˜--æ”¹é”™
+void fill();		//ç¬¬2é¢˜--å¡«ç©º
+void verification();	//ç¬¬3é¢˜--éªŒè¯	
+void program_1();		//ç¬¬4é¢˜--ç¼–ç¨‹
+void program_2();		//ç¬¬5é¢˜--ç¼–ç¨‹è¾“å‡ºtxtæ–‡ä»¶
+void input(stu* p);		//è¾“å…¥
+void print(stu* p);		//è¾“å‡º
+void xprint(stu* p ,FILE *fp);	//è¾“å‡ºè‡³æ–‡æœ¬æ–‡ä»¶
+double aver(stu* p);			//è®¡ç®—å¹³å‡åˆ†
+int excellect(stu* p);			//åˆ¤æ–­æœ€é«˜åˆ†,è¿”å›ä¸‹æ ‡
+void menu();                    //è¾“å‡ºèœå•
+

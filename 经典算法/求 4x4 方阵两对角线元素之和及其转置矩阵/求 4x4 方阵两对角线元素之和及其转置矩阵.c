@@ -21,3 +21,4 @@ void main()
 	}
 	printf("%5d",s);
 }
+

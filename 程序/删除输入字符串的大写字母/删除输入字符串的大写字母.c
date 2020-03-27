@@ -15,3 +15,4 @@ void main()
 	s[n]='\0';
 	puts(s);
 }
+

@@ -2,13 +2,13 @@
 
 void main()
 {
-	// 未知位数的拆数和组合
+	// 鏈煡浣嶆暟鐨勬媶鏁板拰缁勫悎
 	int x, gw, k=0;
 	scanf("%d", &x);
 	while(x)
 	{
 		gw = x%10;
-		k = k*10 + gw;	// 反向组合
+		k = k*10 + gw;	// 鍙嶅悜缁勫悎
 		x = x/10;
 	}
 	printf("%d \n", k);

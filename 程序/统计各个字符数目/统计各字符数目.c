@@ -14,5 +14,5 @@ void main()
 		else
 			other++;
 	}
-	printf("×ÖÄ¸Êı:%d\n¿Õ¸ñÊı:%d\nÊı×ÖÊı:%d\nÆäËû×Ö·û:%d\n",letters,space,digit,other);
+	printf("å­—æ¯æ•°:%d\nç©ºæ ¼æ•°:%d\næ•°å­—æ•°:%d\nå…¶ä»–å­—ç¬¦:%d\n",letters,space,digit,other);
 }

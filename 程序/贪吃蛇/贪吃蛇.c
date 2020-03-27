@@ -11,20 +11,20 @@
 #define right 'd'
 #define stop 'p'
  
-void welcome();               //55¿ªÊ¼½çÃæ
-void Finish();                //291½áÊø½çÃæ
-void creatgraph();            //69Î§Ç½´òÓ¡
-void gotoxy(int x, int y);    //111¹â±êÌø×ª£¬ºáÎªX 0,1,2..
-void gotoprint(int x, int y); //121Ìø×ª´òÓ¡
-void gotodelete(int x, int y);//127Ìø×ªÉ¾³ı
-void creatfood();             //133Ê³Îï²úÉú
-int ClickControl();           //157»ñÈ¡¼üÅÌĞÅºÅ
-int Judge();                  //270ÓÎÏ·½áÊøÅĞ¶Ï
-void MovingBody();      //172ÉßµÄÒÆ¶¯ 
-void Eating();                //223Éß³Ôµ½¶«Î÷ºóµÄ²Ù×÷£¨Éì³¤£©
-void ChangeBody(int a,int b); //245ÉßµÄ×ø±ê±ä»»,ºóÒ»¸ö¸´ÖÆÇ°Ò»¸öSTRUCT,a,bÎªheadÖ®Ç°×ø±ê 
+void welcome();               //55å¼€å§‹ç•Œé¢
+void Finish();                //291ç»“æŸç•Œé¢
+void creatgraph();            //69å›´å¢™æ‰“å°
+void gotoxy(int x, int y);    //111å…‰æ ‡è·³è½¬ï¼Œæ¨ªä¸ºX 0,1,2..
+void gotoprint(int x, int y); //121è·³è½¬æ‰“å°
+void gotodelete(int x, int y);//127è·³è½¬åˆ é™¤
+void creatfood();             //133é£Ÿç‰©äº§ç”Ÿ
+int ClickControl();           //157è·å–é”®ç›˜ä¿¡å·
+int Judge();                  //270æ¸¸æˆç»“æŸåˆ¤æ–­
+void MovingBody();      //172è›‡çš„ç§»åŠ¨ 
+void Eating();                //223è›‡åƒåˆ°ä¸œè¥¿åçš„æ“ä½œï¼ˆä¼¸é•¿ï¼‰
+void ChangeBody(int a,int b); //245è›‡çš„åæ ‡å˜æ¢,åä¸€ä¸ªå¤åˆ¶å‰ä¸€ä¸ªSTRUCT,a,bä¸ºheadä¹‹å‰åæ ‡ 
  
-/*È«¾Ö±äÁ¿ + Ô¤´¦Àí£º*/
+/*å…¨å±€å˜é‡ + é¢„å¤„ç†ï¼š*/
 typedef struct Snakes
 {
 	int x;
@@ -66,7 +66,7 @@ void welcome()
 	gotoxy(20, 13);
 	printf("WELCOME TO THE GAME OF RETRO SNAKE");
 	gotoxy(14, 16);
-	printf("ÇëÔÚÓ¢ÎÄÊäÈë·¨ÖĞ²Ù×÷£¬·´ÏòÒÆ¶¯µÈÍ¬ÓÚ³Ôµ½×Ô¼º£¬wasd¿ØÖÆpÔİÍ£");
+	printf("è¯·åœ¨è‹±æ–‡è¾“å…¥æ³•ä¸­æ“ä½œï¼Œåå‘ç§»åŠ¨ç­‰åŒäºåƒåˆ°è‡ªå·±ï¼Œwasdæ§åˆ¶pæš‚åœ");
 	gotoxy(20, 18);
 	printf("PLEASE ENTER YOUR NAME:");
 	scanf("%s", &name,10);
@@ -76,7 +76,7 @@ void welcome()
 void creatgraph()             
 {
 	int i;
-	for (i = 0; i<58; i += 2)//´òÓ¡ÉÏÏÂ±ß¿ò
+	for (i = 0; i<58; i += 2)//æ‰“å°ä¸Šä¸‹è¾¹æ¡†
 	{
 		gotoprint(i, 0);
 		gotoprint(i, 26);
@@ -89,7 +89,7 @@ void creatgraph()
 	gotoxy(63, 10);
 	printf("hello %s,Welcome To Play",name);
 	gotoxy(63, 15);
-	printf("Your Score Is:%d    =£ş¦Ø£ş= ",score);
+	printf("Your Score Is:%d    =ï¿£Ï‰ï¿£= ",score);
 	gotoxy(63, 20);
 	printf("This Game Is Created By JOKER");
 	head = (snake*)malloc(sizeof(snake));
@@ -122,7 +122,7 @@ void gotoxy(int x, int y)
 void gotoprint(int x, int y)
 {
 	gotoxy(x, y);
-	printf("¡ö");
+	printf("â– ");
 }
 /**********************************************************/
 void gotodelete(int x, int y)
@@ -142,7 +142,7 @@ void creatfood()
 		food.x = food.x+1;
 	}
 	snake *judge = head;
-	while (1)  //±éÀúÅÅ³ıÉßÉíÖØ¸´
+	while (1)  //éå†æ’é™¤è›‡èº«é‡å¤
 	{
 		if (judge->next == NULL) break;
 		if (food.x == judge->x&&food.y == judge->y)
@@ -152,7 +152,7 @@ void creatfood()
 		judge = judge->next;
 	}
 	gotoxy(food.x, food.y);
-	printf("¡Ñ");
+	printf("âŠ™");
 }
 /**********************************************************/
 int ClickControl()
@@ -176,7 +176,7 @@ void MovingBody()
 	int count = 0;
 	int a = head->x, b = head->y;
 	snake *p = head;
-	//Í¨¹ıÏÈÇå¿Õºó´òÓ¡ÊµÏÖ¶¯»­Ğ§¹û
+	//é€šè¿‡å…ˆæ¸…ç©ºåæ‰“å°å®ç°åŠ¨ç”»æ•ˆæœ
 	while (1)
 	{
 		if (p->next == NULL) break;
@@ -296,11 +296,12 @@ void Finish()
 	gotoxy(15, 20);
 	printf("/**********************************************/");
 	gotoxy(18, 14);
-	printf("GAME   OVER      o(*£ş¨Œ£ş*)o");
+	printf("GAME   OVER      o(*ï¿£â–½ï¿£*)o");
 	gotoxy(20, 16);
 	printf("Your Score is %d    hiahiahia", score);
 	gotoxy(18, 18);
-	printf("»¹²»´íÅ¶£¬     ¼ÌĞøÅ¬Á¦O(¡É_¡É)O");
+	printf("è¿˜ä¸é”™å“¦ï¼Œ     ç»§ç»­åŠªåŠ›O(âˆ©_âˆ©)O");
 	gotoxy(0, 27);
 	system("pause");
 }
+

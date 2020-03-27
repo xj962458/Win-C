@@ -5,7 +5,8 @@ void main()
 	printf("please input a number:\n");
 	scanf("%d",&n);
 	if(n%2==0)
-		printf("这个数是偶数");
+		printf("杩欎釜鏁版槸鍋舵暟");
 	else
-	printf("这个数是奇数");
+	printf("杩欎釜鏁版槸濂囨暟");
 }
+

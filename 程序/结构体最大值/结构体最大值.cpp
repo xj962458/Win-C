@@ -5,13 +5,13 @@ typedef struct stu
 	int s;
 }STU;
 
-// ÕÒ³ö·ÖÊý×î¸ßµÄÑ§ÉúÊý¾Ý£¬²¢½«ÆäÒÀ´Î´æÈë½á¹¹ÌåÊý×ébÖÐ£¬²¢·µ»ØµÃ×î¸ß·ÖµÄÑ§ÉúÈËÊý
+// æ‰¾å‡ºåˆ†æ•°æœ€é«˜çš„å­¦ç”Ÿæ•°æ®ï¼Œå¹¶å°†å…¶ä¾æ¬¡å­˜å…¥ç»“æž„ä½“æ•°ç»„bä¸­ï¼Œå¹¶è¿”å›žå¾—æœ€é«˜åˆ†çš„å­¦ç”Ÿäººæ•°
 
-int fun(STU a[5], STU *p)	// ÐÎ²Îa, pÀàÐÍÒ»Ñù£¬¾ùÊÇSTUÀàÐÍµÄ½á¹¹ÌåÖ¸Õë±äÁ¿
-// ²ÎÊý´«µÝ£ºa = s;  p = b;
+int fun(STU a[5], STU *p)	// å½¢å‚a, pç±»åž‹ä¸€æ ·ï¼Œå‡æ˜¯STUç±»åž‹çš„ç»“æž„ä½“æŒ‡é’ˆå˜é‡
+// å‚æ•°ä¼ é€’ï¼ša = s;  p = b;
 {
-	int max = a[0].s,  i=0, j=0;	// i: aÖ¸ÏòµÄsÊý×éÏÂ±ê  j£ºpÖ¸ÏòµÄbÊý×éÏÂ±ê
-	// Çó×î¸ß·Ö
+	int max = a[0].s,  i=0, j=0;	// i: aæŒ‡å‘çš„sæ•°ç»„ä¸‹æ ‡  jï¼špæŒ‡å‘çš„bæ•°ç»„ä¸‹æ ‡
+	// æ±‚æœ€é«˜åˆ†
 	for(i=0; i<5; i++)
 	{
 		if(max < a[i].s)
@@ -20,7 +20,7 @@ int fun(STU a[5], STU *p)	// ÐÎ²Îa, pÀàÐÍÒ»Ñù£¬¾ùÊÇSTUÀàÐÍµÄ½á¹¹ÌåÖ¸Õë±äÁ¿
 		}
 	}
 
-	// ÕÒ³öµÃ×î¸ß·ÖµÄÑ§Éú
+	// æ‰¾å‡ºå¾—æœ€é«˜åˆ†çš„å­¦ç”Ÿ
 	for(i=0; i<5; i++)
 	{
 		if(max == a[i].s)

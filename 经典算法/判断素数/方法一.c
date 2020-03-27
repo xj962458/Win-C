@@ -1,18 +1,18 @@
 #include <stdio.h>
 int main(){
-    int a=0,i;  // ËØÊıµÄ¸öÊı
-    int num=0;  // ÊäÈëµÄÕûÊı
+    int a=0,i;  // ç´ æ•°çš„ä¸ªæ•°
+    int num=0;  // è¾“å…¥çš„æ•´æ•°
 
-    printf("ÊäÈëÒ»¸öÕûÊı£º");
+    printf("è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼š");
     scanf("%d",&num);
     for(i=2;i<num;i++)
     {
         if(num%i==0)
-            a++;  // ËØÊı¸öÊı¼Ó1
+            a++;  // ç´ æ•°ä¸ªæ•°åŠ 1
     }
 
     if(a==0)
-        printf("%dÊÇËØÊı¡£\n", num);
+        printf("%dæ˜¯ç´ æ•°ã€‚\n", num);
     else
-        printf("%d²»ÊÇËØÊı¡£\n", num);
+        printf("%dä¸æ˜¯ç´ æ•°ã€‚\n", num);
 }

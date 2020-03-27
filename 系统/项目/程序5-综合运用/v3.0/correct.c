@@ -26,3 +26,4 @@ void correct()	//第1题--改错
     }
     printf("n=%d\n",n);
 }
+

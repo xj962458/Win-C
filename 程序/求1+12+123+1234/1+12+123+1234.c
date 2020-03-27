@@ -21,3 +21,4 @@ void main()
 		sum+=x(i);
 	printf("sum=1+12+123+...=%ld",sum);
 }
+

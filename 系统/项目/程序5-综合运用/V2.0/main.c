@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include"com.h"
-void main()	//Ö÷º¯Êı
+void main()	//ä¸»å‡½æ•°
 {
 	int item;
 	while(1)
 	{
 		int item;
         menu();
-		printf("ÇëÊäÈëÏàÓ¦µÄÊı×Ö£¬ÔËĞĞÏàÓ¦µÄ³ÌĞò\n");
+		printf("è¯·è¾“å…¥ç›¸åº”çš„æ•°å­—ï¼Œè¿è¡Œç›¸åº”çš„ç¨‹åº\n");
 		scanf("%d",&item);
 	  	switch(item)
 		{
@@ -33,14 +33,15 @@ void main()	//Ö÷º¯Êı
 				break; 
 			case 0:
 				exit(0);
-				printf("³ÌĞò½áÊø\n");
+				printf("ç¨‹åºç»“æŸ\n");
 				getchar();getchar();
 				break;
 			default :
-				printf("\n\nÊäÈëµÄÃüÁî²»¶Ô,ÇëÖØĞÂÊäÈë!!\n");
+				printf("\n\nè¾“å…¥çš„å‘½ä»¤ä¸å¯¹,è¯·é‡æ–°è¾“å…¥!!\n");
 				getchar();getchar();
 				break;
 			
 		}
 	}
 }
+
