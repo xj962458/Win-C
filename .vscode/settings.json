@@ -2,7 +2,7 @@
     "files.associations": {
         "stdio.h": "c",
         "stdlib.h": "c",
-        "X.C": "cpp"
+        "iostream": "cpp"
     },
     "files.exclude": {
         "**/.classpath": true,
