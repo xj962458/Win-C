@@ -203,15 +203,15 @@ void ListInsert(STU *L)
     STU *s = NULL;              //生成一个新节点s
     s = (STU *)malloc(sizeof(STU));
     printf("请输入您要插入的考生的姓名:");
-    scanf("%s",&s->name);
+    scanf("%s",s->name);
     printf("请输入您要插入的考生的身份证号:");
-    scanf("%s",&s->no);
+    scanf("%s",s->no);
     printf("请输入您要插入的考生的性别（女性为0，男性为1）:");
     scanf("%d",&s->xb);
     printf("请输入您要插入的考生的年龄:");
     scanf("%d",&s->age);
     printf("请输入您要插入的考生的电话号码:");
-    scanf("%s",&s->tele);
+    scanf("%s",s->tele);
     s->next = L->next;
     L->next = s;
 }
@@ -220,15 +220,15 @@ void ListInsert(STU *L)
 void Input(STU *p,int i)
 {
     printf("请输入第%d名考生的姓名:",i+1);
-    scanf("%s",&p->name);
+    scanf("%s",p->name);
     printf("请输入第%d名考生的身份证号:",i+1);
-    scanf("%s",&p->no);
+    scanf("%s",p->no);
     printf("请输入第%d名考生的性别（女性为0，男性为1）:",i+1);
     scanf("%d",&p->xb);
     printf("请输入第%d名考生的年龄:",i+1);
     scanf("%d",&p->age);
     printf("请输入第%d名考生的电话号码:",i+1);
-    scanf("%s",&p->tele);
+    scanf("%s",p->tele);
 }
 
 //考生信息管理系统的菜单
