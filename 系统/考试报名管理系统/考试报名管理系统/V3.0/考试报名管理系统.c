@@ -17,11 +17,12 @@ typedef struct student
 STU *LIstInit(STU *L);
 STU *ListCreate(STU *L, int n);
 void ListInsert(STU *L);
-void ListDelete(STU *L,char n[40]);
-void LIstSearch(STU *L,char n[]);
-void input(STU *p,int i);
-void output(STU *L);
-void menu();
+void ListDelete(STU *L);
+void LIstSearch(STU *L);
+void Input(STU *p,int i);
+void Output(STU *L);
+void PrintFile(STU *L);
+void Menu();
 
 //创建表头，初始化链表
 STU *LIstInit(STU *L)
@@ -43,7 +44,7 @@ STU *ListCreate(STU *L, int n)
         //将新生成的节点插入到链表中
         p=NULL;
         p = (STU *)malloc(sizeof(STU));
-        input(p,i);
+        Input(p,i);
         p->next = L->next;
         L->next = p;
     }
@@ -71,14 +72,17 @@ void ListInsert(STU *L)
 }
 
 //对链表的进行节点的删除操作
-void ListDelete(STU *L,char n[])
+void ListDelete(STU *L)
 {
     int i;
+    char n[40];
     STU *p=L->next,*pre=L;  //定义p指针指向头节点的指向，定义pre指向头节点，pre始终指向p的前驱节点
     if(p==NULL)
         printf("数据为空，无法删除！");
     else
     {
+        printf("请输入您要删除的考生姓名:");
+        scanf("%s",n);
         while(strcmp(p->name,n)!=0)
         {
             pre=p;
@@ -95,13 +99,16 @@ void ListDelete(STU *L,char n[])
     }
 }
 
-void LIstSearch(STU *L,char n[])
+void LIstSearch(STU *L)
 {
+    char n[40];
     STU *p=L->next;
     if (p == NULL)
         printf("数据为空，无法查找！");
     else
     {
+        printf("请输入您要查找的考生姓名:");
+        scanf("%s",n);
         while (strcmp(p->name, n) != 0)
         {
             p = p->next;
@@ -121,52 +128,59 @@ void LIstSearch(STU *L,char n[])
     }
 }
 
-void ListModify(STU *L,char na[])
+void ListModify(STU *L)
 {
     int x,a,item;
-    char nam[40],no[18],tel[20];
+    char nam[40],no[18],tel[20],n[40];
     STU *p=L->next;
-    while(p!=NULL)
+    if (p == NULL)
+        printf("数据为空，无法修改！");
+    else
     {
-        if(strcmp(p->name,na)==0)
+        printf("请输入您要修改的考生姓名:");
+        scanf("%s",n);
+        while(strcmp(p->name, n) != 0)
         {
-            printf("请选择您要修改的考生信息类型:\n");
-            printf("1、姓名\n2、身份证号\n3、性别\n4、年龄\n5、电话号码\n");
-            scanf("%d",&item);
-            switch(item)
-            {
-                case 1:
-                    printf("请输入您修改后的姓名:");
-                    scanf("%s",nam);
-                    strcpy(p->name,nam);
-                    break;
-                case 2:
-                    printf("请输入您修改后的身份证号:");
-                    scanf("%s",no);
-                    strcpy(p->no,no);
-                    break;
-                case 3:
-                    printf("请输入您修改后的性别:");
-                    scanf("%d",&x);
-                    p->xb=x;
-                    break;
-                case 4:
-                    printf("请输入您修改后的年龄:");
-                    scanf("%d",&a);
-                    p->age=a;
-                    break;
-                case 5:
-                    printf("请输入您修改后的电话号码:");
-                    scanf("%s",tel);
-                    strcpy(p->tele,tel);
-                    break;
-            }
+            p = p->next;
+            if (p == NULL)
+                printf("没有找到相关信息\n");
         }
-        p=p->next;
+        printf("请选择您要修改的考生信息类型:\n");
+        printf("1、姓名\n2、身份证号\n3、性别\n4、年龄\n5、电话号码\n");
+        scanf("%d",&item);
+        switch(item)
+        {
+            case 1:
+                printf("请输入您修改后的姓名:");
+                scanf("%s",nam);
+                strcpy(p->name,nam);
+                break;
+            case 2:
+                printf("请输入您修改后的身份证号:");
+                scanf("%s",no);
+                strcpy(p->no,no);
+                break;
+            case 3:
+                printf("请输入您修改后的性别:");
+                scanf("%d",&x);
+                p->xb=x;
+                break;
+            case 4:
+                printf("请输入您修改后的年龄:");
+                scanf("%d",&a);
+                p->age=a;
+                break;
+            case 5:
+                printf("请输入您修改后的电话号码:");
+                scanf("%s",tel);
+                strcpy(p->tele,tel);
+                break;
+        }
+        printf("修改成功!");
     }
 }
 
-void input(STU *p,int i)
+void Input(STU *p,int i)
 {
     printf("请输入第%d名考生的姓名:",i+1);
     scanf("%s",&p->name);
@@ -180,7 +194,7 @@ void input(STU *p,int i)
     scanf("%s",&p->tele);
 }
 
-void output(STU *L)
+void Output(STU *L)
 {
     STU *p=L->next;
     while(p!=NULL)
@@ -214,9 +228,9 @@ void PrintFile(STU *L)
     fclose(fp);
 }
 
-void menu()
+void Menu()
 {
-    printf("\n\n\n\n");
+    printf("\n\n");
 	printf("\t\t\t===================考试报名管理系统==================\n");
 	printf("\t\t\t* 作者:武新纪  班级:人工智能191  学号:3190707121    *\n");
 	printf("\t\t\t*                                                   *\n");
@@ -242,7 +256,7 @@ int main()
     L=LIstInit(L);
     do
     { 
-        menu();
+        Menu();
         printf("请输入相应的数字，进行相应的操作:\n");
         scanf("%d",&item);
         switch(item)
@@ -255,27 +269,23 @@ int main()
             case 2:
                 printf("全部考生信息如下:\n");
                 printf("姓名\t\t身份证号\t\t性别\t年龄\t电话号码\n");
-                output(L);
+                Output(L);
                 break;
             case 3:
-                printf("请输入您要查找的考生姓名:");
-                scanf("%s",nam);
-                LIstSearch(L,nam);
+                LIstSearch(L);
                 break;                                             
             case 4:
-                printf("请输入您要修改的学生姓名:");
-                scanf("%s",nam);
-                ListModify(L,nam);
+                ListModify(L);
                 break;
             case 5:
-                printf("请输入您要删除的学生的姓名:");
-                scanf("%s",nam);
-                ListDelete(L,nam);
+                ListDelete(L);
                 break;
             case 6:
                 ListInsert(L);
                 break;
             case 7:
+                printf("功能完善中！");
+            case 8:
                 PrintFile(L);
                 break;
             case 0:
