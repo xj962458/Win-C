@@ -241,13 +241,13 @@ void Input(STU *p,int i)
 {
     printf("请输入第%d名考生的姓名:",i+1);
     scanf("%s",p->name);
-    printf("请输入第%d名考生的身份证号:",i+1);
+    printf("请输入第%d名考生的18位身份证号:",i+1);
     scanf("%s",p->no);
     printf("请输入第%d名考生的性别（女性为0，男性为1）:",i+1);
     scanf("%d",&p->xb);
     printf("请输入第%d名考生的年龄:",i+1);
     scanf("%d",&p->age);
-    printf("请输入第%d名考生的电话号码:",i+1);
+    printf("请输入第%d名考生的11位电话号码:",i+1);
     scanf("%s",p->tele);
 }
 

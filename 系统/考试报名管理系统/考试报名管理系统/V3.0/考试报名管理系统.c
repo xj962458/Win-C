@@ -74,7 +74,6 @@ void ListInsert(STU *L)
 //对链表的进行节点的删除操作
 void ListDelete(STU *L)
 {
-    int i;
     char n[40];
     STU *p=L->next,*pre=L;  //定义p指针指向头节点的指向，定义pre指向头节点，pre始终指向p的前驱节点
     if(p==NULL)
@@ -250,7 +249,7 @@ void Menu()
 
 int main()
 {
-    int item,n,m;         //item用于接收输入的命令，n用于接收输入的考生人数
+    int item,n;         //item用于接收输入的命令，n用于接收输入的考生人数
     char nam[30];         
     STU *L=NULL;
     L=LIstInit(L);
@@ -259,40 +258,73 @@ int main()
         Menu();
         printf("请输入相应的数字，进行相应的操作:\n");
         scanf("%d",&item);
+        system("cls");
         switch(item)
         {
             case 1:
                 printf("请输入您要录入的考生人数:");
                 scanf("%d",&n);
                 L=ListCreate(L,n);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 2:
                 printf("全部考生信息如下:\n");
                 printf("姓名\t\t身份证号\t\t性别\t年龄\t电话号码\n");
                 Output(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 3:
                 LIstSearch(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;                                             
             case 4:
                 ListModify(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 5:
                 ListDelete(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 6:
                 ListInsert(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 7:
                 printf("功能完善中！");
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
             case 8:
                 PrintFile(L);
+                getchar();
+                printf("\n请按任意键返回主菜单\n");
+				getchar();
+				system("cls");
                 break;
             case 0:
                 printf("即将退出考生信息管理系统.....");
                 exit(0);
             default:
-                break;
+                printf("您输入的命令有误，请重新输入");
         }
         printf("\n\n\n\n");
     }while(item);
