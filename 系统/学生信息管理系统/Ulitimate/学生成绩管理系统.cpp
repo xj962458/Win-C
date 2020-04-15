@@ -406,7 +406,7 @@ thefifth:
 		printf("\n*班级___: ");
 		printf("%s", all_stu[ai].stu_clas);
 		printf("\n*成绩一_: ");
-		printf("%.2lf", all_stu[ai].stu_cj1);
+		printf("%.2lf", all_stu[ai].stu_cj1);   
 		printf("\n*成绩二_: ");
 		printf("%.2lf", all_stu[ai].stu_cj2);
 		printf("\n*成绩三_: ");
