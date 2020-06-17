@@ -6,7 +6,7 @@
         {
             "type": "shell",
             "label": "gcc.exe build active file",
-            "command": "D:/Program/Mingw64/bin/gcc.exe",
+            "command": "D:/Program Files/Mingw64/bin/gcc.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -14,7 +14,7 @@
                 "${fileDirname}//${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "D:/Program/Mingw64/bin"
+                "cwd": "D:/Program Files/Mingw64/bin"
             },
             "problemMatcher": [
                 "$gcc"
