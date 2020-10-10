@@ -10,5 +10,6 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
-    }
+    },
+    "python.pythonPath": "D:\\Program Files\\Python\\python.exe"
 }
