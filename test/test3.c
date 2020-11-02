@@ -1,1 +1,0 @@
-void LIstSearch(SP *L){char n[40];SP *p = L->next;if (p == NULL)printf("数据为空，无法查找！");else{printf("请输入您要查找的商品名称:");scanf("%s", n);while (strcmp(p->name, n) != 0){p = p->next;if (p == NULL){printf("没有找到相关信息\n");return;}}printf("%s的库存量为%d\n",p->name,p->workload);}}
