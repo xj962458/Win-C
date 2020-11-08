@@ -27,7 +27,8 @@ void CreateListF(LinkNode *&L,ElemType a[],int n) //头插法建立循环单链表
 }
 void CreateListR(LinkNode *&L,ElemType a[],int n) //尾插法建立循环单链表
 {
-	LinkNode *s,*r;int i;
+	LinkNode *s,*r;
+	int i;
 	L=(LinkNode *)malloc(sizeof(LinkNode));  	//创建头结点
 	L->next=NULL;
 	r=L;					//r始终指向终端结点,开始时指向头结点

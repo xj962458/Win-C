@@ -1,4 +1,5 @@
 //链队运算算法
+//尾插法建立队列，不是头插法建立队列
 #include <stdio.h>
 #include <malloc.h>
 typedef char ElemType;
