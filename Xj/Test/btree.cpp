@@ -9,7 +9,7 @@ typedef struct node
 	struct node *lchild;	//指向左孩子结点
 	struct node *rchild;	//指向右孩子结点
 } BTNode;
-void CreateBTree(BTNode * &b,char *str)	//创建二叉树
+void CreateBTree(BTNode * &b,const char *str)	//创建二叉树
 {
 	BTNode *St[MaxSize],*p=NULL;
 	int top=-1,k,j=0;  
