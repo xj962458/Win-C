@@ -51,9 +51,9 @@ void DispMat(MatGraph g)	//Êä³öÁÚ½Ó¾ØÕóg
 	{
 		for (j=0;j<g.n;j++)
 			if (g.edges[i][j]!=INF)
-				printf("%4d",g.edges[i][j]);
+				printf("%-3d",g.edges[i][j]);
 			else
-				printf("%4s","¡Ş");
+				printf("%-4s","¡Ş");
 		printf("\n");
 	}
 }
